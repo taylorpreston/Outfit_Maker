@@ -1,0 +1,76 @@
+@import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
+// $visual-grid:true;
+@import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
+
+
+*{
+  font-family: 'Helvetica';
+  font-size: 24px;
+  color:#01322a;
+}
+
+body{
+  background-color: #036B5A;
+  @include outer-container;
+};
+
+.mainWrap{
+  @include span-columns(10)
+  @include shift(1);
+  height: 100%;
+  background-color: #01322a;
+};
+
+header{
+  @include span-columns(12);
+  a{
+    @include span-columns(3);
+    text-align: center;
+    color: #009e84;
+    background-color: #01322a;
+    font-size: 30px;
+    font-family: 'Helvetica';
+    text-decoration: none;
+    height: 50px;
+    padding-top: 4px;
+    border: 3px solid #009e84;
+    border-radius: 6px;
+    transition: background-color ease;
+    transition: color .6s ease;
+    transition: border .4s ease;
+  };
+  a:hover{
+    background-color: #009e84;
+    color: #01322a;
+    border: 3px solid  #01322a;
+  }
+}
+
+.user-form{
+  margin-top: 60px;
+  @include span-columns(6);
+  @include shift(3);
+  input{
+    @include span-columns(12);
+    margin-top: 20px;
+    height: 45px;
+    color: #009e84;
+    background-color: #01322a;
+    font-size: 24px;
+    border: 2px solid #009e84;
+    border-radius: 6px;
+    text-align: center;
+  }
+  input.subBtn{
+    @include span-columns(6);
+    @include shift(3);
+    transition: background-color 1s ease;
+    transition: color .6s ease;
+    transition: border .4s ease;
+  }
+  input.subBtn:hover{
+    background-color: #009e84;
+    color: #01322a;
+    border: 2px solid  #01322a;
+  }
+}
