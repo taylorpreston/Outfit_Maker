@@ -5,6 +5,7 @@ import {Router, Route, IndexRoute} from 'react-router';
 import Home from './components/home';
 import Login from './forms/login';
 import Register from './forms/register';
+import Header from './components/header';
 
 ReactDOM.render((
   <Router>
