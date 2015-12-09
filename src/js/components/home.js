@@ -10,9 +10,9 @@ class Home extends React.Component {
     return(
       <div className="mainWrap">
         <header className="main">
-            <Link to="/"> Home </Link>
-            <Link to="/login"> Login </Link>
-            <Link to="/register"> Register </Link>
+            <Link className="homelink" to="/"> Home </Link>
+            <Link className="loginlink" to="/login"> Login </Link>
+            <Link className="registerlink" to="/register"> Register </Link>
         </header>
         {this.props.children}
       </div>
