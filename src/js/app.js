@@ -1,13 +1,10 @@
-console.log('hi')
-console.log('what up homie')
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
 
-import Home from './components/home'
-import Login from './components/login'
-import Register from './components/register'
+import Home from './components/home';
+import Login from './forms/login';
+import Register from './forms/register';
 
 ReactDOM.render((
   <Router>

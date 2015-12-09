@@ -3,6 +3,7 @@
 
 *, *::after, *::before {
   box-sizing: inherit; }
+<<<<<<< HEAD
 
 * {
   font-family: 'Helvetica';
@@ -101,3 +102,5 @@ header {
     background-color: #009e84;
     color: #01322a;
     border: 2px solid  #01322a; }*/
+=======
+>>>>>>> fab25ae2e0743ba2826fceb070f917b3b2fe2dea
