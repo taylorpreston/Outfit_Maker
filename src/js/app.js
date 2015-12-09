@@ -12,6 +12,7 @@ import Outfits from './components/outfits';
 import Closet from './components/closet';
 
 
+
 ReactDOM.render((
   <Router>
     <Route path="/" component={Home}>
