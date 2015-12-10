@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 class Header extends React.Component {
   render () {
@@ -12,7 +13,7 @@ class Header extends React.Component {
           <Link className="oufits" to="/outfits"> Outfits </Link>
           <Link className="outfit-designer" to="/outfitdesigner"> Outfit Designer </Link>
           <Link className="publicfeed" to="/publicfeed"> Public Feed </Link>
-          <Link className="logout" to "/logout"> Logout </Link>
+
 
       </header>
     )
