@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router'
-import $ from 'jquery'
-
+import React from 'react';
+import { Link } from 'react-router';
+import $ from 'jquery';
+import Header from './header';
 
 class Home extends React.Component {
 
@@ -9,11 +9,7 @@ class Home extends React.Component {
   render () {
     return(
       <div className="mainWrap">
-        <header className="main">
-            <Link to="/"> Home </Link>
-            <Link to="/login"> Login </Link>
-            <Link to="/register"> Register </Link>
-        </header>
+        <Header/>
         {this.props.children}
       </div>
     )
