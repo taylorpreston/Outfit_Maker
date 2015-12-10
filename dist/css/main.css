@@ -3,3 +3,84 @@ html {
 
 *, *::after, *::before {
   box-sizing: inherit; }
+
+body {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FF7661;
+  color: #ffffff; }
+  body::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.mainheader {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  background-color: #709C97;
+  border-bottom: 1px solid white;
+  height: 40px;
+  position: relative;
+  top: 0;
+  left: 0; }
+  .mainheader:last-child {
+    margin-right: 0; }
+
+.click {
+  margin-left: 85.29804%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  text-decoration: none;
+  color: #ffffff;
+  font: helvetica;
+  font-size: 12px; }
+  .click:last-child {
+    margin-right: 0; }
+
+.click {
+  a-color: yellow; }
+  .click,
+  .click a:hover {
+    color: #000000; }
+  .click,
+  .click a:visited {
+    color: pink; }
+  .click,
+  .click a:focus {
+    color: blue; }
+  .click,
+  .click a:active {
+    color: green; }
+
+.headerNav {
+  height: 0;
+  overflow: hidden;
+  transition: .3s height; }
+  .headerNav .headerlink {
+    display: block;
+    color: #fff;
+    width: 100%; }
+
+.headerNav.visible {
+  height: 170px; }
+
+.headerNav {
+  text-align: center;
+  line-height: 20px;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  max-width: 200px;
+  top: 40px;
+  right: 0; }
+
+.headerlink {
+  text-decoration: none;
+  color: #ffffff;
+  font: helvetica;
+  font-size: 12px; }
