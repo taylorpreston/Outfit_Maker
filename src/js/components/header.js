@@ -17,17 +17,18 @@ class Header extends React.Component {
     }
     return (
       <header className="mainheader">
-        <a onClick={this.toggleNav} href="#" className="click">Click</a>
+        <a href="#">OUTFIT MAKER</a>
+        <span onClick={this.toggleNav} href="#" className="click">Click</span>
 
         <section className={className}>
-          <Link className="headerlink" to="/"> Home </Link>
-          <Link className="headerlink" to="/login"> Login </Link>
-          <Link className="headerlink" to="/register"> Register </Link>
-          <Link className="headerlink" to="/dashboard"> Dashboard </Link>
-          <Link className="headerlink" to="/closet"> Closet </Link>
-          <Link className="headerlink" to="/outfits"> Outfits </Link>
-          <Link className="headerlink" to="/outfitdesigner"> Outfit Designer </Link>
-          <Link className="headerlink" to="/publicfeed"> Public Feed </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/"> Home </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/login"> Login </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/register"> Register </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/dashboard"> Dashboard </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/closet"> Closet </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/outfits"> Outfits </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/outfitdesigner"> Outfit Designer </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/publicfeed"> Public Feed </Link>
         </section>
       </header>
     )

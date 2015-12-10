@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 class PublicFeed extends React.Component {
   render () {
@@ -7,9 +8,9 @@ class PublicFeed extends React.Component {
         <section className="user">
             <img src="http://www.fillmurray.com/200/200" />
             <span>"USERNAME"</span>
-            <a href="#" >usercloset</a>
-            <a href="#" >Outfits</a>
-            <a href="#" >Design</a>
+            <Link to="/closet" >usercloset</Link>
+            <Link to="/outfits" >Outfits</Link>
+            <Link to="/outfitdesigner" >Design</Link>
         </section>
       </main>
     )

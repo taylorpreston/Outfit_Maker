@@ -1,35 +1,41 @@
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
-$visual-grid:true;
+// $visual-grid:true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
 
 body{
-  @include outer-container;
   background-color: #FF7661;
   color: #ffffff;
 }
-
-.mainheader{
-  @include span-columns(12);
+ //  MAIN HEADER
+.mainheader {
+  @include outer-container;
   background-color: #709C97;
+  @include pad();
   border-bottom: 1px solid white;
   // border-top: 1px solid white;
   height: 40px;
   position: relative;
   top: 0;
   left: 0;
+
+ a {
+   @include span-columns(5 of 12);
+   text-decoration: none;
+   text-align: center;
+ }
 }
 
-
-
 .click{
-  @include shift(10);
-  @include span-columns(2);
+  @include span-columns(6 of 12);
+  text-align: right;
   text-decoration: none;
   color: #ffffff;
   font: helvetica;
-  font-size: 12px;
+  font-size: 18px;
 }
+
+
 
 .click{
   a: {color: yellow;},
@@ -92,6 +98,7 @@ body{
     }
     img {
       @include span-columns(3 of 12);
+      border-radius: 6%;
       @include media($mobile) {
         @include span-columns(3 of 12);
       }
