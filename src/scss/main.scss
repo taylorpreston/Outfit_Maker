@@ -2,6 +2,77 @@
 $visual-grid:true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
+
+body{
+  @include outer-container;
+  background-color: #FF7661;
+  color: #ffffff;
+}
+
+.mainheader{
+  @include span-columns(12);
+  background-color: #709C97;
+  border-bottom: 1px solid white;
+  // border-top: 1px solid white;
+  height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+
+
+.click{
+  @include shift(10);
+  @include span-columns(2);
+  text-decoration: none;
+  color: #ffffff;
+  font: helvetica;
+  font-size: 12px;
+}
+
+.click{
+  a: {color: yellow;},
+  a:hover { color: #000000;},
+  a:visited { color: pink;},
+  a:focus { color: blue;},
+  a:active { color: green;}
+}
+
+.headerNav{
+  height: 0;
+  overflow: hidden;
+  transition: .3s height;
+
+  .headerlink{
+    display: block;
+    color: #fff;
+    width: 100%;
+  }
+}
+
+.headerNav.visible{
+  height: 170px;
+}
+
+.headerNav{
+  text-align: center;
+  line-height: 20px;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  max-width: 200px;
+  top: 40px;
+  right: 0;
+}
+
+.headerlink{
+  text-decoration: none;
+  color: #ffffff;
+  font: helvetica;
+  font-size: 12px;
+}
+
 // PUBLIC FEED
 .publicfeedMain {
   @include outer-container;
