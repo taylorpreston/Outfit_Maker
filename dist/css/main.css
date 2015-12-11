@@ -5,6 +5,7 @@ html {
   box-sizing: inherit; }
 
 body {
+  background-color: #FF7661;
   color: #ffffff;
   background-image: url("/img/simple.jpg");
   background-repeat: no-repeat;
@@ -12,29 +13,39 @@ body {
   position: relative; }
 
 .mainheader {
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 100%;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #709C97;
   border-bottom: 1px solid white;
   height: 40px;
   position: relative;
   top: 0;
   left: 0; }
-  .mainheader:last-child {
-    margin-right: 0; }
+  .mainheader::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .mainheader a {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+    text-decoration: none;
+    text-align: center; }
+    .mainheader a:last-child {
+      margin-right: 0; }
 
 .click {
-  margin-left: 85.29804%;
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 14.70196%;
+  width: 48.82117%;
+  text-align: right;
   text-decoration: none;
   color: #ffffff;
   font: helvetica;
-  font-size: 12px; }
+  font-size: 18px; }
   .click:last-child {
     margin-right: 0; }
 
@@ -81,6 +92,59 @@ body {
   font: helvetica;
   font-size: 12px; }
 
+.loginMain {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .loginMain::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .loginMain section {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    text-align: center; }
+    .loginMain section:last-child {
+      margin-right: 0; }
+  .loginMain input {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 82.94039%; }
+    .loginMain input:last-child {
+      margin-right: 0; }
+  .loginMain span {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%; }
+    .loginMain span:last-child {
+      margin-right: 0; }
+
+.dashboardMain {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2.35765%; }
+  .dashboardMain::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .dashboardMain .dashboardNavBox {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    padding: 2.35765%;
+    margin-right: 0;
+    border: 1px solid #000000;
+    border-radius: 1.125em;
+    text-align: center; }
+    .dashboardMain .dashboardNavBox:last-child {
+      margin-right: 0; }
+
 .publicfeedMain {
   max-width: 68em;
   margin-left: auto;
@@ -111,7 +175,8 @@ body {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 23.23176%; }
+      width: 23.23176%;
+      border-radius: 6%; }
       .publicfeedMain section img:last-child {
         margin-right: 0; }
       @media screen and (max-width: 500px) {

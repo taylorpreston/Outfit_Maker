@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import $ from 'jquery'
 
 class Register extends React.Component {
@@ -6,12 +7,18 @@ class Register extends React.Component {
 
   render () {
     return(
-      <section className="user-form register">
-        <input type="text" ref="username" placeholder="username"/>
-        <input type="password" ref="password" placeholder="password"/>
-        <input type="password" ref="confirmPassword" placeholder="confirm password"/>
-        <input className="subBtn" type="submit" ref="submitBtn"/>
-      </section>
+      <main className="registerMain">
+        <section>
+          <form>
+            <input type="text" ref="username" placeholder="username"/>
+            <input type="password" ref="password" placeholder="password"/>
+            <input type="password" ref="confirmPassword" placeholder="confirm password"/>
+            <input className="subBtn" type="submit" ref="submitBtn"/>
+          </form>
+          <span>Have An Account?<Link to="/">Login Here</Link></span>
+        </section>
+
+      </main>
     )
   }
 }

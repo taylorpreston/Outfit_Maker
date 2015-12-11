@@ -16,7 +16,7 @@ import Closet from './components/closet';
 ReactDOM.render((
   <Router>
     <Route path="/" component={Home}>
-      <Route path="login" component={Login}/>
+      <IndexRoute component={Login}/>
       <Route path="register" component={Register}/>
       <Route path="dashboard" component={Dashboard}/>
       <Route path="closet" component={Closet}/>

@@ -17,13 +17,10 @@ class Header extends React.Component {
     }
     return (
       <header className="mainheader">
-        <h1>OUTFIT MAKER</h1>
+        <a href="#">OUTFIT MAKER</a>
         <span onClick={this.toggleNav} href="#" className="click">Click</span>
-
         <section className={className}>
-          <Link onClick={this.toggleNav} className="headerlink" to="/"> Home </Link>
           <Link onClick={this.toggleNav} className="headerlink" to="/login"> Login </Link>
-          <Link onClick={this.toggleNav} className="headerlink" to="/register"> Register </Link>
           <Link onClick={this.toggleNav} className="headerlink" to="/dashboard"> Dashboard </Link>
           <Link onClick={this.toggleNav} className="headerlink" to="/closet"> Closet </Link>
           <Link onClick={this.toggleNav} className="headerlink" to="/outfits"> Outfits </Link>
