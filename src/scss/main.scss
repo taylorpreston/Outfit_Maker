@@ -1,11 +1,17 @@
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
-$visual-grid:true;
+// $visual-grid:true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
 
 body{
+  // background-color: #FF7661;
   background-color: #FF7661;
   color: #ffffff;
+  background-image: url("/img/simple.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  // background-position: center center;
 }
 
 
