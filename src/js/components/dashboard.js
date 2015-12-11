@@ -1,13 +1,14 @@
-import React, { PropTypes } from 'react'
+import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
 class Dashboard extends React.Component {
   render () {
     return (
       <main className="dashboardMain">
-        <div className="dashboardNavBox"><a href="#closet">CLOSET</a></div>
-        <div className="dashboardNavBox"><a href="#outfits">OUTFITS</a></div>
-        <div className="dashboardNavBox"><a href="#outfitdesigner">OUTFIT DESIGNER</a></div>
-        <div className="dashboardNavBox"><a href="#publicfeed">PUBLIC FEED</a></div>
+        <div className="dashboardNavBox"><Link to="/closet">CLOSET</Link></div>
+        <div className="dashboardNavBox"><Link to="/outfits">OUTFITS</Link></div>
+        <div className="dashboardNavBox"><Link to="/outfitdesigner">OUTFIT DESIGNER</Link></div>
+        <div className="dashboardNavBox"><Link to="/publicfeed">PUBLIC FEED</Link></div>
       </main>
     )
   }

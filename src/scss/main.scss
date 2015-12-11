@@ -1,5 +1,5 @@
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
-// $visual-grid:true;
+$visual-grid:true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
 
@@ -7,11 +7,13 @@ body{
   background-color: #FF7661;
   color: #ffffff;
 }
+
+
+// ===================================
  //  MAIN HEADER
 .mainheader {
   @include outer-container;
   background-color: #709C97;
-  @include pad();
   border-bottom: 1px solid white;
   // border-top: 1px solid white;
   height: 40px;
@@ -34,8 +36,6 @@ body{
   font: helvetica;
   font-size: 18px;
 }
-
-
 
 .click{
   a: {color: yellow;},
@@ -78,7 +78,49 @@ body{
   font: helvetica;
   font-size: 12px;
 }
+// ===================================
+// LOGIN PAGE
 
+.loginMain {
+  @include outer-container;
+  $mobile: new-breakpoint(max-width 500px 4);
+
+  section {
+    @include span-columns(12 of 12);
+    text-align: center;
+  }
+
+  input {
+    @include span-columns(10 of 12);
+  }
+  span {
+    @include span-columns(6 of 12);
+  }
+}
+
+
+
+
+// ===================================
+// DASHBOARD MAIN
+.dashboardMain {
+  @include outer-container;
+  $mobile: new-breakpoint(max-width 500px 4);
+  @include pad();
+
+  .dashboardNavBox {
+    @include span-columns(6 of 12);
+    @include pad();
+    @include omega();
+    border: 1px solid #000000;
+    border-radius:  1.125em;
+    text-align: center;
+  }
+}
+
+
+
+// ===================================
 // PUBLIC FEED
 .publicfeedMain {
   @include outer-container;
