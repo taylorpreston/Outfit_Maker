@@ -49,7 +49,6 @@ class AddItem extends React.Component {
     })
   }
 
-
   componentDidMount() {
     const filepickerElement = this.refs.filepicker;
     if (typeof filepicker !== 'undefined') {

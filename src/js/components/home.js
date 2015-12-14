@@ -15,15 +15,26 @@ class Home extends React.Component {
       loggedIn: false,
       userSession: {}
     }
-
+    this.handleLogoutUser = this.handleLogoutUser.bind(this);
     this.handleLoginUser = this.handleLoginUser.bind(this)
   }
 
+  handleLogoutUser(){
+    this.setState({
+      loggedIn: false,
+      userSession: {}
+      })
+    localStorage.removeItem('userSession')
+    console.log('logged out succes!');
+  }
   handleLoginUser(data){
       this.setState({
         loggedIn: true,
         userSession: data
       })
+      // this saves the sessionToken
+      localStorage.setItem('userSession', JSON.stringify(data));
+      console.log(localStorage.getItem('userSession'));
       console.log(this.state)
   }
 
@@ -34,13 +45,12 @@ class Home extends React.Component {
     let childrenProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {loggedIn: this.state.loggedIn,
                                         userSession: this.state.userSession,
-                                        loginUser: this.handleLoginUser})
+                                        loginUser: this.handleLoginUser
+                                      })
     })
     return(
       <div className="mainWrap">
-        <Header loggedIn = {this.state.loggedIn}
-                userSession = {this.state.userSession}
-                loginUser = {this.handleLoginUser}/>
+        <Header loggedIn={this.state.loggedIn} userSession={this.state.userSession} logoutUser={this.handleLogoutUser}/>
         {childrenProps}
       </div>
     )

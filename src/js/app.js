@@ -14,7 +14,6 @@ import Outfits from './components/outfits';
 import Closet from './components/closet';
 import AddItem from './components/addItem'
 
-
 ReactDOM.render((
   <Router>
     <Route path="/" component={Home}>
