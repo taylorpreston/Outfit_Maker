@@ -3,8 +3,8 @@ import { Link } from 'react-router';
 import $ from 'jquery';
 import Header from './header';
 
-class Home extends React.Component {
 
+class Home extends React.Component {
 
   render () {
     return(
