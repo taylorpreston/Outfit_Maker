@@ -44,13 +44,13 @@ class Register extends React.Component {
       <main className="registerMain">
         <section>
           <form>
-            <input type="text" ref="username" placeholder="username"/>
-            <input type="text" ref="email" placeholder="email"/>
-            <input type="password" ref="password" placeholder="password"/>
-            <input type="password" ref="confirmPassword" placeholder="confirm password"/>
+            <input className="input" type="text" ref="username" placeholder="username"/>
+            <input className="input" type="text" ref="email" placeholder="email"/>
+            <input className="input" type="password" ref="password" placeholder="password"/>
+            <input className="input" type="password" ref="confirmPassword" placeholder="confirm password"/>
             <input className="subBtn" type="submit" ref="submitBtn" onClick={this.registerUser}/>
           </form>
-        <Link to="/">Login Here</Link>
+          <Link className="loginLink" to="/">Login Here</Link>
         </section>
 
       </main>
