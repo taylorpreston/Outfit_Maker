@@ -5,10 +5,10 @@ class Dashboard extends React.Component {
   render () {
     return (
       <main className="dashboardMain">
-        <div className="dashboardNavBox"><Link to="/closet">CLOSET</Link></div>
-        <div className="dashboardNavBox"><Link to="/outfits">OUTFITS</Link></div>
-        <div className="dashboardNavBox"><Link to="/outfitdesigner">OUTFIT DESIGNER</Link></div>
-        <div className="dashboardNavBox"><Link to="/publicfeed">PUBLIC FEED</Link></div>
+        <Link className="dashboardNavBox" to="/closet">CLOSET</Link>
+        <Link className="dashboardNavBox" to="/outfits">OUTFITS</Link>
+        <Link className="dashboardNavBox" to="/outfitdesigner">OUTFIT DESIGNER</Link>
+        <Link className="dashboardNavBox" to="/publicfeed">PUBLIC FEED</Link>
       </main>
     )
   }

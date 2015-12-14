@@ -10,11 +10,11 @@ class Login extends React.Component {
       <main className="loginMain">
         <section>
           <form>
-            <input type="text" ref="username" placeholder="username"/>
-            <input type="password" ref="password" placeholder="password"/>
+            <input className="input" type="text" ref="username" placeholder="username"/>
+            <input className="input" type="password" ref="password" placeholder="password"/>
             <input className="subBtn" type="submit" ref="submitBtn"/>
           </form>
-          <span>Don't Have A Account?<Link to="/register"> Register Now </Link></span>
+          <Link className="registerLink" to="/register"> Register Now </Link>
         </section>
       </main>
     )
