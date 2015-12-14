@@ -22,7 +22,7 @@ class Register extends React.Component {
     let self = this
     let username = this.refs.username.value
     let email = this.refs.email.value
-    let password this.refs.password.value
+    let password= this.refs.password.value
     let passConfirm = this.refs.confirmPassword.value
 
     if(!username || !password || !email || passConfirm !== password){
