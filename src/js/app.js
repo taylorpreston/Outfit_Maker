@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
 
+import setUp from './headers-setup';
 import Home from './components/home';
 import Login from './forms/login';
 import Register from './forms/register';
