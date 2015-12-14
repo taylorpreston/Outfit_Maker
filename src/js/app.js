@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
 
 import setUp from './headers-setup';
+
 import Home from './components/home';
 import Login from './forms/login';
 import Register from './forms/register';
@@ -11,7 +12,6 @@ import OutfitDesigner from './components/outfit-designer';
 import PublicFeed from './components/publicfeed';
 import Outfits from './components/outfits';
 import Closet from './components/closet';
-
 
 
 ReactDOM.render((
@@ -26,4 +26,5 @@ ReactDOM.render((
       <Route path="publicfeed" component={PublicFeed}/>
     </Route>
   </Router>
+
 ),document.getElementById('app'));
