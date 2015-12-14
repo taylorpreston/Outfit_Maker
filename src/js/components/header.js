@@ -6,6 +6,7 @@ class Header extends React.Component {
     super(props);
     this.state = {isVisible: false}
     this.toggleNav = this.toggleNav.bind(this)
+
   }
   toggleNav(){
     this.setState({isVisible: !this.state.isVisible})
@@ -15,6 +16,7 @@ class Header extends React.Component {
     if (this.state.isVisible) {
       className = className + ' visible';
     }
+    console.log(this.props)
     return (
       <header className="mainheader">
         <a href="#">OUTFIT MAKER</a>

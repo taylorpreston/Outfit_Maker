@@ -29,6 +29,7 @@ class Home extends React.Component {
 
 
 
+
   render () {
     let childrenProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {loggedIn: this.state.loggedIn,
@@ -37,7 +38,9 @@ class Home extends React.Component {
     })
     return(
       <div className="mainWrap">
-        <Header/>
+        <Header loggedIn = {this.state.loggedIn}
+                userSession = {this.state.userSession}
+                loginUser = {this.handleLoginUser}/>
         {childrenProps}
       </div>
     )
