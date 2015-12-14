@@ -2,21 +2,55 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import $ from 'jquery'
 
+import setUp from '../headers-setup';
+
 class Register extends React.Component {
 
+  constructor(props){
+    super(props)
 
+    this.registerUser = this.registerUser.bind(this)
+  }
+
+  registerUser(e){
+    e.preventDefault();
+    let username = this.refs.username.value
+    let email = this.refs.email.value
+    let password = this.refs.password.value
+    let passConfirm = this.refs.confirmPassword.value
+    let user = {
+      username,
+      email,
+      password
+    }
+
+    console.log(JSON.stringify(user));
+
+    if(!username || !password || !email || passConfirm !== password){
+      console.log('error reg');
+      return
+    }
+    else {
+      $.ajax({
+        url: 'https://api.parse.com/1/users',
+        type: 'POST',
+        data: JSON.stringify(user)
+        })
+        console.log('sent to parse');
+      }
+    }
   render () {
     return(
       <main className="registerMain">
         <section>
-          <form>
-            <input type="text" ref="username" placeholder="username"/>
-            <input type="text" ref="email" placeholder="email"/>
-            <input type="password" ref="password" placeholder="password"/>
-            <input type="password" ref="confirmPassword" placeholder="confirm password"/>
-            <input className="subBtn" type="submit" ref="submitBtn"/>
+          <form onSubmit={this.registerUser}>
+            <input className="input" type="text" ref="username" placeholder="username"/>
+            <input className="input" type="text" ref="email" placeholder="email"/>
+            <input className="input" type="password" ref="password" placeholder="password"/>
+            <input className="input" type="password" ref="confirmPassword" placeholder="confirm password"/>
+            <input className="subBtn" type="submit" ref="submitBtn" />
           </form>
-          <span>Have An Account?<Link to="/">Login Here</Link></span>
+          <Link className="loginLink" to="/">Login Here</Link>
         </section>
 
       </main>

@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
 
+import setUp from './headers-setup';
+
 import Home from './components/home';
 import Login from './forms/login';
 import Register from './forms/register';
@@ -15,7 +17,7 @@ import Closet from './components/closet';
 ReactDOM.render((
   <Router>
     <Route path="/" component={Home}>
-      <IndexRoute path="login"component={Login}/>
+      <IndexRoute component={Login}/>
       <Route path="register" component={Register}/>
       <Route path="dashboard" component={Dashboard}/>
       <Route path="closet" component={Closet}/>
