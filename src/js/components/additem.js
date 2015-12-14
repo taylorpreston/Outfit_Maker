@@ -1,6 +1,6 @@
 import React from 'react';
-class Closet extends React.Component {
-<<<<<<< HEAD
+class Additem extends React.Component {
+
   componentDidMount() {
     const filepickerElement = this.refs.filepicker;
     if (typeof filepicker !== 'undefined') {
@@ -32,4 +32,4 @@ class Closet extends React.Component {
   }
 }
 
-export default Closet;
+export default Additem;
