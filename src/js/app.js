@@ -12,6 +12,7 @@ import OutfitDesigner from './components/outfit-designer';
 import PublicFeed from './components/publicfeed';
 import Outfits from './components/outfits';
 import Closet from './components/closet';
+import AddItem from './components/addItem'
 
 
 ReactDOM.render((
@@ -24,6 +25,7 @@ ReactDOM.render((
       <Route path="outfits" component={Outfits}/>
       <Route path="outfitdesigner" component={OutfitDesigner}/>
       <Route path="publicfeed" component={PublicFeed}/>
+      <Route path="addItem" component={AddItem}/>
     </Route>
   </Router>
 

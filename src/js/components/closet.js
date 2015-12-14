@@ -1,11 +1,13 @@
 import React from 'react';
 class Closet extends React.Component {
 
-  render () {
+  render() {
     console.log(this.props);
-    return(
+    return (
       <main className="closetMain">
-        <button> boom </button>
+        <button>
+          boom
+        </button>
         <section className="closetTops">
           <h2>Tops</h2>
 

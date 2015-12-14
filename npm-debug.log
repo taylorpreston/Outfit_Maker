@@ -1,46 +1,197 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node',
-1 verbose cli   '/Users/FreddyRoberts/.nvm/versions/node/v0.12.7/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   '$' ]
-2 info using npm@3.4.0
-3 info using node@v0.12.7
-4 silly loadCurrentTree Starting
-5 silly install loadCurrentTree
-6 silly install readLocalPackageData
-7 silly fetchPackageMetaData $
-8 silly fetchOtherPackageData $
-9 silly cache add args [ '$', null ]
-10 verbose cache add spec $
-11 silly cache add parsed spec { raw: '$',
-11 silly cache add   scope: null,
-11 silly cache add   name: null,
-11 silly cache add   rawSpec: '$',
-11 silly cache add   spec: '/Users/FreddyRoberts/dev/Project/Outfit_Maker/$',
-11 silly cache add   type: 'local' }
-12 error addLocal Could not install /Users/FreddyRoberts/dev/Project/Outfit_Maker/$
-13 silly fetchPackageMetaData Error: ENOENT, open '/Users/FreddyRoberts/dev/Project/Outfit_Maker/$'
-13 silly fetchPackageMetaData     at Error (native)
-13 silly fetchPackageMetaData  error for $ { [Error: ENOENT, open '/Users/FreddyRoberts/dev/Project/Outfit_Maker/$']
-13 silly fetchPackageMetaData   errno: -2,
-13 silly fetchPackageMetaData   code: 'ENOENT',
-13 silly fetchPackageMetaData   path: '/Users/FreddyRoberts/dev/Project/Outfit_Maker/$' }
-14 silly rollbackFailedOptional Starting
-15 silly rollbackFailedOptional Finishing
-16 silly runTopLevelLifecycles Starting
-17 silly runTopLevelLifecycles Finishing
-18 silly install printInstalled
-19 verbose stack Error: ENOENT, open '/Users/FreddyRoberts/dev/Project/Outfit_Maker/$'
-19 verbose stack     at Error (native)
-20 verbose cwd /Users/FreddyRoberts/dev/Project/Outfit_Maker
-21 error Darwin 15.0.0
-22 error argv "node" "/Users/FreddyRoberts/.nvm/versions/node/v0.12.7/bin/npm" "install" "$"
-23 error node v0.12.7
-24 error npm  v3.4.0
-25 error path /Users/FreddyRoberts/dev/Project/Outfit_Maker/$
-26 error code ENOENT
-27 error errno -2
-28 error enoent ENOENT, open '/Users/FreddyRoberts/dev/Project/Outfit_Maker/$'
-28 error enoent This is most likely not a problem with npm itself
-28 error enoent and is related to npm not being able to find a file.
-29 verbose exit [ -2, true ]
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@2.14.4
+3 info using node@v4.1.1
+4 verbose readDependencies loading dependencies from /Users/TaylorPresto/dev/OutfitMaker/package.json
+5 warn package.json ironyard-boilerplate@0.1.0 No repository field.
+6 verbose install where, deps [ '/Users/TaylorPresto/dev/OutfitMaker',
+6 verbose install   [ 'babel',
+6 verbose install     'babelify',
+6 verbose install     'browserify',
+6 verbose install     'del',
+6 verbose install     'filepicker-js',
+6 verbose install     'gulp',
+6 verbose install     'gulp-jscs',
+6 verbose install     'gulp-sass',
+6 verbose install     'history',
+6 verbose install     'jquery',
+6 verbose install     'lodash',
+6 verbose install     'react',
+6 verbose install     'react-dom',
+6 verbose install     'react-redux',
+6 verbose install     'react-router',
+6 verbose install     'redux',
+6 verbose install     'redux-logger',
+6 verbose install     'redux-thunk',
+6 verbose install     'vinyl-source-stream',
+6 verbose install     'gulp-gh-pages' ] ]
+7 verbose install where, peers [ '/Users/TaylorPresto/dev/OutfitMaker', [] ]
+8 verbose installManyTop reading for lifecycle /Users/TaylorPresto/dev/OutfitMaker/package.json
+9 info preinstall ironyard-boilerplate@0.1.0
+10 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/babel/package.json
+11 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/babelify/package.json
+12 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/browserify/package.json
+13 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/del/package.json
+14 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/filepicker-js/package.json
+15 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/gulp/package.json
+16 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/gulp-gh-pages/package.json
+17 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/gulp-jscs/package.json
+18 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/gulp-sass/package.json
+19 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/history/package.json
+20 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/jquery/package.json
+21 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/lodash/package.json
+22 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/neat/package.json
+23 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/react/package.json
+24 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/react-dom/package.json
+25 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/react-redux/package.json
+26 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/react-router/package.json
+27 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/redux/package.json
+28 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/redux-logger/package.json
+29 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/redux-thunk/package.json
+30 verbose installManyTop reading scoped package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/vinyl-source-stream/package.json
+31 info package.json jquery@2.1.4 No license field.
+32 verbose readDependencies loading dependencies from /Users/TaylorPresto/dev/OutfitMaker/package.json
+33 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/babel/package.json
+34 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/babelify/package.json
+35 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/browserify/package.json
+36 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/del/package.json
+37 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/filepicker-js/package.json
+38 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/gulp/package.json
+39 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/gulp-gh-pages/package.json
+40 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/gulp-jscs/package.json
+41 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/gulp-sass/package.json
+42 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/history/package.json
+43 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/jquery/package.json
+44 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/lodash/package.json
+45 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/neat/package.json
+46 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/react/package.json
+47 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/react-dom/package.json
+48 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/react-redux/package.json
+49 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/react-router/package.json
+50 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/redux/package.json
+51 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/redux-logger/package.json
+52 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/redux-thunk/package.json
+53 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/vinyl-source-stream/package.json
+54 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/babel/package.json
+55 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/babel-external-helpers/package.json
+56 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/babel-node/package.json
+57 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/babel-plugin/package.json
+58 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/browserify/package.json
+59 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/gulp/package.json
+60 verbose targetResolver reading package data from /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/neat/package.json
+61 verbose already installed skipping history@^1.13.1 /Users/TaylorPresto/dev/OutfitMaker
+62 verbose already installed skipping jquery@^2.1.4 /Users/TaylorPresto/dev/OutfitMaker
+63 verbose already installed skipping lodash@^3.10.1 /Users/TaylorPresto/dev/OutfitMaker
+64 verbose already installed skipping react@^0.14.3 /Users/TaylorPresto/dev/OutfitMaker
+65 verbose already installed skipping react-dom@^0.14.3 /Users/TaylorPresto/dev/OutfitMaker
+66 verbose already installed skipping react-redux@^4.0.0 /Users/TaylorPresto/dev/OutfitMaker
+67 verbose already installed skipping react-router@^1.0.0 /Users/TaylorPresto/dev/OutfitMaker
+68 verbose already installed skipping redux@^3.0.4 /Users/TaylorPresto/dev/OutfitMaker
+69 verbose already installed skipping redux-logger@^2.2.1 /Users/TaylorPresto/dev/OutfitMaker
+70 verbose already installed skipping redux-thunk@^1.0.0 /Users/TaylorPresto/dev/OutfitMaker
+71 verbose already installed skipping vinyl-source-stream@^1.1.0 /Users/TaylorPresto/dev/OutfitMaker
+72 verbose already installed skipping gulp-gh-pages@^0.5.2 /Users/TaylorPresto/dev/OutfitMaker
+73 verbose already installed skipping babel@^5.8.9 /Users/TaylorPresto/dev/OutfitMaker
+74 verbose already installed skipping babelify@^6.1.3 /Users/TaylorPresto/dev/OutfitMaker
+75 verbose already installed skipping browserify@^11.0.1 /Users/TaylorPresto/dev/OutfitMaker
+76 verbose already installed skipping del@^1.2.0 /Users/TaylorPresto/dev/OutfitMaker
+77 verbose already installed skipping filepicker-js@^2.3.1 /Users/TaylorPresto/dev/OutfitMaker
+78 verbose already installed skipping gulp@^3.9.0 /Users/TaylorPresto/dev/OutfitMaker
+79 verbose already installed skipping gulp-jscs@^1.6.0 /Users/TaylorPresto/dev/OutfitMaker
+80 verbose already installed skipping gulp-sass@^2.0.4 /Users/TaylorPresto/dev/OutfitMaker
+81 silly install resolved []
+82 info build /Users/TaylorPresto/dev/OutfitMaker
+83 info linkStuff ironyard-boilerplate@0.1.0
+84 silly linkStuff ironyard-boilerplate@0.1.0 has /Users/TaylorPresto/dev as its parent node_modules
+85 verbose linkBins ironyard-boilerplate@0.1.0
+86 verbose linkMans ironyard-boilerplate@0.1.0
+87 verbose rebuildBundles ironyard-boilerplate@0.1.0
+88 verbose rebuildBundles [ '.bin',
+88 verbose rebuildBundles   'babel',
+88 verbose rebuildBundles   'babelify',
+88 verbose rebuildBundles   'browserify',
+88 verbose rebuildBundles   'del',
+88 verbose rebuildBundles   'filepicker-js',
+88 verbose rebuildBundles   'gulp',
+88 verbose rebuildBundles   'gulp-gh-pages',
+88 verbose rebuildBundles   'gulp-jscs',
+88 verbose rebuildBundles   'gulp-sass',
+88 verbose rebuildBundles   'history',
+88 verbose rebuildBundles   'jquery',
+88 verbose rebuildBundles   'lodash',
+88 verbose rebuildBundles   'neat',
+88 verbose rebuildBundles   'react',
+88 verbose rebuildBundles   'react-dom',
+88 verbose rebuildBundles   'react-redux',
+88 verbose rebuildBundles   'react-router',
+88 verbose rebuildBundles   'redux',
+88 verbose rebuildBundles   'redux-logger',
+88 verbose rebuildBundles   'redux-thunk',
+88 verbose rebuildBundles   'vinyl-source-stream' ]
+89 verbose rebuild bundle /Users/TaylorPresto/dev/OutfitMaker/node_modules/neat
+90 info build /Users/TaylorPresto/dev/OutfitMaker/node_modules/neat
+91 info preinstall neat@1.2.2
+92 info linkStuff neat@1.2.2
+93 silly linkStuff neat@1.2.2 has /Users/TaylorPresto/dev/OutfitMaker/node_modules as its parent node_modules
+94 verbose linkBins neat@1.2.2
+95 verbose link bins [ { neat: './bin/neat' },
+95 verbose link bins   '/Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin',
+95 verbose link bins   false ]
+96 verbose linkMans neat@1.2.2
+97 verbose rebuildBundles neat@1.2.2
+98 verbose rebuildBundles [ '.bin',
+98 verbose rebuildBundles   'coffee-script',
+98 verbose rebuildBundles   'coffeelint',
+98 verbose rebuildBundles   'colors',
+98 verbose rebuildBundles   'commander',
+98 verbose rebuildBundles   'docco',
+98 verbose rebuildBundles   'glob',
+98 verbose rebuildBundles   'growly',
+98 verbose rebuildBundles   'haml-coffee',
+98 verbose rebuildBundles   'highlight.js',
+98 verbose rebuildBundles   'jasmine-node',
+98 verbose rebuildBundles   'js-yaml',
+98 verbose rebuildBundles   'marked',
+98 verbose rebuildBundles   'mustache',
+98 verbose rebuildBundles   'notify-send',
+98 verbose rebuildBundles   'q',
+98 verbose rebuildBundles   'stylus',
+98 verbose rebuildBundles   'uglify-js' ]
+99 silly gentlyRm /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/neat is being purged
+100 verbose gentlyRm don't care about contents; nuking /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/neat
+101 silly vacuum-fs purging /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin/neat
+102 silly vacuum-fs quitting because other entries in /Users/TaylorPresto/dev/OutfitMaker/node_modules/.bin
+103 info install neat@1.2.2
+104 info postinstall neat@1.2.2
+105 info install ironyard-boilerplate@0.1.0
+106 info postinstall ironyard-boilerplate@0.1.0
+107 verbose unsafe-perm in lifecycle true
+108 info ironyard-boilerplate@0.1.0 Failed to exec postinstall script
+109 verbose stack Error: ironyard-boilerplate@0.1.0 postinstall: `bower install && gulp`
+109 verbose stack Exit status 1
+109 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+109 verbose stack     at emitTwo (events.js:87:13)
+109 verbose stack     at EventEmitter.emit (events.js:172:7)
+109 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+109 verbose stack     at emitTwo (events.js:87:13)
+109 verbose stack     at ChildProcess.emit (events.js:172:7)
+109 verbose stack     at maybeClose (internal/child_process.js:817:16)
+109 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+110 verbose pkgid ironyard-boilerplate@0.1.0
+111 verbose cwd /Users/TaylorPresto/dev/OutfitMaker
+112 error Darwin 14.5.0
+113 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+114 error node v4.1.1
+115 error npm  v2.14.4
+116 error code ELIFECYCLE
+117 error ironyard-boilerplate@0.1.0 postinstall: `bower install && gulp`
+117 error Exit status 1
+118 error Failed at the ironyard-boilerplate@0.1.0 postinstall script 'bower install && gulp'.
+118 error This is most likely a problem with the ironyard-boilerplate package,
+118 error not with npm itself.
+118 error Tell the author that this fails on your system:
+118 error     bower install && gulp
+118 error You can get their info via:
+118 error     npm owner ls ironyard-boilerplate
+118 error There is likely additional logging output above.
+119 verbose exit [ 1, true ]
