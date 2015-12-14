@@ -11,6 +11,7 @@ class Register extends React.Component {
         <section>
           <form>
             <input type="text" ref="username" placeholder="username"/>
+            <input type="text" ref="email" placeholder="email"/>
             <input type="password" ref="password" placeholder="password"/>
             <input type="password" ref="confirmPassword" placeholder="confirm password"/>
             <input className="subBtn" type="submit" ref="submitBtn"/>

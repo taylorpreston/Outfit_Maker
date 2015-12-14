@@ -3,6 +3,8 @@ import { Link } from 'react-router';
 import $ from 'jquery';
 import Header from './header';
 
+import setUp from '../headers-setup'
+
 class Home extends React.Component {
 
   constructor(props){
@@ -10,23 +12,33 @@ class Home extends React.Component {
     super(props)
 
     this.state = {
-      loggedIn: flase,
-      userCloser: {
-        tops: false,
-        bottoms: false,
-        shoes: false,
-        accessories: false
-      },
-      userOutfits: []
+      loggedIn: false,
+      userSession: {}
     }
 
+    this.handleLoginUser = this.handleLoginUser.bind(this)
   }
 
+  handleLoginUser(data){
+      this.setState({
+        loggedIn: true,
+        userSession: data
+      })
+      console.log(this.state)
+  }
+
+
+
   render () {
+    let childrenProps = React.Children.map(this.props.children, child => {
+      return React.cloneElement(child, {loggedIn: this.state.loggedIn,
+                                        userSession: this.state.userSession,
+                                        loginUser: this.handleLoginUser})
+    })
     return(
       <div className="mainWrap">
         <Header/>
-        {this.props.children}
+        {childrenProps}
       </div>
     )
   }
