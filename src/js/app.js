@@ -1,35 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute} from 'react-router';
-
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
 import { Provider } from 'react-redux';
+import createLogger from 'redux-logger'
 
-import reducers from './reducers'
 
-import Home from './components/home';
-import Login from './forms/login';
-import Register from './forms/register';
-import Dashboard from './components/dashboard';
-import OutfitDesigner from './components/outfit-designer';
-import PublicFeed from './components/publicfeed';
-import Outfits from './components/outfits';
-import Closet from './components/closet';
+import reducers from './reducers';
+import App from './router'
 
-const store = createStore(reducers)
+const loggerMiddleware = createLogger();
+const createStoreWithMiddleware = applyMiddleware(
+  thunkMiddleware, // lets us dispatch() functions
+  loggerMiddleware // neat middleware that logs actions
+)(createStore);
+
+const store = createStoreWithMiddleware(reducers);
 
 ReactDOM.render((
   <Provider store={store}>
-    <Router>
-      <Route path="/" component={Home} store={store}>
-        <Route path="login" component={Login}/>
-        <Route path="register" component={Register}/>
-        <Route path="dashboard" component={Dashboard}/>
-        <Route path="closet" component={Closet} store={store}/>
-        <Route path="outfits" component={Outfits}/>
-        <Route path="outfitdesigner" component={OutfitDesigner}/>
-        <Route path="publicfeed" component={PublicFeed}/>
-      </Route>
-    </Router>
+    <App/>
   </Provider>
 ),document.getElementById('app'));
