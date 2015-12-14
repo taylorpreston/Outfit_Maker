@@ -40,6 +40,7 @@ class Home extends React.Component {
 
 
 
+
   render () {
     let childrenProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {loggedIn: this.state.loggedIn,

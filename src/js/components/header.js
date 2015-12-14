@@ -38,6 +38,7 @@ class Header extends React.Component {
     if (this.state.isVisible) {
       className = className + ' visible';
     }
+    console.log(this.props)
     return (
       <header className="mainheader">
         <a href="#">OUTFIT MAKER</a>
