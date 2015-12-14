@@ -2,19 +2,31 @@ import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 class Header extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {isVisible: false}
+    this.toggleNav = this.toggleNav.bind(this)
+  }
+  toggleNav(){
+    this.setState({isVisible: !this.state.isVisible})
+  }
   render () {
+    let className = 'headerNav';
+    if (this.state.isVisible) {
+      className = className + ' visible';
+    }
     return (
-      <header className="main">
-          <Link className="homelink" to="/"> Home </Link>
-          <Link className="loginlink" to="/login"> Login </Link>
-          <Link className="registerlink" to="/register"> Register </Link>
-          <Link className="dashboard" to="/dashboard"> Dashboard </Link>
-          <Link className="closet" to="/closet"> Closet </Link>
-          <Link className="oufits" to="/outfits"> Outfits </Link>
-          <Link className="outfit-designer" to="/outfitdesigner"> Outfit Designer </Link>
-          <Link className="publicfeed" to="/publicfeed"> Public Feed </Link>
-
-
+      <header className="mainheader">
+        <a href="#">OUTFIT MAKER</a>
+        <span onClick={this.toggleNav} href="#" className="click">Click</span>
+        <section className={className}>
+          <Link onClick={this.toggleNav} className="headerlink" to="/login"> Login </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/dashboard"> Dashboard </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/closet"> Closet </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/outfits"> Outfits </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/outfitdesigner"> Outfit Designer </Link>
+          <Link onClick={this.toggleNav} className="headerlink" to="/publicfeed"> Public Feed </Link>
+        </section>
       </header>
     )
   }

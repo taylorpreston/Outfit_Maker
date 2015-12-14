@@ -5,6 +5,22 @@ import Header from './header';
 
 class Home extends React.Component {
 
+  constructor(props){
+
+    super(props)
+
+    this.state = {
+      loggedIn: flase,
+      userCloser: {
+        tops: false,
+        bottoms: false,
+        shoes: false,
+        accessories: false
+      },
+      userOutfits: []
+    }
+
+  }
 
   render () {
     return(

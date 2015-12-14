@@ -3,3 +3,263 @@ html {
 
 *, *::after, *::before {
   box-sizing: inherit; }
+
+body {
+  background-color: #FF7661;
+  color: #ffffff;
+  background-image: url("/img/simple.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+
+input::-webkit-input-placeholder {
+  font-size: 12px;
+  color: white !important; }
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 12px;
+  color: white !important; }
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: white !important; }
+
+input:-ms-input-placeholder {
+  font-size: 12px;
+  color: white !important; }
+
+.mainheader {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #709C97;
+  border-bottom: 1px solid white;
+  height: 80px;
+  position: relative;
+  top: 0;
+  left: 0; }
+  .mainheader::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .mainheader a {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+    text-decoration: none;
+    text-align: center; }
+    .mainheader a:last-child {
+      margin-right: 0; }
+
+.click {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  text-align: right;
+  text-decoration: none;
+  color: #ffffff;
+  font: Helvetica;
+  font-size: 18px; }
+  .click:last-child {
+    margin-right: 0; }
+
+.click {
+  a-color: yellow; }
+  .click,
+  .click a:hover {
+    color: #000000; }
+  .click,
+  .click a:visited {
+    color: pink; }
+  .click,
+  .click a:focus {
+    color: blue; }
+  .click,
+  .click a:active {
+    color: green; }
+
+.headerNav {
+  height: 0;
+  overflow: hidden;
+  transition: .3s height; }
+  .headerNav .headerlink {
+    display: block;
+    color: #fff;
+    width: 100%; }
+
+.headerNav.visible {
+  height: 170px; }
+
+.headerNav {
+  text-align: center;
+  line-height: 20px;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  max-width: 200px;
+  top: 80px;
+  right: 0; }
+
+.headerlink {
+  text-decoration: none;
+  color: #ffffff;
+  font: Helvetica;
+  font-size: 12px; }
+
+.loginMain {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .loginMain::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .loginMain section {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    padding: 160px 10px 10px 2.35765%;
+    text-align: center; }
+    .loginMain section:last-child {
+      margin-right: 0; }
+  .loginMain .input {
+    margin-left: 34.11922%;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    background-color: rgba(246, 246, 246, 0.22);
+    padding: 8px 14px 8px 14px;
+    border: 3px solid #ffffff;
+    width: 220px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 20px;
+    outline: none; }
+    .loginMain .input:last-child {
+      margin-right: 0; }
+  .loginMain .subBtn {
+    margin-left: 53.73777%;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    background-color: rgba(246, 246, 246, 0.22);
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 30px;
+    font: Helvetica;
+    border: 4px solid #ffffff;
+    width: 138px;
+    padding: 11px 14px 11px 14px;
+    margin-top: 10px;
+    outline: none; }
+    .loginMain .subBtn:last-child {
+      margin-right: 0; }
+  .loginMain .registerLink {
+    margin-left: 51.17883%;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    text-decoration: none;
+    font: Helvetica;
+    color: #555454;
+    margin-top: 10px; }
+    .loginMain .registerLink:last-child {
+      margin-right: 0; }
+
+.dashboardMain {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 11px 0px 0px 11px; }
+  .dashboardMain::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .dashboardMain .dashboardNavBox {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 48.82117%;
+    padding: 2.35765%;
+    margin-right: 0;
+    border: 4px solid #ffffff;
+    text-align: center;
+    background-color: rgba(246, 246, 246, 0.22);
+    font: Helvetica;
+    text-decoration: none;
+    font-size: 35px;
+    color: #ffffff;
+    height: 300px;
+    padding-top: 110px; }
+    .dashboardMain .dashboardNavBox:last-child {
+      margin-right: 0; }
+
+.publicfeedMain {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .publicfeedMain::after {
+    clear: both;
+    content: "";
+    display: table; }
+  .publicfeedMain section {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    padding: 2.35765%;
+    border: 0.0625em solid #000000; }
+    .publicfeedMain section:last-child {
+      margin-right: 0; }
+    .publicfeedMain section span {
+      text-align: center;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 65.88078%;
+      padding: 2.35765%; }
+      .publicfeedMain section span:last-child {
+        margin-right: 0; }
+    .publicfeedMain section img {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      border-radius: 6%; }
+      .publicfeedMain section img:last-child {
+        margin-right: 0; }
+      @media screen and (max-width: 500px) {
+        .publicfeedMain section img {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 23.23176%; }
+          .publicfeedMain section img:last-child {
+            margin-right: 0; } }
+    .publicfeedMain section a {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%;
+      padding: 2.35765%;
+      text-decoration: none;
+      border: 0.0625em solid #000000;
+      font-size: 1.125em; }
+      .publicfeedMain section a:last-child {
+        margin-right: 0; }
+      @media screen and (max-width: 500px) {
+        .publicfeedMain section a {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 23.23176%; }
+          .publicfeedMain section a:last-child {
+            margin-right: 0; } }
