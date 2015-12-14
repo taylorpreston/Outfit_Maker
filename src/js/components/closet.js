@@ -1,33 +1,31 @@
 import React from 'react';
-
 class Closet extends React.Component {
-  componentDidMount() {
-    const filepickerElement = this.refs.filepicker;
-    if (typeof filepicker !== 'undefined') {
-      filepicker.constructWidget(filepickerElement);
-    }
-    filepickerElement.addEventListener('change', this.handleChangeFileUrl, false);
-  }
 
-  componentWillUnmount() {
-    this.refs.filepicker.removeEventListener('change', this.handleChangeFileUrl, false);
-  }
-  render () {
+  render() {
+    console.log(this.props);
+    return (
+      <main className="closetMain">
+        <button>
+          boom
+        </button>
+        <section className="closetTops">
+          <h2>Tops</h2>
 
-    return(
-      <div className="mycloset">
-      <h1>Closet</h1>
-        <input type="filepicker"
-               data-fp-apikey="A73ighb7VQwywW2MGVsMTz"
-               ref="filepicker"
-               data-fp-mimetypes="image/*"
-               data-fp-container="modal"
-               />
-      </div>
+        </section>
+        <section className="closetBottoms">
+          <h2>Bottoms</h2>
+
+        </section>
+        <section className="closetShoes">
+          <h2>Shoes</h2>
+
+        </section>
+        <section className="closetAccessories">
+          <h2>Accessories</h2>
+
+        </section>
+      </main>
     )
-  }
-  handleChangeFileUrl(e) {
-    console.log('Firepicker URL', e.target.value);
   }
 }
 
