@@ -169,7 +169,7 @@ color: white !important;
   $mobile: new-breakpoint(max-width 500px 4);
   @include pad(11px 0px 0px 11px);
 
-  .dashboardNavBox {
+  .dashboardNavBox1 {
     @include span-columns(6 of 12);
     @include pad();
     @include omega();
@@ -180,8 +180,24 @@ color: white !important;
     text-decoration: none;
     font-size: 35px;
     color: #ffffff;
-    height: 300px;
-    padding-top: 110px;
+    height: 250px;
+    padding-top: 100px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .dashboardNavBox2 {
+    @include span-columns(6 of 12);
+    @include pad();
+    @include omega();
+    border: 4px solid #ffffff;
+    text-align: center;
+    background-color: rgba(246, 246, 246, 0.22);
+    font: $mainfont;
+    text-decoration: none;
+    font-size: 35px;
+    color: #ffffff;
+    height: 250px;
+    padding-top: 100px;
   }
 }
 
@@ -223,5 +239,55 @@ color: white !important;
       }
 
     }
+  }
+}
+
+// ==================================
+//register page
+.registerMain{
+  @include outer-container;
+  $mobile: new-breakpoint(max-width 500px 4);
+
+
+  section {
+    @include span-columns(12 of 12);
+    @include pad();
+  }
+
+  .input {
+    @include shift(4);
+    @include span-columns(4 of 12);
+    background-color: rgba(246, 246, 246, 0.22);
+    padding: 8px 14px 8px 14px;
+    border: 3px solid #ffffff;
+    width: 220px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    font-size: 20px;
+    outline: none;
+  }
+
+  .subBtn{
+    @include shift(6.3);
+    @include span-columns(3 of 12);
+    background-color: rgba(246, 246, 246, 0.22);
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 30px;
+    font: $mainfont;
+    border: 4px solid #ffffff;
+    width: 138px;
+    padding: 11px 14px 11px 14px;
+    margin-top: 10px;
+    outline: none;
+  }
+
+  .loginLink {
+    @include shift(6);
+    @include span-columns(6 of 12);
+    text-decoration: none;
+    font: $mainfont;
+    color: #555454;
+    margin-top: 10px;
   }
 }
