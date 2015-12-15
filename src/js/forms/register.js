@@ -14,6 +14,7 @@ class Register extends React.Component {
 
   registerUser(e){
     e.preventDefault();
+    let self = this
     let username = this.refs.username.value
     let email = this.refs.email.value
     let password = this.refs.password.value
@@ -34,7 +35,10 @@ class Register extends React.Component {
       $.ajax({
         url: 'https://api.parse.com/1/users',
         type: 'POST',
-        data: JSON.stringify(user)
+        data: JSON.stringify(user),
+        success: function(response){
+          self.props.loginUser(response);
+        }
         })
         console.log('sent to parse');
       }
