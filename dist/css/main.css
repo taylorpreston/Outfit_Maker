@@ -229,41 +229,41 @@ input:-ms-input-placeholder {
     clear: both;
     content: "";
     display: table; }
-  .publicfeedMain section {
+  .publicfeedMain .user {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 100%;
     padding: 2.35765%;
     border: 0.0625em solid #000000; }
-    .publicfeedMain section:last-child {
+    .publicfeedMain .user:last-child {
       margin-right: 0; }
-    .publicfeedMain section span {
+    .publicfeedMain .user span {
       text-align: center;
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 65.88078%;
       padding: 2.35765%; }
-      .publicfeedMain section span:last-child {
+      .publicfeedMain .user span:last-child {
         margin-right: 0; }
-    .publicfeedMain section img {
+    .publicfeedMain .user img {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 23.23176%;
       border-radius: 6%; }
-      .publicfeedMain section img:last-child {
+      .publicfeedMain .user img:last-child {
         margin-right: 0; }
       @media screen and (max-width: 500px) {
-        .publicfeedMain section img {
+        .publicfeedMain .user img {
           float: left;
           display: block;
           margin-right: 2.35765%;
           width: 23.23176%; }
-          .publicfeedMain section img:last-child {
+          .publicfeedMain .user img:last-child {
             margin-right: 0; } }
-    .publicfeedMain section a {
+    .publicfeedMain .user a {
       float: left;
       display: block;
       margin-right: 2.35765%;
@@ -272,15 +272,15 @@ input:-ms-input-placeholder {
       text-decoration: none;
       border: 0.0625em solid #000000;
       font-size: 1.125em; }
-      .publicfeedMain section a:last-child {
+      .publicfeedMain .user a:last-child {
         margin-right: 0; }
       @media screen and (max-width: 500px) {
-        .publicfeedMain section a {
+        .publicfeedMain .user a {
           float: left;
           display: block;
           margin-right: 2.35765%;
           width: 23.23176%; }
-          .publicfeedMain section a:last-child {
+          .publicfeedMain .user a:last-child {
             margin-right: 0; } }
 
 .registerMain {
