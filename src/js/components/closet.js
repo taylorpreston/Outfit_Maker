@@ -1,5 +1,7 @@
 import React from 'react';
 class Closet extends React.Component {
+<<<<<<< HEAD
+=======
 
   constructor(props){
     super(props)
@@ -7,6 +9,7 @@ class Closet extends React.Component {
     console.log(this.props)
   }
 
+>>>>>>> 21e557761bf40070fff62b32f931e7c91f9d9c38
   render() {
     return (
       <main className="closetMain">
