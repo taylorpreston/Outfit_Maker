@@ -20,12 +20,21 @@ class Dashboard extends React.Component {
       url:'https://api.parse.com/1/classes/usercloset',
       type:'GET',
       success: function(response){
-        console.log(response.results);
-        self.response.results
+        let allClosets = response.results
+
+      function myCloset(closet){
+
+        let closetUsername = closet.username
+        let sessionUsername = self.props.userSession.username
+
+          if(closetUsername === sessionUsername)
+            // console.log('I am the user closet', closet)
+            return closet
+        }
+        let usersFilteredCloset = allClosets.filter(myCloset)
+        self.props.createUserCloset(usersFilteredCloset)
       }
     })
-
-    console.log(userCLoset)
 
   }
   render () {

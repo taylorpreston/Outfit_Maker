@@ -18,7 +18,7 @@ class Home extends React.Component {
     }
     this.handleLogoutUser = this.handleLogoutUser.bind(this);
     this.handleLoginUser = this.handleLoginUser.bind(this)
-    this.hadleUserCloset = this.handleUserCloset.bind(this)
+    this.handleUserCloset = this.handleUserCloset.bind(this)
   }
 
   handleUserCloset(data){
@@ -49,14 +49,13 @@ class Home extends React.Component {
   }
 
 
-
-
   render () {
     let childrenProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {loggedIn: this.state.loggedIn,
                                         userSession: this.state.userSession,
+                                        userCloset: this.state.userCloset,
                                         loginUser: this.handleLoginUser,
-                                        userCloset: this.state.userCloset
+                                        createUserCloset: this.handleUserCloset
                                       })
     })
     return(
@@ -65,7 +64,7 @@ class Home extends React.Component {
                 userSession={this.state.userSession}
                 userCloset={this.state.userCloset}
                 logoutUser={this.handleLogoutUser}
-                handleUserCloset={this.handleUserCloset}/>
+                createUserCloset={this.handleUserCloset}/>
         {childrenProps}
       </div>
     )

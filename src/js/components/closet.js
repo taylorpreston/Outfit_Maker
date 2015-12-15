@@ -1,8 +1,13 @@
 import React from 'react';
 class Closet extends React.Component {
 
+  constructor(props){
+    super(props)
+
+    console.log(this.props)
+  }
+
   render() {
-    console.log(this.props);
     return (
       <main className="closetMain">
         <button>
