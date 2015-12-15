@@ -10,7 +10,6 @@ class Login extends React.Component {
     super(props)
 
     this.loginUser = this.loginUser.bind(this)
-    console.log(this.props)
   }
 
   loginUser(e) {
