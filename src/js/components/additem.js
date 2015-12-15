@@ -1,5 +1,7 @@
 import React from 'react';
+import $ from 'jquery'
 
+import headers from '../headers-setup'
 
 class AddItem extends React.Component {
 
@@ -18,6 +20,7 @@ class AddItem extends React.Component {
         weather : {},
         style : {}
     }
+    console.log(this.props);
   }
 
   saveClothingItem(e){
@@ -29,6 +32,7 @@ class AddItem extends React.Component {
     let weather = this.refs.weather.value
     let style = this.refs.style.value
     let img = this.state.img
+    let userId = this.props.userSession.Id
     let clothingItem = {
       type,
       discription,
@@ -37,8 +41,14 @@ class AddItem extends React.Component {
       style,
       img,
     }
+    $.ajax({
+      url:'https://api.parse.com/1/classes/closet',
+      type: 'POST',
+      data: JSON.stringify(clothingItem)
+    })
+    console.log('sent item to closet')
 
-    console.log(clothingItem)
+
   }
 
   handleChangeFileUrl(e) {
