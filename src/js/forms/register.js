@@ -28,7 +28,7 @@ class Register extends React.Component {
     console.log(JSON.stringify(user));
 
     if(!username || !password || !email || passConfirm !== password){
-      console.log('error reg');
+      alert('Please enter information correctly!');
       return
     }
     else {
