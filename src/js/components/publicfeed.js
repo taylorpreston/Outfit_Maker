@@ -1,17 +1,37 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
+import $ from 'jquery';
+import User from './user';
 
 class PublicFeed extends React.Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      hasLoaded: false,
+      users: []
+    };
+  }
+    componentDidMount(){
+      $.ajax({
+        url: 'https://api.parse.com/1/users',
+        type: 'GET',
+        success: function(response){
+          console.log(response);
+          users: response[0].username
+          console.log(users);
+        }
+      });
+
+    }
+
   render () {
     return (
       <main className="publicfeedMain">
-        <section className="user">
-            <img src="http://www.fillmurray.com/200/200" />
-            <span>"USERNAME"</span>
-            <Link to="/closet" >usercloset</Link>
-            <Link to="/outfits" >Outfits</Link>
-            <Link to="/outfitdesigner" >Design</Link>
-        </section>
+      <ul className="usersList">
+
+      </ul>
       </main>
     )
   }
