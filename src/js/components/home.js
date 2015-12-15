@@ -13,10 +13,18 @@ class Home extends React.Component {
 
     this.state = {
       loggedIn: false,
-      userSession: {}
+      userSession: {},
+      userCloset: {}
     }
     this.handleLogoutUser = this.handleLogoutUser.bind(this);
     this.handleLoginUser = this.handleLoginUser.bind(this)
+    this.handleUserCloset = this.handleUserCloset.bind(this)
+  }
+
+  handleUserCloset(data){
+    this.setState({
+      userCloset: {data}
+    })
   }
 
   handleLogoutUser(){
@@ -41,18 +49,22 @@ class Home extends React.Component {
   }
 
 
-
-
   render () {
     let childrenProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {loggedIn: this.state.loggedIn,
                                         userSession: this.state.userSession,
-                                        loginUser: this.handleLoginUser
+                                        userCloset: this.state.userCloset,
+                                        loginUser: this.handleLoginUser,
+                                        createUserCloset: this.handleUserCloset
                                       })
     })
     return(
       <div className="mainWrap">
-        <Header loggedIn={this.state.loggedIn} userSession={this.state.userSession} logoutUser={this.handleLogoutUser}/>
+        <Header loggedIn={this.state.loggedIn}
+                userSession={this.state.userSession}
+                userCloset={this.state.userCloset}
+                logoutUser={this.handleLogoutUser}
+                createUserCloset={this.handleUserCloset}/>
         {childrenProps}
       </div>
     )

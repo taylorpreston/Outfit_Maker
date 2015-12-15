@@ -1,7 +1,16 @@
 import React from 'react';
 class Closet extends React.Component {
+<<<<<<< HEAD
+=======
+
+  constructor(props){
+    super(props)
+
+    console.log(this.props)
+  }
+
+>>>>>>> 21e557761bf40070fff62b32f931e7c91f9d9c38
   render() {
-    console.log(this.props);
     return (
       <main className="closetMain">
         <button>
