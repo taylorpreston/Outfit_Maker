@@ -24,7 +24,7 @@ ReactDOM.render((
       <Route path="outfits" component={Outfits}/>
       <Route path="outfitdesigner" component={OutfitDesigner}/>
       <Route path="publicfeed" component={PublicFeed}/>
-      <Route path="addItem" component={AddItem}/>
+      <Route path="additem" component={AddItem}/>
     </Route>
   </Router>
 

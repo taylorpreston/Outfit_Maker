@@ -12,9 +12,14 @@ class Login extends React.Component {
     this.loginUser = this.loginUser.bind(this)
   }
 
+  componentDidMount() {
+    if(this.props.loggedIn === true){
+      this.props.history.pushState(null, '/dashboard');
+    }
+  }
+
   loginUser(e) {
     e.preventDefault()
-    console.log('clickthebutton');
     let self = this
     let username = this.refs.username.value
     let password = this.refs.password.value
@@ -27,7 +32,7 @@ class Login extends React.Component {
         url: `https://api.parse.com/1/login?username=${username}&password=${password}`,
         type: 'GET',
         success: function(response) {
-          console.log('this is the response', response)
+          console.log('logined response!', response)
           self.props.loginUser(response)
         },
         error: function(xhr, status, error){

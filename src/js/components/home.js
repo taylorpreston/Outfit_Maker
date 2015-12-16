@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  Link
-}
-from 'react-router';
+import {Link} from 'react-router';
 import $ from 'jquery';
 import Header from './header';
 import setUp from '../headers-setup'
@@ -37,8 +34,8 @@ class Home extends React.Component {
       userSession: {}
     })
     localStorage.removeItem('userSession')
-    console.log('logged out succes!');
-    window.location.href = '#/'
+    console.log('logged out success!');
+    this.props.history.pushState(null, '/')
   }
   handleLoginUser(data) {
     this.setState({
@@ -47,9 +44,8 @@ class Home extends React.Component {
       })
       // this saves the sessionToken
     localStorage.setItem('userSession', JSON.stringify(data));
-    window.location.href = '#/dashboard'
+    this.props.history.pushState(null, '/dashboard');
     console.log(localStorage.getItem('userSession'));
-    console.log(this.state)
   }
 
 

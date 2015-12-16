@@ -13,7 +13,11 @@ class Register extends React.Component {
     this.createCloset = this.createCloset.bind(this)
     this.regUser = this.regUser.bind(this)
   }
-
+  componentDidMount(){
+    if(this.props.loggedIn === true){
+      this.props.history.pushState(null, '/dashboard');
+    }
+  }
   registerUser(e){
     let self = this
     let username = this.refs.username.value

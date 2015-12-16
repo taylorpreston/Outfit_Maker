@@ -21,7 +21,7 @@ class Header extends React.Component {
   logoutUser(e) {
     let self = this;
     e.preventDefault();
-    console.log('trying to log out...', JSON.parse(localStorage.getItem('userSession')).sessionToken);
+    console.log('trying to log out...');
     $.ajax({
       headers: {
         "X-Parse-Session-Token": JSON.parse(localStorage.getItem('userSession')).sessionToken
@@ -29,7 +29,6 @@ class Header extends React.Component {
       url: `https://api.parse.com/1/logout`,
       type: 'POST',
       success: function() {
-        console.log(self.props);
         self.props.logoutUser();
         self.toggleNav();
       }
@@ -41,12 +40,11 @@ class Header extends React.Component {
     if (this.state.isVisible) {
       className = className + ' visible';
     }
-    console.log(this.props)
     let links;
     if (this.props.loggedIn === true) {
       links = (
         <div>
-        <span onClick={this.toggleNav} href="#" className="click">Click</span>
+        <span onClick={this.toggleNav} href="#" className="click"><img src="http://www.fillmurray.com/50/50" /></span>
         <section className={className}>
           <Link onClick={this.toggleNav} className="headerlink" to="/dashboard">
             Dashboard
