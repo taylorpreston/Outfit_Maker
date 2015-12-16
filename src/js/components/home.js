@@ -14,7 +14,7 @@ class Home extends React.Component {
     this.state = {
       loggedIn: false,
       userSession: {},
-      userCloset: {}
+      userCloset: []
     }
     this.handleLogoutUser = this.handleLogoutUser.bind(this);
     this.handleLoginUser = this.handleLoginUser.bind(this)

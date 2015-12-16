@@ -9,34 +9,36 @@ class Dashboard extends React.Component {
   constructor(props){
     super(props)
 
-    console.log(this.props)
+    // console.log(this.props)
 
   }
 
   componentDidMount() {
     let self = this
     let username = this.props.userSession.username
-    let userCLoset = $.ajax({
-      url:'https://api.parse.com/1/classes/usercloset',
-      type:'GET',
-      success: function(response){
-        let allClosets = response.results
-
-      function myCloset(closet){
-
-        let closetUsername = closet.username
-        let sessionUsername = self.props.userSession.username
-
-          if(closetUsername === sessionUsername)
-            // console.log('I am the user closet', closet)
-            return closet
-        }
-        let usersFilteredCloset = allClosets.filter(myCloset)
-        self.props.createUserCloset(usersFilteredCloset)
-      }
-    })
-
+    // let userCLoset = $.ajax({
+    //   url:'https://api.parse.com/1/classes/usercloset',
+    //   type:'GET',
+    //   success: function(response){
+    //   let allClosets = response.results
+    //
+    //   function myCloset(closet){
+    //
+    //     let closetUsername = closet.username
+    //     let sessionUsername = self.props.userSession.username
+    //
+    //       if(closetUsername === sessionUsername){
+    //         console.log('I am the user closet', closet)
+    //         return closet
+    //       }
+    //     }
+    //     let usersFilteredCloset = allClosets.filter(myCloset)
+    //     console.log(usersFilteredCloset);
+    //     self.props.createUserCloset(usersFilteredCloset)
+    //   }
+    // })
   }
+  
   render () {
     return (
       <main className="dashboardMain">

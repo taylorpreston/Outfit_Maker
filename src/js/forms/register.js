@@ -14,8 +14,7 @@ class Register extends React.Component {
     this.regUser = this.regUser.bind(this)
   }
 
-  registerUser(e){
-    e.preventDefault();
+  registerUser(){
     let self = this
     let username = this.refs.username.value
     let email = this.refs.email.value
@@ -45,24 +44,8 @@ class Register extends React.Component {
       }
     }
 
-  createCloset(){
-    console.log('you created a user closet')
-    let username = this.refs.username.value
-    let closet = []
-    let userCloset =  {
-      username,
-      closet
-    }
-    $.ajax({
-      url: 'https://api.parse.com/1/classes/usercloset',
-      type: 'POST',
-      data: JSON.stringify(userCloset)
-    })
-  }
-
   regUser(e){
     e.preventDefault()
-    this.createCloset()
     this.registerUser()
   }
 

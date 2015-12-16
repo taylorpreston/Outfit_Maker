@@ -29,7 +29,7 @@ class Header extends React.Component {
       url: `https://api.parse.com/1/logout`,
       type: 'POST',
       success: function() {
-        console.log(self.props);
+        // console.log(self.props);
         self.props.logoutUser();
         self.toggleNav();
       }
@@ -41,7 +41,6 @@ class Header extends React.Component {
     if (this.state.isVisible) {
       className = className + ' visible';
     }
-    console.log(this.props)
     return (
       <header className="mainheader">
         <a href="#">OUTFIT MAKER</a>

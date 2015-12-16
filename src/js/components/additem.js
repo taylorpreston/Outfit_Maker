@@ -9,7 +9,6 @@ class AddItem extends React.Component {
     super(props)
 
     this.handleChangeFileUrl =  this.handleChangeFileUrl.bind(this)
-
     this.saveClothingItem = this.saveClothingItem.bind(this)
 
     this.state = {
@@ -25,6 +24,10 @@ class AddItem extends React.Component {
 
   saveClothingItem(e){
     console.log('you clicked a button');
+    console.log("this is the user closet prop ----->", this.props.userCloset)
+    let userCloset = this.props.userCloset
+
+    console.log(userCloset);
     e.preventDefault()
     let type = this.refs.type.value
     let discription = this.refs.discription.value
@@ -32,7 +35,12 @@ class AddItem extends React.Component {
     let weather = this.refs.weather.value
     let style = this.refs.style.value
     let img = this.state.img
-    let userId = this.props.userSession.Id
+    let user = {
+          __type: "Pointer",
+          className: "_User",
+          objectId: this.props.userSession.objectId
+        }
+
     let clothingItem = {
       type,
       discription,
@@ -40,14 +48,17 @@ class AddItem extends React.Component {
       weather,
       style,
       img,
+      user
     }
+    let newUserCloset = userCloset.push(clothingItem)
     $.ajax({
-      url:'https://api.parse.com/1/classes/closet',
+      url:'https://api.parse.com/1/classes/Article',
       type: 'POST',
       data: JSON.stringify(clothingItem)
+    }).done((result) => {
+      console.log('sent item to closet')
+      console.log(result)
     })
-    console.log('sent item to closet')
-
 
   }
 
