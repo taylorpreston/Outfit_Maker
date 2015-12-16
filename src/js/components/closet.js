@@ -6,6 +6,7 @@ class Closet extends React.Component {
 
     console.log(this.props)
   }
+
   componentDidMount(){
     if(this.props.loggedIn === false){
       this.props.history.pushState(null, '/');
