@@ -345,3 +345,74 @@ input:-ms-input-placeholder {
     margin-top: 10px; }
     .registerMain .loginLink:last-child {
       margin-right: 0; }
+
+.closetMain {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .closetMain::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.closetItems {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .closetItems:last-child {
+    margin-right: 0; }
+
+.mycloset {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .mycloset::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.filePicker {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .filePicker:last-child {
+    margin-right: 0; }
+
+.filePickerBtn {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  background-color: rgba(246, 246, 246, 0.22);
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 15px;
+  font: Helvetica;
+  border: 4px solid #ffffff;
+  width: 118px;
+  padding: 11px 14px 11px 14px;
+  margin-top: 10px;
+  outline: none; }
+  .filePickerBtn:last-child {
+    margin-right: 0; }
+
+.uploadedImage {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%; }
+  .uploadedImage:last-child {
+    margin-right: 0; }
+  .uploadedImage img {
+    max-width: 100%; }
+
+.imageInputs {
+  margin-left: 51.17883%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .imageInputs:last-child {
+    margin-right: 0; }

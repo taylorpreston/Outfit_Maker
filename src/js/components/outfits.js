@@ -1,11 +1,12 @@
 import React from 'react'
+import AddItem from './additem';
+
 
 class Outfits extends React.Component {
 
-
   render () {
-    return  (
-      <h1>Outfits</h1>
+    return(
+      <h1>outfits</h1>
     )
   }
 }
