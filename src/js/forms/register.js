@@ -14,8 +14,7 @@ class Register extends React.Component {
     this.regUser = this.regUser.bind(this)
   }
 
-  registerUser(e){
-    e.preventDefault();
+  registerUser(){
     let self = this
     let username = this.refs.username.value
     let email = this.refs.email.value
