@@ -42,14 +42,12 @@ class Header extends React.Component {
       className = className + ' visible';
     }
     console.log(this.props)
-    return (
-      <header className="mainheader">
-        <a href="#">OUTFIT MAKER</a>
+    let links;
+    if (this.props.loggedIn === true) {
+      links = (
+        <div>
         <span onClick={this.toggleNav} href="#" className="click">Click</span>
         <section className={className}>
-          <Link onClick={this.toggleNav} className="headerlink" to="/login">
-            Login
-          </Link>
           <Link onClick={this.toggleNav} className="headerlink" to="/dashboard">
             Dashboard
           </Link>
@@ -69,6 +67,13 @@ class Header extends React.Component {
             Logout
           </Link>
         </section>
+        </div>
+      )
+    }
+    return (
+      <header className="mainheader">
+        <a href="#">OUTFIT MAKER</a>
+          {links}
       </header>
     )
   }

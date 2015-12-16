@@ -18,7 +18,6 @@ class PublicFeed extends React.Component {
       url: 'https://api.parse.com/1/users',
       type: 'GET',
       success: (response) => {
-        console.log(response.results);
         this.setState({users: response.results})
       }
     });
@@ -28,10 +27,8 @@ class PublicFeed extends React.Component {
   render() {
     let names = this.state.users.map(user => {
       let username = user.username
-      console.log(username);
       return <User key={user.objectId} username={username}/>;
     })
-    console.log(names);
     return (
       <main className="publicfeedMain">
         <ul className="usersList">
