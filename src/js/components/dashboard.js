@@ -16,29 +16,7 @@ class Dashboard extends React.Component {
   componentDidMount() {
     let self = this
     let username = this.props.userSession.username
-<<<<<<< HEAD
-    // let userCLoset = $.ajax({
-    //   url:'https://api.parse.com/1/classes/usercloset',
-    //   type:'GET',
-    //   success: function(response){
-    //   let allClosets = response.results
-    //
-    //   function myCloset(closet){
-    //
-    //     let closetUsername = closet.username
-    //     let sessionUsername = self.props.userSession.username
-    //
-    //       if(closetUsername === sessionUsername){
-    //         console.log('I am the user closet', closet)
-    //         return closet
-    //       }
-    //     }
-    //     let usersFilteredCloset = allClosets.filter(myCloset)
-    //     console.log(usersFilteredCloset);
-    //     self.props.createUserCloset(usersFilteredCloset)
-    //   }
-    // })
-=======
+
       if(this.props.loggedIn === false){
         this.props.history.pushState(null, '/');
       } else { let userCLoset = $.ajax({
@@ -61,9 +39,8 @@ class Dashboard extends React.Component {
       }
     })
    }
->>>>>>> bb3e218344b442a9bd1ea6f1c1cd639e73492b54
   }
-  
+
   render () {
     return (
       <main className="dashboardMain">
