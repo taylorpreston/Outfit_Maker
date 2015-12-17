@@ -29,10 +29,6 @@ class Header extends React.Component {
       url: `https://api.parse.com/1/logout`,
       type: 'POST',
       success: function() {
-<<<<<<< HEAD
-        // console.log(self.props);
-=======
->>>>>>> bb3e218344b442a9bd1ea6f1c1cd639e73492b54
         self.props.logoutUser();
         self.toggleNav();
       }
@@ -44,18 +40,11 @@ class Header extends React.Component {
     if (this.state.isVisible) {
       className = className + ' visible';
     }
-<<<<<<< HEAD
-    return (
-      <header className="mainheader">
-        <a href="#">OUTFIT MAKER</a>
-        <span onClick={this.toggleNav} href="#" className="click">Click</span>
-=======
     let links;
     if (this.props.loggedIn === true) {
       links = (
         <div>
         <span onClick={this.toggleNav} href="#" className="click"><img src="http://www.fillmurray.com/50/50" /></span>
->>>>>>> bb3e218344b442a9bd1ea6f1c1cd639e73492b54
         <section className={className}>
           <Link onClick={this.toggleNav} className="headerlink" to="/dashboard">
             Dashboard

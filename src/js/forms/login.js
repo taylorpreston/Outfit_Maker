@@ -8,9 +8,7 @@ class Login extends React.Component {
 
   constructor(props) {
     super(props)
-
     this.loginUser = this.loginUser.bind(this)
-<<<<<<< HEAD
     this.createCloset = this.createCloset.bind(this)
     this.logTheUser = this.logTheUser.bind(this)
   }
@@ -78,7 +76,6 @@ class Login extends React.Component {
     this.loginUser().then(() => {
       this.createCloset();
     });
-=======
     console.log(this.props)
   }
 
@@ -111,7 +108,6 @@ class Login extends React.Component {
         }
       })
     }
->>>>>>> bb3e218344b442a9bd1ea6f1c1cd639e73492b54
   }
 
   render () {
