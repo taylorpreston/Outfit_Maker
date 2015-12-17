@@ -8,7 +8,6 @@ class Login extends React.Component {
 
   constructor(props) {
     super(props)
-
     this.loginUser = this.loginUser.bind(this)
     this.createCloset = this.createCloset.bind(this)
     this.logTheUser = this.logTheUser.bind(this)
@@ -119,7 +118,7 @@ class Login extends React.Component {
           <form>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="password" ref="password" placeholder="password"/>
-            <input className="subBtn" type="submit" ref="submitBtn" onClick={this.loginUser}/>
+            <input className="subBtn" type="submit" ref="submitBtn" onClick={this.logTheUser}/>
           </form>
           <Link className="registerLink" to="/register">Register Now</Link>
         </section>

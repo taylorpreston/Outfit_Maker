@@ -9,14 +9,11 @@ class Dashboard extends React.Component {
   constructor(props){
     super(props)
 
-    // console.log(this.props)
-
   }
 
   componentDidMount() {
     let self = this
     let username = this.props.userSession.username
-
       if(this.props.loggedIn === false){
         this.props.history.pushState(null, '/');
       } else { let userCLoset = $.ajax({
