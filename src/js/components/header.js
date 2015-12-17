@@ -29,7 +29,6 @@ class Header extends React.Component {
       url: `https://api.parse.com/1/logout`,
       type: 'POST',
       success: function() {
-
         self.props.logoutUser();
         self.toggleNav();
       }

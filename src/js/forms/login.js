@@ -8,7 +8,6 @@ class Login extends React.Component {
 
   constructor(props) {
     super(props)
-
     this.loginUser = this.loginUser.bind(this)
     this.createCloset = this.createCloset.bind(this)
     this.logTheUser = this.logTheUser.bind(this)
