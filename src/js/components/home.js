@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 import $ from 'jquery';
 import Header from './header';
-
 import setUp from '../headers-setup'
 
 class Home extends React.Component {
 
-  constructor(props){
+  constructor(props) {
 
     super(props)
 
@@ -21,53 +20,56 @@ class Home extends React.Component {
     this.handleUserCloset = this.handleUserCloset.bind(this)
   }
 
-  handleUserCloset(data){
+  handleUserCloset(data) {
     this.setState({
-      userCloset: {data}
+      userCloset: {
+        data
+      }
     })
   }
 
-  handleLogoutUser(){
+  handleLogoutUser() {
     this.setState({
       loggedIn: false,
       userSession: {}
-      })
+    })
     localStorage.removeItem('userSession')
-    console.log('logged out succes!');
-    window.location.href = '#/'
+    console.log('logged out success!');
+    this.props.history.pushState(null, '/')
   }
-  handleLoginUser(data){
-      this.setState({
+  handleLoginUser(data) {
+    this.setState({
         loggedIn: true,
         userSession: data
       })
       // this saves the sessionToken
-      localStorage.setItem('userSession', JSON.stringify(data));
-      window.location.href = '#/dashboard'
-      console.log(localStorage.getItem('userSession'));
-      console.log(this.state)
+    localStorage.setItem('userSession', JSON.stringify(data));
+    this.props.history.pushState(null, '/dashboard');
+    console.log(localStorage.getItem('userSession'));
   }
 
 
-  render () {
+  render() {
     let childrenProps = React.Children.map(this.props.children, child => {
-      return React.cloneElement(child, {loggedIn: this.state.loggedIn,
-                                        userSession: this.state.userSession,
-                                        userCloset: this.state.userCloset,
-                                        loginUser: this.handleLoginUser,
-                                        createUserCloset: this.handleUserCloset
-                                      })
-    })
-    return(
-      <div className="mainWrap">
-        <Header loggedIn={this.state.loggedIn}
-                userSession={this.state.userSession}
-                userCloset={this.state.userCloset}
-                logoutUser={this.handleLogoutUser}
-                createUserCloset={this.handleUserCloset}/>
+      return React.cloneElement(child, {
+        loggedIn: this.state.loggedIn,
+        userSession: this.state.userSession,
+        userCloset: this.state.userCloset,
+        loginUser: this.handleLoginUser,
+        createUserCloset: this.handleUserCloset
+      })
+    });
+    return (
+      <div className = "mainWrap" >
+        <Header loggedIn = {this.state.loggedIn}
+                      userSession = {this.state.userSession}
+                      userCloset = {this.state.userCloset}
+                      logoutUser = {this.handleLogoutUser}
+                      createUserCloset = {this.handleUserCloset}/>
         {childrenProps}
       </div>
     )
+
   }
 }
 

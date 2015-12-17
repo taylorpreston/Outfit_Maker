@@ -1,11 +1,11 @@
-import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
+import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 import $ from 'jquery';
 import User from './user';
 
 class PublicFeed extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -13,25 +13,32 @@ class PublicFeed extends React.Component {
       users: []
     };
   }
-    componentDidMount(){
+
+  componentDidMount() {
+    let self = this;
+    if(this.props.loggedIn === false){
+      this.props.history.pushState(null, '/')
+    } else {
       $.ajax({
-        url: 'https://api.parse.com/1/users',
-        type: 'GET',
-        success: function(response){
-          console.log(response);
-          users: response[0].username
-          console.log(users);
-        }
-      });
+      url: 'https://api.parse.com/1/users',
+      type: 'GET',
+      success: (response) => {
+        self.setState({users: response.results})
+      }
+    });
+  }
+  }
 
-    }
-
-  render () {
+  render() {
+    let names = this.state.users.map(user => {
+      let username = user.username
+      return <User key={user.objectId} username={username}/>;
+    })
     return (
       <main className="publicfeedMain">
-      <ul className="usersList">
-
-      </ul>
+        <ul className="usersList">
+          {names}
+        </ul>
       </main>
     )
   }

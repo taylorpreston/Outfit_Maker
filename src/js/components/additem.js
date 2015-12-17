@@ -1,7 +1,10 @@
 import React from 'react';
 import $ from 'jquery'
+import {Link} from 'react-router';
+
 
 import headers from '../headers-setup'
+import Closet from './closet';
 
 class AddItem extends React.Component {
 
@@ -20,6 +23,12 @@ class AddItem extends React.Component {
         style : {}
     }
     console.log(this.props);
+  }
+
+  componentDidMount(){
+    if(this.props.loggedIn === false){
+      this.props.history.pushState(null, '/');
+    }
   }
 
   saveClothingItem(e){
@@ -66,7 +75,7 @@ class AddItem extends React.Component {
     console.log('Firepicker URL', e.target.value);
     let img = e.target.value
     this.setState({
-      img
+      newlyUploadedImage: img
     })
   }
 
@@ -81,17 +90,26 @@ class AddItem extends React.Component {
   componentWillUnmount() {
     this.refs.filepicker.removeEventListener('change', this.handleChangeFileUrl, false);
   }
-  render () {
+
+  render(){
+
+    let newlyUploadedImage = <span></span>;
+    if (this.state.newlyUploadedImage){
+      newlyUploadedImage = <img src={this.state.newlyUploadedImage}/>;
+    }
 
     return(
       <div className="mycloset">
       <h1>Closet</h1>
-        <input type="filepicker"
+        <input className="filePicker" type="filepicker"
                data-fp-apikey="A73ighb7VQwywW2MGVsMTz"
                ref="filepicker"
+               data-fp-button-class="filePickerBtn"
                data-fp-mimetypes="image/*"
                data-fp-container="modal"
                />
+             <section className="uploadedImage">{ newlyUploadedImage }</section>
+        <section className="imageInputs">
         <input type="text" ref="discription" placeholder="item discription"/>
         <input type="text" ref="brand" placeholder="brand"/>
         <select className="type" ref="type">
@@ -113,8 +131,9 @@ class AddItem extends React.Component {
           <option value="active"> active </option>
         </select>
         <input type="button" onClick={this.saveClothingItem} placeholder="bitch"/>
+        <Link className="closetView" to="/closet">Go to closet</Link>
+        </section>
       </div>
-
     )
   }
 

@@ -1,31 +1,43 @@
 import React from 'react';
-class Closet extends React.Component {
+import {Link} from 'react-router';
+import AddItem from './additem';
+import $ from 'Jquery';
+import headers from '../headers-setup';
 
+
+class Closet extends React.Component {
   constructor(props){
     super(props)
 
+    this.state = {
+      hasLoaded: false,
+      articles: []
+    }
     console.log(this.props)
   }
 
+  componentDidMount(){
+    if(this.props.loggedIn === false){
+      this.props.history.pushState(null, '/');
+    }
+  }
   render() {
     return (
       <main className="closetMain">
-        <button>
-          boom
-        </button>
-        <section className="closetTops">
+      <Link className="AddItemView" to="/additem">Add Item</Link>
+        <section className="closetItems">
           <h2>Tops</h2>
 
         </section>
-        <section className="closetBottoms">
+        <section className="closetItems">
           <h2>Bottoms</h2>
 
         </section>
-        <section className="closetShoes">
+        <section className="closetItems">
           <h2>Shoes</h2>
 
         </section>
-        <section className="closetAccessories">
+        <section className="closetItems">
           <h2>Accessories</h2>
 
         </section>
