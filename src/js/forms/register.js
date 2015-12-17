@@ -12,17 +12,14 @@ class Register extends React.Component {
     this.createCloset = this.createCloset.bind(this)
     this.regUser = this.regUser.bind(this)
   }
-<<<<<<< HEAD
 
-  registerUser(){
-=======
   componentDidMount(){
     if(this.props.loggedIn === true){
-      this.props.history.pushState(null, '/dashboard');
+      this.props.history.pushState(null, '/dashboard')
     }
   }
+
   registerUser(e){
->>>>>>> bb3e218344b442a9bd1ea6f1c1cd639e73492b54
     let self = this
     let username = this.refs.username.value
     let email = this.refs.email.value
@@ -52,16 +49,11 @@ class Register extends React.Component {
       }
     }
 
-  regUser(e){
-    e.preventDefault()
-    this.registerUser()
-  }
-
   render () {
     return(
       <main className="registerMain">
         <section>
-          <form onSubmit={this.regUser}>
+          <form onSubmit={this.registerUser()}>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="text" ref="email" placeholder="email"/>
             <input className="input" type="password" ref="password" placeholder="password"/>
