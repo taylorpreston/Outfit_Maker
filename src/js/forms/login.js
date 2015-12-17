@@ -10,6 +10,75 @@ class Login extends React.Component {
     super(props)
 
     this.loginUser = this.loginUser.bind(this)
+<<<<<<< HEAD
+    this.createCloset = this.createCloset.bind(this)
+    this.logTheUser = this.logTheUser.bind(this)
+  }
+
+  loginUser() {
+    // console.log('clickthebutton');
+
+    return new Promise((resolve, reject) => {
+      let self = this
+      let username = this.refs.username.value
+      let password = this.refs.password.value
+      let userToken = this.props.userToken
+
+      if (!username || !password) {
+        alert('Please enter your Username and Password.')
+      } else {
+        $.ajax({
+          url: `https://api.parse.com/1/login?username=${username}&password=${password}`,
+          type: 'GET',
+          success: function(response) {
+            console.log('this is the response', response)
+            self.props.loginUser(response);
+            resolve();
+          },
+          error: function(xhr, status, error){
+              // console.log('error!', error);
+              alert('please enter your correct details!')
+              reject();
+          }
+        })
+      }
+    });
+
+  }
+
+  createCloset(){
+    console.log('you created a user closet')
+    let self = this
+    let username = this.refs.username.value
+    let userId = this.props.userSession.objectId
+
+    console.log(userId)
+
+    $.ajax({
+      url: 'https://api.parse.com/1/classes/Article',
+      type: 'GET',
+      data: {
+        where: JSON.stringify({
+          "user": {
+            "__type": "Pointer",
+            "className": "_User",
+            "objectId": userId
+          }
+        })
+      },
+      success: function(response){
+        console.log(response)
+          self.props.createUserCloset(response)
+      }
+    })
+  }
+
+  logTheUser(e){
+    e.preventDefault()
+    this.loginUser().then(() => {
+      this.createCloset();
+    });
+=======
     console.log(this.props)
   }
 
@@ -42,6 +111,7 @@ class Login extends React.Component {
         }
       })
     }
+>>>>>>> bb3e218344b442a9bd1ea6f1c1cd639e73492b54
   }
 
   render () {
@@ -52,7 +122,7 @@ class Login extends React.Component {
           <form>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="password" ref="password" placeholder="password"/>
-            <input className="subBtn" type="submit" ref="submitBtn" onClick={this.loginUser}/>
+            <input className="subBtn" type="submit" ref="submitBtn" onClick={this.logTheUser}/>
           </form>
           <Link className="registerLink" to="/register">Register Now</Link>
         </section>
