@@ -119,7 +119,7 @@ class Login extends React.Component {
           <form>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="password" ref="password" placeholder="password"/>
-            <input className="subBtn" type="submit" ref="submitBtn" onClick={this.logTheUser}/>
+            <input className="subBtn" type="submit" ref="submitBtn" onClick={this.loginUser}/>
           </form>
           <Link className="registerLink" to="/register">Register Now</Link>
         </section>
