@@ -47,10 +47,7 @@ class Login extends React.Component {
   createCloset(){
     console.log('you created a user closet')
     let self = this
-    let username = this.refs.username.value
     let userId = this.props.userSession.objectId
-
-    console.log(userId)
 
     $.ajax({
       url: 'https://api.parse.com/1/classes/Article',
@@ -82,31 +79,6 @@ class Login extends React.Component {
   componentDidMount() {
     if(this.props.loggedIn === true){
       this.props.history.pushState(null, '/dashboard');
-    }
-  }
-
-  loginUser(e) {
-    e.preventDefault()
-    let self = this
-    let username = this.refs.username.value
-    let password = this.refs.password.value
-    let userToken = this.props.userToken
-
-    if (!username || !password) {
-      alert('Please enter your Username and Password.')
-    } else {
-      $.ajax({
-        url: `https://api.parse.com/1/login?username=${username}&password=${password}`,
-        type: 'GET',
-        success: function(response) {
-          console.log('logined response!', response)
-          self.props.loginUser(response)
-        },
-        error: function(xhr, status, error){
-            console.log('error!', error);
-            alert('please enter your correct details!')
-        }
-      })
     }
   }
 
