@@ -15,7 +15,7 @@ class AddItem extends React.Component {
     this.saveClothingItem = this.saveClothingItem.bind(this)
 
     this.state = {
-        img : {},
+        img : null,
         type : {},
         discription : {},
         brand : {},
@@ -44,11 +44,13 @@ class AddItem extends React.Component {
     let weather = this.refs.weather.value
     let style = this.refs.style.value
     let img = this.state.img
+    let userId = this.props.userSession.objectId
+    let self = this
     let user = {
-          __type: "Pointer",
-          className: "_User",
-          objectId: this.props.userSession.objectId
-        }
+      "__type": "Pointer",
+      "className": "_User",
+      "objectId": userId
+    };
 
     let clothingItem = {
       type,
@@ -59,7 +61,6 @@ class AddItem extends React.Component {
       img,
       user
     }
-    let newUserCloset = userCloset.push(clothingItem)
     $.ajax({
       url:'https://api.parse.com/1/classes/Article',
       type: 'POST',
@@ -69,13 +70,15 @@ class AddItem extends React.Component {
       console.log(result)
     })
 
+
+    // this.props.createUserCloset()
   }
 
   handleChangeFileUrl(e) {
     console.log('Firepicker URL', e.target.value);
     let img = e.target.value
     this.setState({
-      newlyUploadedImage: img
+      img: img
     })
   }
 
@@ -94,8 +97,8 @@ class AddItem extends React.Component {
   render(){
 
     let newlyUploadedImage = <span></span>;
-    if (this.state.newlyUploadedImage){
-      newlyUploadedImage = <img src={this.state.newlyUploadedImage}/>;
+    if (this.state.img){
+      newlyUploadedImage = <img src={this.state.img}/>;
     }
 
     return(

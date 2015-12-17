@@ -65,7 +65,7 @@ class Login extends React.Component {
         })
       },
       success: function(response){
-        console.log(response)
+        console.log('you made the fucking closet',response)
           self.props.createUserCloset(response)
       }
     })
@@ -118,7 +118,7 @@ class Login extends React.Component {
           <form>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="password" ref="password" placeholder="password"/>
-            <input className="subBtn" type="submit" ref="submitBtn" onClick={this.loginUser}/>
+            <input className="subBtn" type="submit" ref="submitBtn" onClick={this.logTheUser}/>
           </form>
           <Link className="registerLink" to="/register">Register Now</Link>
         </section>
