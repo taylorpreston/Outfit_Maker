@@ -4,6 +4,7 @@ import AddItem from './additem';
 import $ from 'Jquery';
 import headers from '../headers-setup';
 
+
 class Closet extends React.Component {
   constructor(props){
     super(props)
@@ -14,17 +15,11 @@ class Closet extends React.Component {
     }
     console.log(this.props)
   }
+
   componentDidMount(){
-    let self = this;
-    $.ajax({
-      url: 'https://api.parse.com/1/classes/Article/5kIvw289qp',
-      hasLoaded: true,
-      type: 'GET',
-      success: (response) => {
-        self.setState({articles: response.results})
-        console.log(response.results);
-      }
-    })
+    if(this.props.loggedIn === false){
+      this.props.history.pushState(null, '/');
+    }
   }
   render() {
     return (

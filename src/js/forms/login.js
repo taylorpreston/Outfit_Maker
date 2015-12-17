@@ -13,21 +13,35 @@ class Login extends React.Component {
     console.log(this.props)
   }
 
-  loginUser (e) {
+  componentDidMount() {
+    if(this.props.loggedIn === true){
+      this.props.history.pushState(null, '/dashboard');
+    }
+  }
+
+  loginUser(e) {
     e.preventDefault()
-    console.log('clickthebutton');
     let self = this
     let username = this.refs.username.value
     let password = this.refs.password.value
     let userToken = this.props.userToken
-    $.ajax({
-      url: `https://api.parse.com/1/login?username=${username}&password=${password}`,
-      type: 'GET',
-      success: function(response) {
-        console.log('this is the response', response)
-        self.props.loginUser(response)
-      }
-    })
+
+    if (!username || !password) {
+      alert('Please enter your Username and Password.')
+    } else {
+      $.ajax({
+        url: `https://api.parse.com/1/login?username=${username}&password=${password}`,
+        type: 'GET',
+        success: function(response) {
+          console.log('logined response!', response)
+          self.props.loginUser(response)
+        },
+        error: function(xhr, status, error){
+            console.log('error!', error);
+            alert('please enter your correct details!')
+        }
+      })
+    }
   }
 
   render () {

@@ -16,7 +16,9 @@ class Dashboard extends React.Component {
   componentDidMount() {
     let self = this
     let username = this.props.userSession.username
-    let userCLoset = $.ajax({
+      if(this.props.loggedIn === false){
+        this.props.history.pushState(null, '/');
+      } else { let userCLoset = $.ajax({
       url:'https://api.parse.com/1/classes/usercloset',
       type:'GET',
       success: function(response){
@@ -35,7 +37,7 @@ class Dashboard extends React.Component {
         self.props.createUserCloset(usersFilteredCloset)
       }
     })
-
+   }
   }
   render () {
     return (

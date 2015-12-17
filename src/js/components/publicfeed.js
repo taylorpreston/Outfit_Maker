@@ -13,25 +13,27 @@ class PublicFeed extends React.Component {
       users: []
     };
   }
+
   componentDidMount() {
-    $.ajax({
+    let self = this;
+    if(this.props.loggedIn === false){
+      this.props.history.pushState(null, '/')
+    } else {
+      $.ajax({
       url: 'https://api.parse.com/1/users',
       type: 'GET',
       success: (response) => {
-        console.log(response.results);
-        this.setState({users: response.results})
+        self.setState({users: response.results})
       }
     });
-
+  }
   }
 
   render() {
     let names = this.state.users.map(user => {
       let username = user.username
-      console.log(username);
       return <User key={user.objectId} username={username}/>;
     })
-    console.log(names);
     return (
       <main className="publicfeedMain">
         <ul className="usersList">
