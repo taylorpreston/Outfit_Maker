@@ -12,7 +12,6 @@ class OutfitDesigner extends React.Component {
   }
 
   render () {
-    let designTops = this.props.designTops
     return (
       <main className="outfitdesignerMain">
       <h1>OutfitDesigner</h1>

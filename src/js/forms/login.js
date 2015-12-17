@@ -10,6 +10,7 @@ class Login extends React.Component {
     super(props)
 
     this.loginUser = this.loginUser.bind(this)
+    console.log(this.props)
   }
 
   componentDidMount() {
@@ -43,9 +44,9 @@ class Login extends React.Component {
     }
   }
 
-  render() {
+  render () {
 
-    return (
+    return(
       <main className="loginMain">
         <section>
           <form>
@@ -53,9 +54,7 @@ class Login extends React.Component {
             <input className="input" type="password" ref="password" placeholder="password"/>
             <input className="subBtn" type="submit" ref="submitBtn" onClick={this.loginUser}/>
           </form>
-          <Link className="registerLink" to="/register">
-            Register Now
-          </Link>
+          <Link className="registerLink" to="/register">Register Now</Link>
         </section>
       </main>
     )

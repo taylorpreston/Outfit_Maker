@@ -8,7 +8,6 @@ class Register extends React.Component {
 
   constructor(props){
     super(props)
-
     this.registerUser = this.registerUser.bind(this)
     this.createCloset = this.createCloset.bind(this)
     this.regUser = this.regUser.bind(this)
