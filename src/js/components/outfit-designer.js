@@ -4,6 +4,8 @@ class OutfitDesigner extends React.Component {
 
   constructor(props){
     super(props)
+
+    console.log(this.props)
   }
   componentDidMount(){
     if(this.props.loggedIn === false){

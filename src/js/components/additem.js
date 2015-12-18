@@ -13,9 +13,10 @@ class AddItem extends React.Component {
 
     this.handleChangeFileUrl =  this.handleChangeFileUrl.bind(this)
     this.saveClothingItem = this.saveClothingItem.bind(this)
+    this.updateCloset = this.updateCloset.bind(this)
 
     this.state = {
-        img : {},
+        img : null,
         type : {},
         discription : {},
         brand : {},
@@ -31,6 +32,30 @@ class AddItem extends React.Component {
     }
   }
 
+  updateCloset(){
+    console.log('you created a user closet')
+    let self = this
+    let userId = this.props.userSession.objectId
+
+    $.ajax({
+      url: 'https://api.parse.com/1/classes/Article',
+      type: 'GET',
+      data: {
+        where: JSON.stringify({
+          "user": {
+            "__type": "Pointer",
+            "className": "_User",
+            "objectId": userId
+          }
+        })
+      },
+      success: function(response){
+        console.log('you made the fucking closet',response)
+          self.props.createUserCloset(response)
+      }
+    })
+  }
+
   saveClothingItem(e){
     console.log('you clicked a button');
     console.log("this is the user closet prop ----->", this.props.userCloset)
@@ -44,11 +69,13 @@ class AddItem extends React.Component {
     let weather = this.refs.weather.value
     let style = this.refs.style.value
     let img = this.state.img
+    let userId = this.props.userSession.objectId
+    let self = this
     let user = {
-          __type: "Pointer",
-          className: "_User",
-          objectId: this.props.userSession.objectId
-        }
+      "__type": "Pointer",
+      "className": "_User",
+      "objectId": userId
+    };
 
     let clothingItem = {
       type,
@@ -64,17 +91,16 @@ class AddItem extends React.Component {
       type: 'POST',
       data: JSON.stringify(clothingItem)
     }).done((result) => {
-      console.log('sent item to closet')
-      console.log(result)
+      console.log('sent item to closet', result)
+      self.updateCloset()
     })
-
   }
 
   handleChangeFileUrl(e) {
     console.log('Firepicker URL', e.target.value);
     let img = e.target.value
     this.setState({
-      newlyUploadedImage: img
+      img: img
     })
   }
 
@@ -93,8 +119,8 @@ class AddItem extends React.Component {
   render(){
 
     let newlyUploadedImage = <span></span>;
-    if (this.state.newlyUploadedImage){
-      newlyUploadedImage = <img src={this.state.newlyUploadedImage}/>;
+    if (this.state.img){
+      newlyUploadedImage = <img src={this.state.img}/>;
     }
 
     return(
