@@ -14,7 +14,6 @@ class Login extends React.Component {
   }
 
   loginUser() {
-    // console.log('clickthebutton');
 
     return new Promise((resolve, reject) => {
       let self = this
@@ -34,7 +33,6 @@ class Login extends React.Component {
             resolve();
           },
           error: function(xhr, status, error){
-              // console.log('error!', error);
               alert('please enter your correct details!')
               reject();
           }

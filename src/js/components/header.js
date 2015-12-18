@@ -7,11 +7,30 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: false
+      isVisible: false,
+      user: []
     }
+
     this.toggleNav = this.toggleNav.bind(this)
     this.logoutUser = this.logoutUser.bind(this)
   }
+
+componentDidMount(){
+  let self = this
+  if (localStorage.getItem('userSession')) {
+    let ID = JSON.parse(localStorage.getItem('userSession')).objectId;
+    console.log(ID);
+
+    $.ajax({
+      url: `https://api.parse.com/1/users/${ID}`,
+      type: 'GET',
+      success: (response) => {
+        self.setState({user: response.username})
+        console.log(response.username);
+      }
+    });
+  }
+}
   toggleNav() {
     this.setState({
       isVisible: !this.state.isVisible
@@ -41,9 +60,11 @@ class Header extends React.Component {
       className = className + ' visible';
     }
     let links;
+    let user = this.props.userSession.username;
     if (this.props.loggedIn === true) {
       links = (
         <div>
+        <span>{user}</span>
         <span onClick={this.toggleNav} href="#" className="click"><img src="http://www.fillmurray.com/50/50" /></span>
         <section className={className}>
           <Link onClick={this.toggleNav} className="headerlink" to="/dashboard">
