@@ -59,7 +59,6 @@ class AddItem extends React.Component {
       img,
       user
     }
-    let newUserCloset = userCloset.push(clothingItem)
     $.ajax({
       url:'https://api.parse.com/1/classes/Article',
       type: 'POST',

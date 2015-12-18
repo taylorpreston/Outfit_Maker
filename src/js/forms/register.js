@@ -9,8 +9,6 @@ class Register extends React.Component {
   constructor(props){
     super(props)
     this.registerUser = this.registerUser.bind(this)
-    this.createCloset = this.createCloset.bind(this)
-    this.regUser = this.regUser.bind(this)
   }
 
   componentDidMount(){
@@ -20,6 +18,7 @@ class Register extends React.Component {
   }
 
   registerUser(e){
+    e.preventDefault()
     let self = this
     let username = this.refs.username.value
     let email = this.refs.email.value
@@ -53,7 +52,7 @@ class Register extends React.Component {
     return(
       <main className="registerMain">
         <section>
-          <form onSubmit={this.registerUser()}>
+          <form onSubmit={this.registerUser}>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="text" ref="email" placeholder="email"/>
             <input className="input" type="password" ref="password" placeholder="password"/>
