@@ -13,7 +13,11 @@ class Home extends React.Component {
     this.state = {
       loggedIn: false,
       userSession: {},
-      userCloset: []
+      userCloset: {data: {results: []}},
+      userTops:[],
+      userBottoms:[],
+      userShoes:[],
+      userAccessories:[]
     }
     this.handleLogoutUser = this.handleLogoutUser.bind(this);
     this.handleLoginUser = this.handleLoginUser.bind(this)
@@ -21,12 +25,45 @@ class Home extends React.Component {
   }
 
   handleUserCloset(data) {
+
+    let allClothes = data.results
+    console.log('data-results', data.results);
+
+    function tops(item){
+      return item.type === "Top";
+    }
+
+    function bottoms(item){
+      return item.type === "Bottom";
+    }
+
+    function shoes(item){
+      return item.type === "Shoes";
+    }
+
+    function accessories(item){
+      return item.type === "Accessory";
+    }
+
+    let userTops = allClothes.filter(tops)
+    let userBottoms = allClothes.filter(bottoms)
+    let userShoes = allClothes.filter(shoes)
+    let userAccessories = allClothes.filter(accessories)
+
+
     this.setState({
       userCloset: {
         data
-      }
-    })
+      },
+      userTops,
+      userBottoms,
+      userShoes,
+      userAccessories
+    });
+
+    console.log('user tops', userTops)
   }
+
 
   handleLogoutUser() {
     this.setState({
@@ -55,6 +92,10 @@ class Home extends React.Component {
         loggedIn: this.state.loggedIn,
         userSession: this.state.userSession,
         userCloset: this.state.userCloset,
+        userTops: this.state.userTops,
+        userBottoms: this.state.userBottoms,
+        userShoes:  this.state.userShoes,
+        userAccessories: this.state.userAccessories,
         loginUser: this.handleLoginUser,
         createUserCloset: this.handleUserCloset
       })
@@ -64,6 +105,10 @@ class Home extends React.Component {
         <Header loggedIn = {this.state.loggedIn}
                       userSession = {this.state.userSession}
                       userCloset = {this.state.userCloset}
+                      userTops = {this.state.userTops}
+                      userBottoms = {this.state.userBottoms}
+                      userShoes = {this.state.userShoes}
+                      userAccessories = {this.state.userAccessories}
                       logoutUser = {this.handleLogoutUser}
                       createUserCloset = {this.handleUserCloset}/>
         {childrenProps}

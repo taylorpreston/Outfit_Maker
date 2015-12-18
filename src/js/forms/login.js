@@ -62,7 +62,7 @@ class Login extends React.Component {
         })
       },
       success: function(response){
-        console.log('you made the fucking closet',response)
+        console.log('you made a closet',response)
           self.props.createUserCloset(response)
       }
     })

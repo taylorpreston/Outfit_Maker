@@ -8,17 +8,17 @@ import headers from '../headers-setup';
 class Closet extends React.Component {
   constructor(props){
     super(props)
-
     console.log(this.props)
   }
 
   componentDidMount(){
     if(this.props.loggedIn === false){
-      this.props.history.pushState(null, '/');
+      this.props.history.pushState(null, '/')
     }
-  
   }
   render() {
+
+
     return (
       <main className="closetMain">
       <Link className="AddItemView" to="/additem">Add Item</Link>
