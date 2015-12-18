@@ -50,7 +50,7 @@ class AddItem extends React.Component {
         })
       },
       success: function(response){
-        console.log('you made the fucking closet',response)
+        console.log('you made the closet',response)
           self.props.createUserCloset(response)
       }
     })
