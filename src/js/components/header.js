@@ -10,6 +10,7 @@ class Header extends React.Component {
       isVisible: false,
       user: []
     }
+
     this.toggleNav = this.toggleNav.bind(this)
     this.logoutUser = this.logoutUser.bind(this)
   }
@@ -59,7 +60,7 @@ componentDidMount(){
       className = className + ' visible';
     }
     let links;
-    let user = this.state.user;
+    let user = this.props.userSession.username;
     if (this.props.loggedIn === true) {
       links = (
         <div>
