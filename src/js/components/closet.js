@@ -9,10 +9,6 @@ class Closet extends React.Component {
   constructor(props){
     super(props)
 
-    this.state = {
-      hasLoaded: false,
-      articles: []
-    }
     console.log(this.props)
   }
 
@@ -20,6 +16,7 @@ class Closet extends React.Component {
     if(this.props.loggedIn === false){
       this.props.history.pushState(null, '/');
     }
+  
   }
   render() {
     return (

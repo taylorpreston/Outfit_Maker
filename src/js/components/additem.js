@@ -13,6 +13,7 @@ class AddItem extends React.Component {
 
     this.handleChangeFileUrl =  this.handleChangeFileUrl.bind(this)
     this.saveClothingItem = this.saveClothingItem.bind(this)
+    this.updateCloset = this.updateCloset.bind(this)
 
     this.state = {
         img : null,
@@ -29,6 +30,30 @@ class AddItem extends React.Component {
     if(this.props.loggedIn === false){
       this.props.history.pushState(null, '/');
     }
+  }
+
+  updateCloset(){
+    console.log('you created a user closet')
+    let self = this
+    let userId = this.props.userSession.objectId
+
+    $.ajax({
+      url: 'https://api.parse.com/1/classes/Article',
+      type: 'GET',
+      data: {
+        where: JSON.stringify({
+          "user": {
+            "__type": "Pointer",
+            "className": "_User",
+            "objectId": userId
+          }
+        })
+      },
+      success: function(response){
+        console.log('you made the fucking closet',response)
+          self.props.createUserCloset(response)
+      }
+    })
   }
 
   saveClothingItem(e){
@@ -66,12 +91,9 @@ class AddItem extends React.Component {
       type: 'POST',
       data: JSON.stringify(clothingItem)
     }).done((result) => {
-      console.log('sent item to closet')
-      console.log(result)
+      console.log('sent item to closet', result)
+      self.updateCloset()
     })
-
-
-    // this.props.createUserCloset()
   }
 
   handleChangeFileUrl(e) {
