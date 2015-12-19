@@ -18,6 +18,7 @@ class Closet extends React.Component {
   }
   render() {
 
+    console.log(this.props.userTops);
 
     return (
       <main className="closetMain">
