@@ -4,6 +4,7 @@ import AddItem from './additem';
 import $ from 'Jquery';
 import headers from '../headers-setup';
 
+import Article from './closet-article'
 
 class Closet extends React.Component {
   constructor(props){
@@ -16,15 +17,16 @@ class Closet extends React.Component {
       this.props.history.pushState(null, '/')
     }
   }
+
   render() {
-
-
+    console.log('render function ran');
+    )
     return (
       <main className="closetMain">
       <Link className="AddItemView" to="/additem">Add Item</Link>
         <section className="closetItems">
           <h2>Tops</h2>
-
+          {allUserTops}
         </section>
         <section className="closetItems">
           <h2>Bottoms</h2>
