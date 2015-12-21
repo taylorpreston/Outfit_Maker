@@ -36,19 +36,19 @@ class Closet extends React.Component {
       <Link className="AddItemView" to="/additem">Add Item</Link>
         <ul className="closetItems">
           <h2>Tops</h2>
-          {tops}
+            {tops}
         </ul>
         <ul className="closetItems">
           <h2>Bottoms</h2>
-          {bottoms}
+            {bottoms}
         </ul>
         <ul className="closetItems">
           <h2>Shoes</h2>
-          {shoes}
+            {shoes}
         </ul>
         <ul className="closetItems">
           <h2>Accessories</h2>
-          {accessories}
+            {accessories}
         </ul>
       </main>
     )

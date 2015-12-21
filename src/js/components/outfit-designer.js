@@ -20,7 +20,6 @@ class OutfitDesigner extends React.Component {
     console.log(this.props.userCloset.data.results[3].discription);
     return (
       <main className="outfitdesignerMain">
-        <Article/>
       </main>
     )
   }
