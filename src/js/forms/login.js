@@ -86,8 +86,8 @@ class Login extends React.Component {
       <main className="loginMain">
         <section>
           <form>
-            <input className="input" type="text" ref="username" placeholder="username"/>
-            <input className="input" type="password" ref="password" placeholder="password"/>
+            <input id="inputs" className="input" type="text" ref="username" placeholder="username"/>
+            <input id="inputs" className="input" type="password" ref="password" placeholder="password"/>
             <input className="subBtn" type="submit" ref="submitBtn" onClick={this.logTheUser}/>
           </form>
           <Link className="registerLink" to="/register">Register Now</Link>
