@@ -87,6 +87,7 @@ class Home extends React.Component {
 
 
   render() {
+    console.log(localStorage.getItem('userSession'));
     let childrenProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
         loggedIn: this.state.loggedIn,
