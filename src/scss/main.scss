@@ -7,12 +7,12 @@
 
 
 body{
-  // background-color: #FF7661;
-  color: #ffffff;
-  background-image: url("/img/simple.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  background-color: #DCDCDE;
+  // color: #ffffff;
+  // background-image: url("/img/simple.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // position: relative;
   // background-position: center center;
 }
 
@@ -301,6 +301,22 @@ color: white !important;
 
 .closetItems{
   @include span-columns(12 of 12);
+  border-bottom: 1px solid #000000;
+  h2 {
+      @include span-columns(12 of 12);
+  }
+
+  li {
+    @include span-columns(3 of 12);
+    text-align: center;
+
+    span {
+      @include span-columns(3 of 3);
+    }
+      img {
+        @include span-columns(2 of 3);
+      }
+  }
 }
 
 

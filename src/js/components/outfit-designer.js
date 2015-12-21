@@ -1,4 +1,5 @@
 import React from 'react';
+import Article from './article';
 
 class OutfitDesigner extends React.Component {
 
@@ -11,20 +12,14 @@ class OutfitDesigner extends React.Component {
     if(this.props.loggedIn === false){
       this.props.history.pushState(null, '/');
     }
+
   }
 
+
   render () {
+    console.log(this.props.userCloset.data.results[3].discription);
     return (
       <main className="outfitdesignerMain">
-      <h1>OutfitDesigner</h1>
-      <section className="designTops"></section>
-      <h2>tops</h2>
-      <section className="designBottom"></section>
-      <h3>bottoms</h3>
-      <section className="designShoes"></section>
-      <h4>shoes</h4>
-      <section className="designAccessories"></section>
-      <h5>accessories</h5>
       </main>
     )
   }

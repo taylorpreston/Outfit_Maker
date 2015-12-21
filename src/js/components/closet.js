@@ -3,13 +3,11 @@ import {Link} from 'react-router';
 import AddItem from './additem';
 import $ from 'Jquery';
 import headers from '../headers-setup';
-
-import Article from './closet-article'
+import Article from './article';
 
 class Closet extends React.Component {
   constructor(props){
     super(props)
-    console.log(this.props)
   }
 
   componentDidMount(){
@@ -17,29 +15,41 @@ class Closet extends React.Component {
       this.props.history.pushState(null, '/')
     }
   }
-
   render() {
-    console.log('render function ran');
-    )
+    console.log(JSON.stringify(this.props.userShoes));
+    let self = this.props
+    let tops = self.userTops.map(item => {
+      return <Article key={item.objectId} img={item.img} discription={item.discription}/>
+    })
+    let bottoms = self.userBottoms.map(item => {
+      return <Article key={item.objectId} img={item.img} discription={item.discription}/>
+    })
+    let shoes = self.userShoes.map(item => {
+      return <Article key={item.objectId} img={item.img} discription={item.discription}/>
+    })
+    let accessories = self.userAccessories.map(item => {
+      return <Article key={item.objectId} img={item.img} discription={item.discription}/>
+    })
+
     return (
       <main className="closetMain">
       <Link className="AddItemView" to="/additem">Add Item</Link>
-        <section className="closetItems">
+        <ul className="closetItems">
           <h2>Tops</h2>
-          {allUserTops}
-        </section>
-        <section className="closetItems">
+            {tops}
+        </ul>
+        <ul className="closetItems">
           <h2>Bottoms</h2>
-
-        </section>
-        <section className="closetItems">
+            {bottoms}
+        </ul>
+        <ul className="closetItems">
           <h2>Shoes</h2>
-
-        </section>
-        <section className="closetItems">
+            {shoes}
+        </ul>
+        <ul className="closetItems">
           <h2>Accessories</h2>
-
-        </section>
+            {accessories}
+        </ul>
       </main>
     )
   }

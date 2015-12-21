@@ -5,11 +5,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  color: #ffffff;
-  background-image: url("/img/simple.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative; }
+  background-color: #DCDCDE; }
 
 input::-webkit-input-placeholder {
   font-size: 12px;
@@ -359,9 +355,39 @@ input:-ms-input-placeholder {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 100%; }
+  width: 100%;
+  border-bottom: 1px solid #000000; }
   .closetItems:last-child {
     margin-right: 0; }
+  .closetItems h2 {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%; }
+    .closetItems h2:last-child {
+      margin-right: 0; }
+  .closetItems li {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    text-align: center; }
+    .closetItems li:last-child {
+      margin-right: 0; }
+    .closetItems li span {
+      float: left;
+      display: block;
+      margin-right: 10.1484%;
+      width: 100%; }
+      .closetItems li span:last-child {
+        margin-right: 0; }
+    .closetItems li img {
+      float: left;
+      display: block;
+      margin-right: 10.1484%;
+      width: 63.28387%; }
+      .closetItems li img:last-child {
+        margin-right: 0; }
 
 .mycloset {
   max-width: 68em;
