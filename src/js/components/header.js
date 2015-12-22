@@ -11,7 +11,7 @@ class Header extends React.Component {
       user: []
     }
 
-    // this.toggleNav = this.toggleNav.bind(this)
+
     this.logoutUser = this.logoutUser.bind(this)
   }
 
@@ -31,11 +31,6 @@ componentDidMount(){
     });
   }
 }
-  // toggleNav() {
-  //   this.setState({
-  //     isVisible: !this.state.isVisible
-  //   })
-  // }
 
   logoutUser(e) {
     let self = this;
@@ -49,7 +44,6 @@ componentDidMount(){
       type: 'POST',
       success: function() {
         self.props.logoutUser();
-        self.toggleNav();
       }
     })
 
@@ -84,7 +78,7 @@ componentDidMount(){
           <Link id="headerlink" className="fa fa-users " to="/publicfeed">
             Public Feed
           </Link>
-          <Link id="headerlink" className="fa fa-sign-out " to="/login">
+          <Link onClick={this.logoutUser} id="headerlink" className="fa fa-sign-out " to="/">
             Logout
           </Link>
         </section>

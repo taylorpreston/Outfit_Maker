@@ -8,6 +8,12 @@ $visual-grid:true;
 
 body{
   background-color: #fff;
+  // color: #ffffff;
+  // background-image: url("/img/simple.jpg");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // position: relative;
+  // background-position: center center;
 }
 
 //these are css placeholder colors for each different
@@ -32,7 +38,6 @@ font-size:12px;
 color: $loginForm !important;
 }
 
-// ===================================
  //  MAIN HEADER
 
 .mainheader {
@@ -337,4 +342,23 @@ h1{
       font-family: $mainfont;
       font-size: 12px;
   }
+}
+
+///////////////////////////////////////////
+/// Outfit Maker Page
+
+.outfitMain{
+  @include outer-container
+}
+
+.closetSection{
+  @include span-columns(5 of 12)
+}
+
+.outfitDesigner{
+  @include span-columns(5 of 12)
+}
+
+.designImg{
+  @include span-columns(3 of 12)
 }
