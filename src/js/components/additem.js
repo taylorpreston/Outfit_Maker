@@ -125,7 +125,7 @@ class AddItem extends React.Component {
 
     return(
       <div className="mycloset">
-      <h1>Closet</h1>
+      <h1>ADD ITEM</h1>
         <input className="filePicker" type="filepicker"
                data-fp-apikey="A73ighb7VQwywW2MGVsMTz"
                ref="filepicker"
@@ -135,8 +135,8 @@ class AddItem extends React.Component {
                />
         <section className="uploadedImage">{ newlyUploadedImage }</section>
         <section className="imageInputs">
-        <input type="text" ref="discription" placeholder="item discription"/>
-        <input type="text" ref="brand" placeholder="brand"/>
+        <input className="inputs" type="text" ref="discription" placeholder="item discription"/>
+        <input className="inputs" type="text" ref="brand" placeholder="brand"/>
         <select className="type" ref="type">
           <option value="Top"> Top </option>
           <option value="Bottom"> Bottom </option>
@@ -144,18 +144,18 @@ class AddItem extends React.Component {
           <option value="Accessory"> Accessory </option>
         </select>
         <select className="weather" ref="weather">
-          <option value="sunny"> sunny </option>
-          <option value="rainy"> rainy </option>
-          <option value="snowy"> snowy </option>
-          <option value="normaly"> normaly </option>
+          <option value="sunny"> Sunny </option>
+          <option value="rainy"> Rainy </option>
+          <option value="snowy"> Snowy </option>
+          <option value="normaly"> Normal </option>
         </select>
         <select className="style" ref="style">
-          <option value="fomal"> fomal </option>
-          <option value="casual"> casual </option>
-          <option value="comfy"> comfy </option>
-          <option value="active"> active </option>
+          <option value="fomal"> Formal </option>
+          <option value="casual"> Casual </option>
+          <option value="comfy"> Comfy </option>
+          <option value="active"> Active </option>
         </select>
-        <input type="button" onClick={this.saveClothingItem} placeholder="bitch"/>
+        <input type="button" onClick={this.saveClothingItem} placeholder="Save Item"/>
         <Link className="closetView" to="/closet">Go to closet</Link>
         </section>
       </div>

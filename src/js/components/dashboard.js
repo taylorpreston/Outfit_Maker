@@ -22,10 +22,10 @@ class Dashboard extends React.Component {
     console.log(this.props)
     return (
       <main className="dashboardMain">
-        <Link className="dashboardNavBox1" to="/closet">CLOSET</Link>
-        <Link className="dashboardNavBox2" to="/outfits">OUTFITS</Link>
-        <Link className="dashboardNavBox1" to="/outfitdesigner">OUTFIT DESIGNER</Link>
-        <Link className="dashboardNavBox2" to="/publicfeed">PUBLIC FEED</Link>
+        <Link className="dashboardNavBox" to="/closet">CLOSET</Link>
+        <Link className="dashboardNavBox" to="/outfits">OUTFITS</Link>
+        <Link className="dashboardNavBox" to="/outfitdesigner">OUTFIT DESIGNER</Link>
+        <Link className="dashboardNavBox" to="/publicfeed">PUBLIC FEED</Link>
       </main>
     )
   }

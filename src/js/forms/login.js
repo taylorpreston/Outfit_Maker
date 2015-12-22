@@ -94,7 +94,7 @@ class Login extends React.Component {
       },
       success: function(response){
         console.log('you got outfits',response)
-          self.props.createUserOutfits(response)
+        self.props.createUserOutfits(response)
       }
     })
   }
