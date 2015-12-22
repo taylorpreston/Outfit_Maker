@@ -7,7 +7,7 @@ import setUp from '../headers-setup'
 class Home extends React.Component {
 
   constructor(props) {
-
+  
     super(props)
 
     this.state = {
@@ -61,7 +61,7 @@ class Home extends React.Component {
       userAccessories
     });
 
-    console.log('user tops', userTops)
+    console.log('user tops', userTops.img)
   }
 
 
