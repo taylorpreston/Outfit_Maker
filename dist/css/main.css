@@ -5,7 +5,7 @@ html {
   box-sizing: inherit; }
 
 body {
-  background-color: #DCDCDE; }
+  background-color: #111; }
 
 input::-webkit-input-placeholder {
   font-size: 12px;
@@ -441,4 +441,37 @@ input:-ms-input-placeholder {
   margin-right: 2.35765%;
   width: 48.82117%; }
   .imageInputs:last-child {
+    margin-right: 0; }
+
+.outfitMain {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .outfitMain::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.closetSection {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%; }
+  .closetSection:last-child {
+    margin-right: 0; }
+
+.outfitDesigner {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 40.29137%; }
+  .outfitDesigner:last-child {
+    margin-right: 0; }
+
+.designImg {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%; }
+  .designImg:last-child {
     margin-right: 0; }

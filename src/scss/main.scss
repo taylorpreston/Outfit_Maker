@@ -7,7 +7,7 @@
 
 
 body{
-  background-color: #DCDCDE;
+  background-color: #111;
   // color: #ffffff;
   // background-image: url("/img/simple.jpg");
   // background-repeat: no-repeat;
@@ -351,4 +351,23 @@ color: white !important;
 .imageInputs{
   @include shift(6);
   @include span-columns(6 of 12);
+}
+
+///////////////////////////////////////////
+/// Outfit Maker Page
+
+.outfitMain{
+  @include outer-container
+}
+
+.closetSection{
+  @include span-columns(5 of 12)
+}
+
+.outfitDesigner{
+  @include span-columns(5 of 12)
+}
+
+.designImg{
+  @include span-columns(3 of 12)
 }

@@ -10,6 +10,7 @@ class Login extends React.Component {
     super(props)
     this.loginUser = this.loginUser.bind(this)
     this.createCloset = this.createCloset.bind(this)
+    this.getUserOutfits = this.getUserOutfits.bind(this)
     this.logTheUser = this.logTheUser.bind(this)
   }
 
@@ -43,6 +44,9 @@ class Login extends React.Component {
   }
 
   createCloset(){
+
+
+  return new Promise ((resolve, reject) => {
     console.log('you created a user closet')
     let self = this
     let userId = this.props.userSession.objectId
@@ -62,14 +66,47 @@ class Login extends React.Component {
       success: function(response){
         console.log('you made a closet',response)
           self.props.createUserCloset(response)
+          resolve()
+      },
+      error: function(){
+        console.log("error error")
+        reject()
+      }
+    })
+  })
+}
+
+  getUserOutfits(){
+    let self = this
+    let userId = this.props.userSession.objectId
+
+    $.ajax({
+      url: 'https://api.parse.com/1/classes/Outfit',
+      type: 'GET',
+      data: {
+        where: JSON.stringify({
+          "user": {
+            "__type": "Pointer",
+            "className": "_User",
+            "objectId": userId
+          }
+        })
+      },
+      success: function(response){
+        console.log('you got outfits',response)
+          self.props.createUserOutfits(response)
       }
     })
   }
 
+
+
   logTheUser(e){
     e.preventDefault()
     this.loginUser().then(() => {
-      this.createCloset();
+      this.createCloset().then(() => {
+        this.getUserOutfits()
+      })
     });
     console.log(this.props)
   }

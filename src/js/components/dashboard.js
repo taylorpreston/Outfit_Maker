@@ -8,7 +8,6 @@ class Dashboard extends React.Component {
 
   constructor(props){
     super(props)
-
   }
 
   componentDidMount() {
@@ -20,6 +19,7 @@ class Dashboard extends React.Component {
    }
 
   render () {
+    console.log(this.props)
     return (
       <main className="dashboardMain">
         <Link className="dashboardNavBox1" to="/closet">CLOSET</Link>

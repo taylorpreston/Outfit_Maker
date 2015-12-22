@@ -13,6 +13,7 @@ class Home extends React.Component {
     this.state = {
       loggedIn: false,
       userSession: {},
+      userOutfits:[],
       userCloset: {data: {results: []}},
       userTops:[],
       userBottoms:[],
@@ -22,6 +23,13 @@ class Home extends React.Component {
     this.handleLogoutUser = this.handleLogoutUser.bind(this);
     this.handleLoginUser = this.handleLoginUser.bind(this)
     this.handleUserCloset = this.handleUserCloset.bind(this)
+    this.handleUserOutfits = this.handleUserOutfits.bind(this)
+  }
+
+  handleUserOutfits(data) {
+    this.setState({
+      userOutfits: data
+    })
   }
 
   handleUserCloset(data) {
@@ -93,8 +101,10 @@ class Home extends React.Component {
         userBottoms: this.state.userBottoms,
         userShoes:  this.state.userShoes,
         userAccessories: this.state.userAccessories,
+        userOutfits: this.state.userOutfits,
         loginUser: this.handleLoginUser,
-        createUserCloset: this.handleUserCloset
+        createUserCloset: this.handleUserCloset,
+        createUserOutfits: this.handleUserOutfits
       })
     });
     return (
@@ -107,7 +117,8 @@ class Home extends React.Component {
                       userShoes = {this.state.userShoes}
                       userAccessories = {this.state.userAccessories}
                       logoutUser = {this.handleLogoutUser}
-                      createUserCloset = {this.handleUserCloset}/>
+                      createUserCloset = {this.handleUserCloset}
+                      createUserOutfits = {this.handleUserOutfits}/>
         {childrenProps}
       </div>
     )
