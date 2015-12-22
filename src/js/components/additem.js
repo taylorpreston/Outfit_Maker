@@ -133,7 +133,7 @@ class AddItem extends React.Component {
                data-fp-mimetypes="image/*"
                data-fp-container="modal"
                />
-             <section className="uploadedImage">{ newlyUploadedImage }</section>
+        <section className="uploadedImage">{ newlyUploadedImage }</section>
         <section className="imageInputs">
         <input className="inputs" type="text" ref="discription" placeholder="item discription"/>
         <input className="inputs" type="text" ref="brand" placeholder="brand"/>
