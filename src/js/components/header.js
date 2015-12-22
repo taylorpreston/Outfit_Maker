@@ -49,7 +49,10 @@ componentDidMount(){
       type: 'POST',
       success: function() {
         self.props.logoutUser();
+<<<<<<< HEAD
         // self.toggleNav();
+=======
+>>>>>>> a64aa2c1e5f178ab7b672fb6d969a8164f40d435
       }
     })
 
@@ -84,7 +87,7 @@ componentDidMount(){
           <Link id="headerlink" className="fa fa-users " to="/publicfeed">
             Public Feed
           </Link>
-          <Link onClick={this.logoutUser} id="headerlink" className="fa fa-sign-out " to="/login">
+          <Link id="headerlink" className="fa fa-sign-out " to="/" onClick={this.logoutUser}>
             Logout
           </Link>
         </section>
