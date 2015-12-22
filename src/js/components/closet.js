@@ -3,12 +3,11 @@ import {Link} from 'react-router';
 import AddItem from './additem';
 import $ from 'Jquery';
 import headers from '../headers-setup';
-
+import Category from './category';
 
 class Closet extends React.Component {
   constructor(props){
     super(props)
-    console.log(this.props)
   }
 
   componentDidMount(){
@@ -17,28 +16,13 @@ class Closet extends React.Component {
     }
   }
   render() {
-
-    console.log(this.props.userTops);
-
     return (
       <main className="closetMain">
-      <Link className="AddItemView" to="/additem">Add Item</Link>
-        <section className="closetItems">
-          <h2>Tops</h2>
-
-        </section>
-        <section className="closetItems">
-          <h2>Bottoms</h2>
-
-        </section>
-        <section className="closetItems">
-          <h2>Shoes</h2>
-
-        </section>
-        <section className="closetItems">
-          <h2>Accessories</h2>
-
-        </section>
+        <Link className="AddItemView" to="/additem">Add Item</Link>
+        <Category title="Tops" limit={3} articles={this.props.userTops} />
+        <Category title="Bottoms" limit={3} articles={this.props.userBottoms} />
+        <Category title="Shoes" limit={3} articles={this.props.userShoes} />
+        <Category title="Accessories" limit={3} articles={this.props.userAccessories} />
       </main>
     )
   }
