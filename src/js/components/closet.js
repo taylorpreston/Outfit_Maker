@@ -18,7 +18,7 @@ class Closet extends React.Component {
   render() {
     return (
       <main className="closetMain">
-        <Link className="AddItemView" to="/additem">Add Item</Link>
+        <Link className="addItemView" to="/additem">Add Item</Link>
         <Category title="Tops" limit={3} articles={this.props.userTops} />
         <Category title="Bottoms" limit={3} articles={this.props.userBottoms} />
         <Category title="Shoes" limit={3} articles={this.props.userShoes} />
