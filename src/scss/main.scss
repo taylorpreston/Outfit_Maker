@@ -1,111 +1,83 @@
 @import '../../dist/bower_components/bourbon/app/assets/stylesheets/bourbon';
-// $visual-grid:true;
+$visual-grid:true;
 @import '../../dist/bower_components/neat/app/assets/stylesheets/neat';
 
 //global variables//
-@import "_variables.scss";
+@import "./variables";
 
 
 body{
-  background-color: #DCDCDE;
-  // color: #ffffff;
-  // background-image: url("/img/simple.jpg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // position: relative;
-  // background-position: center center;
+  background-color: #fff;
 }
 
 //these are css placeholder colors for each different
 //browser engine.
 input::-webkit-input-placeholder {
 font-size:12px;
-color: white !important;
+color: $loginForm !important;
 }
 
 input:-moz-placeholder { /* Firefox 18- */
 font-size:12px;
-color: white !important;
+color: $loginForm !important;
 }
 
 input::-moz-placeholder {  /* Firefox 19+ */
 font-size:12px;
-color: white !important;
+color: $loginForm !important;
 }
 
 input:-ms-input-placeholder {
 font-size:12px;
-color: white !important;
+color: $loginForm !important;
 }
 
 // ===================================
  //  MAIN HEADER
+
 .mainheader {
   @include outer-container;
-  background-color: #709C97;
-  border-bottom: 1px solid white;
-  height: 80px;
-  position: relative;
-  top: 0;
-  left: 0;
-
- a {
-   @include span-columns(5 of 12);
-   text-decoration: none;
-   text-align: center;
- }
+  background-color: #ffffff;
+  border-bottom: 1px solid black;
+  height: 120px;
 }
 
-.click{
-  @include span-columns(6 of 12);
-  text-align: right;
+.logo {
+  @include shift(5 of 12);
+  font-family: $mainfont;
   text-decoration: none;
-  color: #ffffff;
-  font: $mainfont;
-  font-size: 18px;
+  color: #3ABFB5;
 }
 
-.click{
-  a: {color: yellow;},
-  a:hover { color: #000000;},
-  a:visited { color: pink;},
-  a:focus { color: blue;},
-  a:active { color: green;}
+.userbox{
+  @include shift(8);
+  float: right;
+  height: 60px;
 }
+.userlink{
 
-.headerNav{
-  height: 0;
-  overflow: hidden;
-  transition: .3s height;
-
-  .headerlink{
-    display: block;
-    color: #fff;
-    width: 100%;
-  }
-}
-
-.headerNav.visible{
-  height: 170px;
-}
-
-.headerNav{
-  text-align: center;
-  line-height: 20px;
-  background-color: black;
-  position: absolute;
-  width: 100%;
-  max-width: 200px;
-  top: 80px;
-  right: 0;
-}
-
-.headerlink{
   text-decoration: none;
-  color: #ffffff;
-  font: $mainfont;
+  color: #3ABFB5;
+  font-family: $mainfont;
   font-size: 12px;
+  line-height: 80px;
 }
+.avatar{
+  float: right;
+}
+
+.headerNav{
+  @include span-columns(5.5 of 12);
+  float: right;
+}
+#headerlink{
+  color: #FF7C2F;
+  font-size: 14px;
+}
+
+
+
+
 // ===================================
 // LOGIN PAGE
 
@@ -124,10 +96,10 @@ color: white !important;
     @include span-columns(4 of 12);
     background-color: rgba(246, 246, 246, 0.22);
     padding: 8px 14px 8px 14px;
-    border: 3px solid #ffffff;
+    border: 3px solid $loginForm;
     width: 220px;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: $loginForm;
     font-size: 20px;
     outline: none;
   }
@@ -136,11 +108,11 @@ color: white !important;
     @include shift(6.3);
     @include span-columns(3 of 12);
     background-color: rgba(246, 246, 246, 0.22);
-    color: #ffffff;
+    color: $loginForm;
     font-weight: normal;
     font-size: 30px;
-    font: $mainfont;
-    border: 4px solid #ffffff;
+    font-family: $mainfont;
+    border: 4px solid $loginForm;
     width: 138px;
     padding: 11px 14px 11px 14px;
     margin-top: 10px;
@@ -151,8 +123,8 @@ color: white !important;
     @include shift(6);
     @include span-columns(6 of 12);
     text-decoration: none;
-    font: $mainfont;
-    color: #555454;
+    font-family: $mainfont;
+    color: $registerLink;
     margin-top: 10px;
   }
 }
@@ -168,35 +140,19 @@ color: white !important;
   $mobile: new-breakpoint(max-width 500px 4);
   @include pad(11px 0px 0px 11px);
 
-  .dashboardNavBox1 {
-    @include span-columns(6 of 12);
+  .dashboardNavBox {
+    @include span-columns(5.8 of 12);
     @include pad();
-    @include omega();
-    border: 4px solid #ffffff;
+    margin-top: 10px;
+    line-height: 200px;
+    border:2px solid $dashboardNav;
     text-align: center;
     background-color: rgba(246, 246, 246, 0.22);
-    font: $mainfont;
+    font-family: $mainfont;
     text-decoration: none;
     font-size: 35px;
-    color: #ffffff;
+    color: $dashboardNav;
     height: 250px;
-    padding-top: 100px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-  .dashboardNavBox2 {
-    @include span-columns(6 of 12);
-    @include pad();
-    @include omega();
-    border: 4px solid #ffffff;
-    text-align: center;
-    background-color: rgba(246, 246, 246, 0.22);
-    font: $mainfont;
-    text-decoration: none;
-    font-size: 35px;
-    color: #ffffff;
-    height: 250px;
-    padding-top: 100px;
   }
 }
 
@@ -231,6 +187,8 @@ color: white !important;
       @include span-columns(3 of 12);
       @include pad();
       text-decoration: none;
+      text-align: center;
+      font-family: $mainfont;
       border: 0.0625em solid #000000;
       font-size: 1.125em;
       @include media($mobile) {
@@ -273,7 +231,7 @@ color: white !important;
     color: #ffffff;
     font-weight: normal;
     font-size: 30px;
-    font: $mainfont;
+    font-family: $mainfont;
     border: 4px solid #ffffff;
     width: 138px;
     padding: 11px 14px 11px 14px;
@@ -285,7 +243,7 @@ color: white !important;
     @include shift(6);
     @include span-columns(6 of 12);
     text-decoration: none;
-    font: $mainfont;
+    font-family: $mainfont;
     color: #555454;
     margin-top: 10px;
   }
@@ -304,6 +262,9 @@ color: white !important;
   border-bottom: 1px solid #000000;
   h2 {
       @include span-columns(12 of 12);
+      font-family: $mainfont;
+      font-size: 14px;
+      color: #FF6002;
   }
 
   li {
@@ -312,6 +273,9 @@ color: white !important;
 
     span {
       @include span-columns(3 of 3);
+      font-family: $mainfont;
+      font-size: 12px;
+      color: #FF6002;
     }
       img {
         @include span-columns(2 of 3);
@@ -319,11 +283,23 @@ color: white !important;
   }
 }
 
+.addItemView{
+  text-decoration: none;
+  font-family: $mainfont;
+  font-size: 16px;
+  color: #3ABFB5;
+}
 
 //////////////////////////////////////
 //AddItem
 .mycloset{
   @include outer-container;
+}
+h1{
+  text-align: center;
+  font-family: $mainfont;
+  font-weight: lighter;
+  color: #3ABFB5;
 }
 .filePicker{
   @include span-columns(12 of 12);
@@ -331,11 +307,11 @@ color: white !important;
 .filePickerBtn{
   @include span-columns(12 of 12);
   background-color: rgba(246, 246, 246, 0.22);
-  color: #ffffff;
+  color: #000000;
   font-weight: normal;
   font-size: 15px;
-  font: $mainfont;
-  border: 4px solid #ffffff;
+  font-family: $mainfont;
+  border: 4px solid #000000;
   width: 118px;
   padding: 11px 14px 11px 14px;
   margin-top: 10px;
@@ -349,6 +325,16 @@ color: white !important;
 }
 
 .imageInputs{
-  @include shift(6);
-  @include span-columns(6 of 12);
+  @include shift(7);
+  @include span-columns(5 of 12);
+
+  input{
+    @include span-columns(5 of 5);
+  }
+
+  select{
+    @include span-columns(5 of 5);
+      font-family: $mainfont;
+      font-size: 12px;
+  }
 }
