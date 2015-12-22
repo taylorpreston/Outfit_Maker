@@ -7,7 +7,7 @@ import setUp from '../headers-setup'
 class Home extends React.Component {
 
   constructor(props) {
-  
+
     super(props)
 
     this.state = {
@@ -22,6 +22,10 @@ class Home extends React.Component {
     this.handleLogoutUser = this.handleLogoutUser.bind(this);
     this.handleLoginUser = this.handleLoginUser.bind(this)
     this.handleUserCloset = this.handleUserCloset.bind(this)
+  }
+
+  componentDidMount(){
+    // check to see if user is logged in
   }
 
   handleUserCloset(data) {

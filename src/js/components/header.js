@@ -20,7 +20,7 @@ componentDidMount(){
   if (localStorage.getItem('userSession')) {
     let ID = JSON.parse(localStorage.getItem('userSession')).objectId;
     console.log(ID);
-    
+
     $.ajax({
       url: `https://api.parse.com/1/users/${ID}`,
       type: 'GET',

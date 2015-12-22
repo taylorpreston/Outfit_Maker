@@ -4,7 +4,6 @@ class Article extends React.Component {
   render () {
 
 
-
     return(
       <li>
         <span>{this.props.discription}</span>
