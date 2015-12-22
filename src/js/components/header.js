@@ -11,7 +11,7 @@ class Header extends React.Component {
       user: []
     }
 
-    this.toggleNav = this.toggleNav.bind(this)
+    // this.toggleNav = this.toggleNav.bind(this)
     this.logoutUser = this.logoutUser.bind(this)
   }
 
@@ -20,7 +20,7 @@ componentDidMount(){
   if (localStorage.getItem('userSession')) {
     let ID = JSON.parse(localStorage.getItem('userSession')).objectId;
     console.log(ID);
-    
+
     $.ajax({
       url: `https://api.parse.com/1/users/${ID}`,
       type: 'GET',
@@ -31,11 +31,11 @@ componentDidMount(){
     });
   }
 }
-  toggleNav() {
-    this.setState({
-      isVisible: !this.state.isVisible
-    })
-  }
+  // toggleNav() {
+  //   this.setState({
+  //     isVisible: !this.state.isVisible
+  //   })
+  // }
 
   logoutUser(e) {
     let self = this;
@@ -55,34 +55,36 @@ componentDidMount(){
 
   }
   render() {
-    let className = 'headerNav';
-    if (this.state.isVisible) {
-      className = className + ' visible';
-    }
+    // let className = 'headerNav';
+    // if (this.state.isVisible) {
+    //   className = className + ' visible';
+    // }
     let links;
     let user = this.props.userSession.username;
     if (this.props.loggedIn === true) {
       links = (
         <div>
-        <span>{user}</span>
-        <span onClick={this.toggleNav} href="#" className="click"><img src="http://www.fillmurray.com/50/50" /></span>
-        <section className={className}>
-          <Link onClick={this.toggleNav} className="headerlink" to="/dashboard">
+        <div className="userbox">
+        <span href="#" className="avatar"><img src="http://www.fillmurray.com/50/50" /></span>
+        <span className="userlink">Welcome, {user}</span>
+        </div>
+        <section className="headerNav">
+          <Link id="headerlink" className="fa fa-home " to="/dashboard">
             Dashboard
           </Link>
-          <Link onClick={this.toggleNav} className="headerlink" to="/closet">
+          <Link id="headerlink" className="fa fa-columns " to="/closet">
             Closet
           </Link>
-          <Link onClick={this.toggleNav} className="headerlink" to="/outfits">
+          <Link id="headerlink" className="fa fa-suitcase " to="/outfits">
             Outfits
           </Link>
-          <Link onClick={this.toggleNav} className="headerlink" to="/outfitdesigner">
+          <Link id="headerlink" className="fa fa-scissors " to="/outfitdesigner">
             Outfit Designer
           </Link>
-          <Link onClick={this.toggleNav} className="headerlink" to="/publicfeed">
+          <Link id="headerlink" className="fa fa-users " to="/publicfeed">
             Public Feed
           </Link>
-          <Link onClick={this.logoutUser} className="headerlink" to="/login">
+          <Link id="headerlink" className="fa fa-sign-out " to="/login">
             Logout
           </Link>
         </section>
@@ -91,7 +93,7 @@ componentDidMount(){
     }
     return (
       <header className="mainheader">
-        <a href="#">OUTFIT MAKER</a>
+        <a href="#" className="logo">OUTFIT MAKER</a>
           {links}
       </header>
     )

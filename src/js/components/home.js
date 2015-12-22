@@ -7,7 +7,7 @@ import setUp from '../headers-setup'
 class Home extends React.Component {
 
   constructor(props) {
-  
+
     super(props)
 
     this.state = {
@@ -27,7 +27,6 @@ class Home extends React.Component {
   handleUserCloset(data) {
 
     let allClothes = data.results
-    console.log('data-results', data.results);
 
     function tops(item){
       return item.type === "Top";
@@ -60,8 +59,6 @@ class Home extends React.Component {
       userShoes,
       userAccessories
     });
-
-    console.log('user tops', userTops.img)
   }
 
 
