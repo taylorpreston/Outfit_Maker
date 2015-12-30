@@ -50,7 +50,9 @@ componentDidMount(){
       success: function() {
         self.props.logoutUser();
 
+
       }
+
     })
 
   }
