@@ -7,9 +7,9 @@ class User extends React.Component {
     <li className="user">
         <img src="http://www.fillmurray.com/200/200" />
         <span>{this.props.username}</span>
-        <Link className="usersPublicFeed" to="/closet" >usercloset</Link>
-        <Link className="usersPublicFeed" to="/outfits" >Outfits</Link>
-        <Link className="usersPublicFeed" to="/outfitdesigner" >Design</Link>
+        <Link className="usersPublicFeed" to="/closet" >Their Closet</Link>
+        <Link className="usersPublicFeed" to="/outfits" >Saved Outfits</Link>
+        <Link className="usersPublicFeed" to="/outfitdesigner" >Design an Outfit</Link>
     </li>
     )
   }
