@@ -1,5 +1,5 @@
 import React from 'react'
-
+import OutfitItem from './outfit-item'
 
 class Outfits extends React.Component {
   constructor(props){
@@ -14,8 +14,17 @@ class Outfits extends React.Component {
 
   render () {
     console.log(this.props)
+    let userOutfits = this.props.userOutfits.results
+    console.log(userOutfits)
+
+  let outfits = userOutfits.map( outfit => {
+   return <OutfitItem key={outfit.objectId} outfit={outfit}/>
+  })
+
     return(
-      <h1>outfits</h1>
+      <section className="outfitPage">
+        {outfits}
+      </section>
     )
   }
 }
