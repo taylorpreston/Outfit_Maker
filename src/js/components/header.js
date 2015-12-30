@@ -78,7 +78,7 @@ componentDidMount(){
           <Link id="headerlink" className="fa fa-users " to="/publicfeed">
             Public Feed
           </Link>
-          <Link onClick={this.logoutUser} id="headerlink" className="fa fa-sign-out " to="/">
+          <Link id="headerlink" className="fa fa-sign-out " to="/" onClick={this.logoutUser}>
             Logout
           </Link>
         </section>
