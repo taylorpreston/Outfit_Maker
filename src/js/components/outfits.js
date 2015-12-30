@@ -22,7 +22,7 @@ class Outfits extends React.Component {
   })
 
     return(
-      <section>
+      <section className="outfitPage">
         {outfits}
       </section>
     )

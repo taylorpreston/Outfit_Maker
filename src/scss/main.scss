@@ -14,7 +14,17 @@ body{
   // background-size: cover;
   // position: relative;
   // background-position: center center;
+  h1{
+    font-family: 'Josefin Slab', serif;
+  }
+  h2{
+    font-family: 'Josefin Slab', serif;
+  }
+  h3{
+    font-family: 'Josefin Slab', serif;
+  }
 }
+
 
 //these are css placeholder colors for each different
 //browser engine.
@@ -361,4 +371,19 @@ h1{
 
 .designImg{
   @include span-columns(3 of 12)
+}
+
+///////////////////
+/// Outfit Page
+
+.outfitPage{
+
+  .outfitDisplay{
+    @include  span-columns(3 of 12);
+  }
+
+  img{
+    @include span-columns(12 of 12)
+    margin-bottom: 10px;
+  }
 }
