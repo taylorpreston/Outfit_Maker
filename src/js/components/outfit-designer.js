@@ -198,9 +198,9 @@ class OutfitDesigner extends React.Component {
           <div className="designAccessories">
             {outfitAccessories}
           </div>
-          <input className="input" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
+          <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
         </section>
-        <button onClick={this.saveOutfit}>Save Your Outfit</button>
+        <button className="saveOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
       </main>
     )
   }
