@@ -49,7 +49,7 @@ componentDidMount(){
       type: 'POST',
       success: function() {
         self.props.logoutUser();
-      }
+       }
     })
 
   }
