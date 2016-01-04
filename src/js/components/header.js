@@ -88,7 +88,7 @@ componentDidMount(){
     }
     return (
       <header className="mainheader">
-        <img className="hangerlogo" src="../../img/vechanger.png"/>
+        <img className="hangerlogo" src="/img/vechanger.png"/>
         <a href="#" className="drobe">DROBE</a>
           {links}
       </header>
