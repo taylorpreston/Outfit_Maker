@@ -58,37 +58,38 @@ componentDidMount(){
     let user = this.props.userSession.username;
     if (this.props.loggedIn === true) {
       links = (
-        <div>
-        <div className="userbox">
-        <span href="#" className="avatar"><img src="http://www.fillmurray.com/50/50" /></span>
-        <span className="userlink">Welcome, {user}</span>
-        </div>
-        <section className="headerNav">
-          <Link id="headerlink" className="fa fa-home " to="/dashboard">
-            Dashboard
-          </Link>
-          <Link id="headerlink" className="fa fa-columns " to="/closet">
-            Closet
-          </Link>
-          <Link id="headerlink" className="fa fa-suitcase " to="/outfits">
-            Outfits
-          </Link>
-          <Link id="headerlink" className="fa fa-scissors " to="/outfitdesigner">
-            Outfit Designer
-          </Link>
-          <Link id="headerlink" className="fa fa-users " to="/publicfeed">
-            Public Feed
-          </Link>
-          <Link id="headerlink" className="fa fa-sign-out " to="/" onClick={this.logoutUser}>
-            Logout
-          </Link>
-        </section>
+        <div className="linkContainer">
+          <div className="userbox">
+            <span href="#" className="avatar"><img src="http://www.fillmurray.com/50/50" /></span>
+            <span className="userlink">Welcome, {user}</span>
+          </div>
+          <section className="headerNav">
+            <Link className="headerlink" to="/dashboard">
+              Dashboard
+            </Link>
+            <Link className="headerlink" to="/closet">
+               Closet
+            </Link>
+            <Link className="headerlink" to="/outfits">
+               Outfits
+            </Link>
+            <Link className="headerlink" to="/outfitdesigner">
+               Outfit Designer
+            </Link>
+            <Link className="headerlink" to="/publicfeed">
+               Public Feed
+            </Link>
+            <Link className="headerlink" to="/" onClick={this.logoutUser}>
+               Logout
+            </Link>
+          </section>
         </div>
       )
     }
     return (
       <header className="mainheader">
-        <a href="#" className="logo">OUTFIT MAKER</a>
+        <img className="hangerlogo" src="../../img/vechanger.png"/>
+        <a href="#" className="drobe">DROBE</a>
           {links}
       </header>
     )

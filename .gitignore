@@ -38,7 +38,7 @@ bower_components
 
 # PARSE AUTH HEADER KEYS
 /src/js/headers-setup.js
-
+dist
 
 # Node
 
