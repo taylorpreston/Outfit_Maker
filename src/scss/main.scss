@@ -97,11 +97,19 @@ color: $loginForm !important;
 
   section {
     @include span-columns(12 of 12);
-    @include pad(160px 10px 10px default);
+    @include pad();
+
+    span {
+      @include span-columns(12 of 12);
+      @include pad();
+      color: #FF7C2F;
+      font-size: 14px;
+      text-align: center;
+    }
   }
 form {
   @include span-columns(4 of 12);
-    @include shift(4);
+    @include shift(4.6);
 }
   .input {
     @include span-columns(4 of 4);
@@ -224,10 +232,16 @@ form {
   section {
     @include span-columns(12 of 12);
     @include pad();
-
+    span {
+      @include span-columns(12 of 12);
+      @include pad();
+      color: #FF7C2F;
+      font-size: 14px;
+      text-align: center;
+    }
     form {
       @include span-columns(4 of 12);
-      @include shift(4);
+      @include shift(4.6);
     }
   }
 
@@ -280,25 +294,32 @@ form {
   border-bottom: 1px solid #000000;
   h2 {
       @include span-columns(12 of 12);
+      @include pad();
       font-family: $mainfont;
-      font-size: 14px;
+      margin: 0;
+      font-size: 22px;
       color: #FF6002;
+      text-align: center;
   }
 
   li {
-    @include span-columns(3 of 12);
-    text-align: center;
+    @include span-columns(4 of 12);
 
     span {
-      @include span-columns(3 of 3);
+      @include span-columns(4 of 4);
+      @include pad();
       font-family: $mainfont;
-      font-size: 12px;
+      font-size: 14px;
       color: #FF6002;
+      text-align: center;
     }
       img {
-        @include span-columns(2 of 3);
+        @include span-columns(2.5 of 4);
+        @include shift(0.8);
       }
   }
+
+
 }
 
 .addItemView{
@@ -308,6 +329,12 @@ form {
   color: #3ABFB5;
 }
 
+.fa {
+  font-size: 30px;
+  outline: none;
+  border: none;
+  background-color: #fff;
+}
 //////////////////////////////////////
 //AddItem
 .mycloset{

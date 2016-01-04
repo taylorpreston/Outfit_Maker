@@ -9,7 +9,7 @@ class Article extends React.Component {
   render () {
     return(
         <li>
-          <span>{this.props.discription}</span>
+          <span>{this.props.brand}</span>
           <img src={this.props.img}/>
         </li>
     )

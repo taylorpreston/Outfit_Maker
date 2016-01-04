@@ -19,14 +19,12 @@ componentDidMount(){
   let self = this
   if (localStorage.getItem('userSession')) {
     let ID = JSON.parse(localStorage.getItem('userSession')).objectId;
-    console.log(ID);
 
     $.ajax({
       url: `https://api.parse.com/1/users/${ID}`,
       type: 'GET',
       success: (response) => {
         self.setState({user: response.username})
-        console.log(response.username);
       }
     });
   }
@@ -35,7 +33,7 @@ componentDidMount(){
   logoutUser(e) {
     let self = this;
     e.preventDefault();
-    console.log('trying to log out...');
+
     $.ajax({
       headers: {
         "X-Parse-Session-Token": JSON.parse(localStorage.getItem('userSession')).sessionToken

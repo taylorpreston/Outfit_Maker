@@ -90,15 +90,26 @@ input:-ms-input-placeholder {
     display: block;
     margin-right: 2.35765%;
     width: 100%;
-    padding: 160px 10px 10px 2.35765%; }
+    padding: 2.35765%; }
     .loginMain section:last-child {
       margin-right: 0; }
+    .loginMain section span {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%;
+      padding: 2.35765%;
+      color: #FF7C2F;
+      font-size: 14px;
+      text-align: center; }
+      .loginMain section span:last-child {
+        margin-right: 0; }
   .loginMain form {
     float: left;
     display: block;
     margin-right: 2.35765%;
     width: 31.76157%;
-    margin-left: 34.11922%; }
+    margin-left: 39.2371%; }
     .loginMain form:last-child {
       margin-right: 0; }
   .loginMain .input {
@@ -259,12 +270,23 @@ input:-ms-input-placeholder {
     padding: 2.35765%; }
     .registerMain section:last-child {
       margin-right: 0; }
+    .registerMain section span {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%;
+      padding: 2.35765%;
+      color: #FF7C2F;
+      font-size: 14px;
+      text-align: center; }
+      .registerMain section span:last-child {
+        margin-right: 0; }
     .registerMain section form {
       float: left;
       display: block;
       margin-right: 2.35765%;
       width: 31.76157%;
-      margin-left: 34.11922%; }
+      margin-left: 39.2371%; }
       .registerMain section form:last-child {
         margin-right: 0; }
   .registerMain .input {
@@ -334,34 +356,39 @@ input:-ms-input-placeholder {
     display: block;
     margin-right: 2.35765%;
     width: 100%;
+    padding: 2.35765%;
     font-family: "Josefin Sans", sans-serif;
-    font-size: 14px;
-    color: #FF6002; }
+    margin: 0;
+    font-size: 22px;
+    color: #FF6002;
+    text-align: center; }
     .closetItems h2:last-child {
       margin-right: 0; }
   .closetItems li {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 23.23176%;
-    text-align: center; }
+    width: 31.76157%; }
     .closetItems li:last-child {
       margin-right: 0; }
     .closetItems li span {
       float: left;
       display: block;
-      margin-right: 10.1484%;
+      margin-right: 7.42297%;
       width: 100%;
+      padding: 2.35765%;
       font-family: "Josefin Sans", sans-serif;
-      font-size: 12px;
-      color: #FF6002; }
+      font-size: 14px;
+      color: #FF6002;
+      text-align: center; }
       .closetItems li span:last-child {
         margin-right: 0; }
     .closetItems li img {
       float: left;
       display: block;
-      margin-right: 10.1484%;
-      width: 63.28387%; }
+      margin-right: 7.42297%;
+      width: 59.71639%;
+      margin-left: 21.48459%; }
       .closetItems li img:last-child {
         margin-right: 0; }
 
@@ -370,6 +397,12 @@ input:-ms-input-placeholder {
   font-family: "Josefin Sans", sans-serif;
   font-size: 20px;
   color: #3ABFB5; }
+
+.fa {
+  font-size: 30px;
+  outline: none;
+  border: none;
+  background-color: #fff; }
 
 .mycloset {
   max-width: 68em;
