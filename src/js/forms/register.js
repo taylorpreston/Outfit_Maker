@@ -58,8 +58,8 @@ class Register extends React.Component {
             <input className="input" type="password" ref="password" placeholder="password"/>
             <input className="input" type="password" ref="confirmPassword" placeholder="confirm password"/>
             <input className="subBtn" type="submit" ref="submitBtn"/>
+            <Link className="loginLink" to="/">Login Here</Link>
           </form>
-          <Link className="loginLink" to="/">Login Here</Link>
         </section>
 
       </main>
