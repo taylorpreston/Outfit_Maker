@@ -4,25 +4,6 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-body:before {
-  background-image: -webkit-linear-gradient(left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100%, transparent 100%);
-  background-image: -moz-linear-gradient(left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100%, transparent 100%);
-  background-image: -ms-linear-gradient(left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100%, transparent 100%);
-  background-image: -o-linear-gradient(left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100%, transparent 100%);
-  background-image: linear-gradient(to left, transparent 0, #eee 0, #eee 6.17215%, transparent 6.17215%, transparent 8.5298%, #eee 8.5298%, #eee 14.70196%, transparent 14.70196%, transparent 17.05961%, #eee 17.05961%, #eee 23.23176%, transparent 23.23176%, transparent 25.58941%, #eee 25.58941%, #eee 31.76157%, transparent 31.76157%, transparent 34.11922%, #eee 34.11922%, #eee 40.29137%, transparent 40.29137%, transparent 42.64902%, #eee 42.64902%, #eee 48.82117%, transparent 48.82117%, transparent 51.17883%, #eee 51.17883%, #eee 57.35098%, transparent 57.35098%, transparent 59.70863%, #eee 59.70863%, #eee 65.88078%, transparent 65.88078%, transparent 68.23843%, #eee 68.23843%, #eee 74.41059%, transparent 74.41059%, transparent 76.76824%, #eee 76.76824%, #eee 82.94039%, transparent 82.94039%, transparent 85.29804%, #eee 85.29804%, #eee 91.4702%, transparent 91.4702%, transparent 93.82785%, #eee 93.82785%, #eee 100%, transparent 100%);
-  content: "";
-  display: inline-block;
-  height: 100%;
-  left: 0;
-  margin: 0 auto;
-  max-width: 68em;
-  opacity: 0.4;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  width: 100%;
-  z-index: -1; }
-
 body {
   background-color: #fff; }
   body h1 {
@@ -62,39 +43,84 @@ input:-ms-input-placeholder {
     content: "";
     display: table; }
 
-.logo {
-  margin-left: 42.64902%;
+.drobe {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 10.43705%;
   font-family: "Josefin Sans", sans-serif;
   text-decoration: none;
-  color: #3ABFB5; }
+  color: #3ABFB5;
+  line-height: 96px;
+  font-size: 30px; }
+  .drobe:last-child {
+    margin-right: 0; }
+
+.linkContainer {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 70.14568%; }
+  .linkContainer:last-child {
+    margin-right: 0; }
+
+.hangerlogo {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 14.70196%;
+  padding: 2.35765%;
+  border: 1px solid black;
+  border-radius: 4%;
+  line-height: 96px; }
+  .hangerlogo:last-child {
+    margin-right: 0; }
 
 .userbox {
-  margin-left: 68.23843%;
-  float: right;
-  height: 60px; }
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  text-align: right; }
+  .userbox:last-child {
+    margin-right: 0; }
 
 .userlink {
   text-decoration: none;
   color: #3ABFB5;
   font-family: "Josefin Sans", sans-serif;
   font-size: 12px;
-  line-height: 80px; }
+  padding-top: 10px;
+  padding-right: 10px; }
 
-.avatar {
-  float: right; }
+.avatar, .userlink {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px; }
+  .avatar:last-child, .userlink:last-child {
+    margin-right: 0; }
 
 .headerNav {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 44.55627%;
-  float: right; }
+  width: 100%;
+  text-align: right;
+  padding-top: 10px; }
   .headerNav:last-child {
     margin-right: 0; }
 
-#headerlink {
+.headerlink {
   color: #FF7C2F;
-  font-size: 14px; }
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  padding-right: 10px; }
+  .headerlink:hover {
+    color: rgba(204, 116, 0, 0.97); }
 
 .loginMain {
   max-width: 68em;
@@ -183,10 +209,24 @@ input:-ms-input-placeholder {
     font-family: "Josefin Sans", sans-serif;
     text-decoration: none;
     font-size: 35px;
-    color: #000000;
-    height: 250px; }
+    color: #FF7C2F;
+    height: 250px;
+    cursor: pointer;
+    -webkit-transition: background-color .7s ease-out;
+    -moz-transition: background-color .7s ease-out;
+    -o-transition: background-color .7s ease-out;
+    transition: background-color .7s ease-out; }
     .dashboardMain .dashboardNavBox:last-child {
       margin-right: 0; }
+    .dashboardMain .dashboardNavBox:hover {
+      cursor: pointer;
+      -webkit-transition: background-color 2s ease-out;
+      -moz-transition: background-color 2s ease-out;
+      -o-transition: background-color 2s ease-out;
+      transition: background-color 2s ease-out;
+      color: white;
+      background-color: #FF7C2F;
+      border: 2px solid gray; }
 
 .publicfeedMain {
   max-width: 68em;
@@ -244,9 +284,24 @@ input:-ms-input-placeholder {
       font-family: "Josefin Sans", sans-serif;
       color: #000000;
       border: 0.0625em solid #000000;
-      font-size: 1.125em; }
+      font-size: 1.125em;
+      background-color: rgba(246, 246, 246, 0.22);
+      cursor: pointer;
+      -webkit-transition: background-color .7s ease-out;
+      -moz-transition: background-color .7s ease-out;
+      -o-transition: background-color .7s ease-out;
+      transition: background-color .7s ease-out; }
       .publicfeedMain .user a:last-child {
         margin-right: 0; }
+      .publicfeedMain .user a:hover {
+        cursor: pointer;
+        -webkit-transition: background-color 2s ease-out;
+        -moz-transition: background-color 2s ease-out;
+        -o-transition: background-color 2s ease-out;
+        transition: background-color 2s ease-out;
+        color: white;
+        background-color: #FF7C2F;
+        border: 2px solid gray; }
       @media screen and (max-width: 500px) {
         .publicfeedMain .user a {
           float: left;

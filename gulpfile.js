@@ -36,7 +36,7 @@ gulp.task('sass', function () {
 gulp.task('watch', function() {
   gulp.watch(['./src/**/*.js'], ['lint','babel']);
   gulp.watch(['./src/scss/*.scss'], ['sass']);
-  gulp.watch(['./src/index.html'], ['copy']);
+  gulp.watch(['./src/index.html', './src/img/**/*'], ['copy']);
 });
 
 gulp.task('copy', function () {
