@@ -1,7 +1,13 @@
 import React, { PropTypes } from 'react';
 import {Link} from 'react-router';
+import $ from 'jquery';
 
 class User extends React.Component {
+  constructor(props){
+    super(props)
+  }
+
+
   render () {
     return (
     <li className="user">

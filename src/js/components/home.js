@@ -32,6 +32,18 @@ class Home extends React.Component {
     })
   }
 
+  componentDidMount(){
+    let userSession = JSON.parse(localStorage.getItem('userSession'));
+
+    console.log('SESSION', userSession);
+    if (userSession) {
+      this.setState({
+        loggedIn: true,
+        userSession: userSession
+      });
+    }
+  }
+
   handleUserCloset(data) {
 
     let allClothes = data.results
@@ -76,7 +88,6 @@ class Home extends React.Component {
       userSession: {}
     })
     localStorage.removeItem('userSession')
-    console.log('logged out success!');
     this.props.history.pushState(null, '/')
   }
   handleLoginUser(data) {
@@ -87,12 +98,10 @@ class Home extends React.Component {
       // this saves the sessionToken
     localStorage.setItem('userSession', JSON.stringify(data));
     this.props.history.pushState(null, '/dashboard');
-    console.log(localStorage.getItem('userSession'));
   }
 
 
   render() {
-    console.log(localStorage.getItem('userSession'));
     let childrenProps = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
         loggedIn: this.state.loggedIn,

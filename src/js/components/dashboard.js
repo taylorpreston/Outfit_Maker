@@ -19,7 +19,6 @@ class Dashboard extends React.Component {
    }
 
   render () {
-    console.log(this.props)
     return (
       <main className="dashboardMain">
         <Link className="dashboardNavBox" to="/closet">CLOSET</Link>
