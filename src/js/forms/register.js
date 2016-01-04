@@ -20,10 +20,10 @@ class Register extends React.Component {
   registerUser(e){
     e.preventDefault()
     let self = this
-    let username = this.refs.username.value
-    let email = this.refs.email.value
-    let password = this.refs.password.value
-    let passConfirm = this.refs.confirmPassword.value
+    let username = this.refs.username.value.replace(/\s+/g, '').toLowerCase;
+    let email = this.refs.email.value.replace(/\s+/g, '').toLowerCase;
+    let password = this.refs.password.value.replace(/\s+/g, '').toLowerCase;
+    let passConfirm = this.refs.confirmPassword.value.replace(/\s+/g, '').toLowerCase;
     let user = {
       username,
       email,
@@ -52,14 +52,15 @@ class Register extends React.Component {
     return(
       <main className="registerMain">
         <section>
+          <span>register with us</span>
           <form onSubmit={this.registerUser}>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="text" ref="email" placeholder="email"/>
             <input className="input" type="password" ref="password" placeholder="password"/>
             <input className="input" type="password" ref="confirmPassword" placeholder="confirm password"/>
             <input className="subBtn" type="submit" ref="submitBtn"/>
+            <Link className="loginLink" to="/">Login Here</Link>
           </form>
-          <Link className="loginLink" to="/">Login Here</Link>
         </section>
 
       </main>

@@ -53,17 +53,17 @@ class Category extends React.Component {
       }
       return false;
     }).map(item => {
-      return <Article key={item.objectId} img={item.img} discription={item.discription}/>
+      return <Article key={item.objectId} img={item.img} brand={item.brand}/>
     });
 
     return (
       <div>
-        <button className="prevBtn" onClick={this.handlePrev}>Prev</button>
+        <button className="fa fa-arrow-left" onClick={this.handlePrev}></button>
         <ul className="closetItems">
           <h2>{this.props.title}</h2>
           {articles}
         </ul>
-        <button className="nextBtn" onClick={this.handleNext}>Next</button>
+        <button className="fa fa-arrow-right" onClick={this.handleNext}></button>
       </div>
     )
   }

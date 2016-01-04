@@ -8,12 +8,7 @@
 
 body{
   background-color: #fff;
-  // color: #ffffff;
-  // background-image: url("/img/simple.jpg");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // position: relative;
-  // background-position: center center;
+
   h1{
     font-family: 'Josefin Slab', serif;
   }
@@ -125,13 +120,22 @@ color: $loginForm !important;
 
   section {
     @include span-columns(12 of 12);
-    @include pad(160px 10px 10px default);
-    text-align: center;
-  }
+    @include pad();
 
+    span {
+      @include span-columns(12 of 12);
+      @include pad();
+      color: #FF7C2F;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+form {
+  @include span-columns(4 of 12);
+    @include shift(4.6);
+}
   .input {
-    @include shift(4);
-    @include span-columns(4 of 12);
+    @include span-columns(4 of 4);
     background-color: rgba(246, 246, 246, 0.22);
     padding: 8px 14px 8px 14px;
     border: 3px solid $loginForm;
@@ -143,8 +147,7 @@ color: $loginForm !important;
   }
 
   .subBtn{
-    @include shift(6.3);
-    @include span-columns(3 of 12);
+    @include span-columns(3 of 4);
     background-color: rgba(246, 246, 246, 0.22);
     color: $loginForm;
     font-weight: normal;
@@ -158,12 +161,13 @@ color: $loginForm !important;
   }
 
   .registerLink {
-    @include shift(6);
-    @include span-columns(6 of 12);
+    @include span-columns(4 of 4);
+    @include pad();
     text-decoration: none;
     font-family: $mainfont;
     color: $registerLink;
     margin-top: 10px;
+    text-align: left;
   }
 }
 
@@ -284,30 +288,38 @@ color: $loginForm !important;
   section {
     @include span-columns(12 of 12);
     @include pad();
+    span {
+      @include span-columns(12 of 12);
+      @include pad();
+      color: #FF7C2F;
+      font-size: 14px;
+      text-align: center;
+    }
+    form {
+      @include span-columns(4 of 12);
+      @include shift(4.6);
+    }
   }
 
   .input {
-    @include shift(4);
-    @include span-columns(4 of 12);
-    background-color: rgba(246, 246, 246, 0.22);
+    @include span-columns(4 of 4);
     padding: 8px 14px 8px 14px;
-    border: 3px solid #ffffff;
+    border: 3px solid $loginForm;
     width: 220px;
     margin-bottom: 15px;
-    color: #ffffff;
+    color: $loginForm;
     font-size: 20px;
     outline: none;
   }
 
   .subBtn{
-    @include shift(6.3);
-    @include span-columns(3 of 12);
+    @include span-columns(3 of 4);
     background-color: rgba(246, 246, 246, 0.22);
-    color: #ffffff;
+    color: $loginForm;
     font-weight: normal;
     font-size: 30px;
     font-family: $mainfont;
-    border: 4px solid #ffffff;
+    border: 4px solid $loginForm;
     width: 138px;
     padding: 11px 14px 11px 14px;
     margin-top: 10px;
@@ -315,12 +327,13 @@ color: $loginForm !important;
   }
 
   .loginLink {
-    @include shift(6);
-    @include span-columns(6 of 12);
+    @include span-columns(4 of 4);
+    @include pad();
     text-decoration: none;
     font-family: $mainfont;
-    color: #555454;
+    color: $registerLink;
     margin-top: 10px;
+    text-align: left;
   }
 }
 
@@ -337,25 +350,32 @@ color: $loginForm !important;
   border-bottom: 1px solid #000000;
   h2 {
       @include span-columns(12 of 12);
+      @include pad();
       font-family: $mainfont;
-      font-size: 14px;
+      margin: 0;
+      font-size: 22px;
       color: #FF6002;
+      text-align: center;
   }
 
   li {
-    @include span-columns(3 of 12);
-    text-align: center;
+    @include span-columns(4 of 12);
 
     span {
-      @include span-columns(3 of 3);
+      @include span-columns(4 of 4);
+      @include pad();
       font-family: $mainfont;
-      font-size: 12px;
+      font-size: 14px;
       color: #FF6002;
+      text-align: center;
     }
       img {
-        @include span-columns(2 of 3);
+        @include span-columns(2.5 of 4);
+        @include shift(0.8);
       }
   }
+
+
 }
 
 .addItemView{
@@ -377,6 +397,12 @@ color: $loginForm !important;
 
 
 
+.fa {
+  font-size: 30px;
+  outline: none;
+  border: none;
+  background-color: #fff;
+}
 //////////////////////////////////////
 //AddItem
 .mycloset{

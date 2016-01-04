@@ -18,8 +18,8 @@ class Login extends React.Component {
 
     return new Promise((resolve, reject) => {
       let self = this
-      let username = this.refs.username.value
-      let password = this.refs.password.value
+      let username = this.refs.username.value.replace(/\s+/g, '').toLowerCase();
+      let password = this.refs.password.value.replace(/\s+/g, '').toLowerCase();
       let userToken = this.props.userToken
 
       if (!username || !password) {
@@ -44,8 +44,6 @@ class Login extends React.Component {
   }
 
   createCloset(){
-
-
   return new Promise ((resolve, reject) => {
     console.log('you created a user closet')
     let self = this
@@ -122,12 +120,13 @@ class Login extends React.Component {
     return(
       <main className="loginMain">
         <section>
+          <span>take the WAR out of warDROBE</span>
           <form>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="password" ref="password" placeholder="password"/>
             <input className="subBtn" type="submit" ref="submitBtn" onClick={this.logTheUser}/>
+            <Link className="registerLink" to="/register">Register Now</Link>
           </form>
-          <Link className="registerLink" to="/register">Register Now</Link>
         </section>
       </main>
     )
