@@ -526,13 +526,13 @@ h1{
 /// Outfit Page
 
 .outfitPage{
-
+  @include outer-container;
   .outfitDisplay{
     @include  span-columns(3 of 12);
+
+    img{
+      @include span-columns(2 of 3)
+    }
   }
 
-  img{
-    @include span-columns(12 of 12)
-    margin-bottom: 10px;
-  }
 }

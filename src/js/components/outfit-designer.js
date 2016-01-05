@@ -1,6 +1,7 @@
 import React from 'react';
 import OutfitArticle from './outfit-article';
 import $ from 'jquery';
+import Category from './category';
 
 class OutfitDesigner extends React.Component {
 
@@ -166,6 +167,10 @@ class OutfitDesigner extends React.Component {
 
     return (
       <main className="outfittMain">
+        <Category title="Tops" limit={3} articles={this.props.userTops} />
+        <Category title="Bottoms" limit={3} articles={this.props.userBottoms} />
+        <Category title="Shoes" limit={3} articles={this.props.userShoes} />
+        <Category title="Accessories" limit={3} articles={this.props.userAccessories} />
         <section className='closetSection'>
           <ul className="closetItems">
             <h2>Tops</h2>
