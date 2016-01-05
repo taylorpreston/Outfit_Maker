@@ -41,7 +41,7 @@ class Home extends React.Component {
         loggedIn: true,
         userSession: userSession
       });
-    }
+    } 
   }
 
   handleUserCloset(data) {

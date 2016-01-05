@@ -41,8 +41,7 @@ componentDidMount(){
       url: `https://api.parse.com/1/logout`,
       type: 'POST',
       success: function() {
-        self.props.logoutUser();
-
+        self.props.logoutUser(null, '/dashboard');
 
       }
 

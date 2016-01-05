@@ -13,9 +13,6 @@ class Dashboard extends React.Component {
   componentDidMount() {
     let self = this
     let username = this.props.userSession.username
-      if(this.props.loggedIn === false){
-        this.props.history.pushState(null, '/');
-      }
    }
 
   render () {

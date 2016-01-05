@@ -110,9 +110,7 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    if(this.props.loggedIn === true){
-      this.props.history.pushState(null, '/dashboard');
-    }
+
   }
 
   render () {
