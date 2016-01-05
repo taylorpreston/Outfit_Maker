@@ -7,11 +7,19 @@ class PublicFeed extends React.Component {
 
   constructor(props) {
     super(props);
-
+    console.log(this.props)
     this.state = {
       hasLoaded: false,
-      users: []
+      users: [],
+      currentUser: {}
     };
+  }
+
+  handleCurrentUser(data){
+    console.log(data)
+    this.setStae({
+      currentUser: data
+    })
   }
 
   componentDidMount() {
@@ -30,9 +38,18 @@ class PublicFeed extends React.Component {
   }
 
   render() {
-    let names = this.state.users.map(user => {
+      let names = this.state.users.map(user => {
       let username = user.username
-      return <User key={user.objectId} username={username}/>;
+      let publicFeedUser = this.props.createPublicFeedUser
+      let publicFeedUserOutfits = this.props.createPublicFeedUserOutfits
+      let publicFeedUserId = this.props.setPublicFeedUserId
+      return <User key={user.objectId}
+                   username={username}
+                   user={user}
+                   createPublicFeedUser={publicFeedUser}
+                   createPublicFeedUserOutfits = {publicFeedUserOutfits}
+                   setPublicFeedUserId = {publicFeedUserId}
+                   />;
     })
     return (
       <main className="publicfeedMain">

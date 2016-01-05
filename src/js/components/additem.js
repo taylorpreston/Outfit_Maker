@@ -1,9 +1,6 @@
 import React from 'react';
-import $ from 'jquery'
 import {Link} from 'react-router';
-
-
-import headers from '../headers-setup'
+import $ from '../ajax';
 import Closet from './closet';
 
 class AddItem extends React.Component {
