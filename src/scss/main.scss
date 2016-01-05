@@ -59,18 +59,39 @@ color: $loginForm !important;
   color: #3ABFB5;
   line-height: 96px;
   font-size: 30px;
+  margin-left: 5.3%;
 }
 
 .linkContainer{
-  @include span-columns(8.5);
+  float: right;
 }
 
 .hangerlogo{
-  @include span-columns(2 of 12);
-  @include pad();
-  border: 1px solid black;
-  border-radius: 4%;
-  line-height: 96px;
+  padding: 0;
+  margin: 10px 0 0 0;
+  float: left;
+
+
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    background: #ccc;
+    border-radius: 90px;
+    background-image: url(../img/hanger.png);
+    background-repeat: no-repeat;
+    background-color: #FF6C00;
+    background-size: 50px;
+    background-position: center center;
+    height: 85px;
+    width: 85px;
+    float: left;
+  }
   // color: white;
   // background-color: black;
 }
