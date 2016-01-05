@@ -35,14 +35,12 @@ class Category extends React.Component {
   handleNext() {
     // do some checks to make sure we're not past the total number of items
     let self = this.state
-
     let page = self.page + 1;
-
     this.setState({
       page: page
     });
   }
-
+  
   render () {
     let articles = this.props.articles.filter((item, index) => {
       let start = this.state.page * this.props.limit;
