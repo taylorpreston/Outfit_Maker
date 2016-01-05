@@ -165,7 +165,7 @@ class OutfitDesigner extends React.Component {
     let outfitAccessories = (<img className='designImg' src={this.state.outfitAccessoriesImg}/>)
 
     return (
-      <main className="outfittMain">
+      <main className="outfitMain">
         <section className='closetSection'>
           <ul className="closetItems">
             <h2>Tops</h2>
@@ -185,7 +185,7 @@ class OutfitDesigner extends React.Component {
             </ul>
         </section>
         <section className="outfitDesigner">
-          <h3>selected top</h3>
+          <h3>Make an Outfit</h3>
           <div className="designerTop, design">
             {outfitTop}
           </div>

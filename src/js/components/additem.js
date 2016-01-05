@@ -118,14 +118,15 @@ class AddItem extends React.Component {
 
   render(){
 
-    let newlyUploadedImage = <span></span>;
+    let newlyUploadedImage = <span className="placeholder"><span className="image-placeholder"></span></span>;
     if (this.state.img){
       newlyUploadedImage = <img src={this.state.img}/>;
     }
 
     return(
       <div className="mycloset">
-      <h1>ADD ITEM</h1>
+      <h4>ADD ITEM</h4>
+      <section className="upload">
         <input className="filePicker" type="filepicker"
                data-fp-apikey="A73ighb7VQwywW2MGVsMTz"
                ref="filepicker"
@@ -134,29 +135,30 @@ class AddItem extends React.Component {
                data-fp-container="modal"
                />
         <section className="uploadedImage">{ newlyUploadedImage }</section>
+        </section>
         <section className="imageInputs">
-        <input className="inputs" type="text" ref="discription" placeholder="item discription"/>
-        <input className="inputs" type="text" ref="brand" placeholder="brand"/>
-        <select className="type" ref="type">
-          <option value="Top"> Top </option>
-          <option value="Bottom"> Bottom </option>
-          <option value="Shoes"> Shoes </option>
-          <option value="Accessory"> Accessory </option>
-        </select>
-        <select className="weather" ref="weather">
-          <option value="sunny"> Sunny </option>
-          <option value="rainy"> Rainy </option>
-          <option value="snowy"> Snowy </option>
-          <option value="normaly"> Normal </option>
-        </select>
-        <select className="style" ref="style">
-          <option value="fomal"> Formal </option>
-          <option value="casual"> Casual </option>
-          <option value="comfy"> Comfy </option>
-          <option value="active"> Active </option>
-        </select>
-        <input type="button" onClick={this.saveClothingItem} placeholder="Save Item"/>
-        <Link className="closetView" to="/closet">Go to closet</Link>
+          <input className="inputs" type="text" ref="discription" placeholder="Outfit Title"/>
+          <input className="inputs" type="text" ref="brand" placeholder="Brand"/>
+          <select className="type" ref="type">
+            <option value="Top"> Top </option>
+            <option value="Bottom"> Bottom </option>
+            <option value="Shoes"> Shoes </option>
+            <option value="Accessory"> Accessory </option>
+          </select>
+          <select className="weather" ref="weather">
+            <option value="sunny"> Sunny </option>
+            <option value="rainy"> Rainy </option>
+            <option value="snowy"> Snowy </option>
+            <option value="normaly"> Normal </option>
+          </select>
+          <select className="style" ref="style">
+            <option value="fomal"> Formal </option>
+            <option value="casual"> Casual </option>
+            <option value="comfy"> Comfy </option>
+            <option value="active"> Active </option>
+          </select>
+          <input className="saveItem" type="button" onClick={this.saveClothingItem} value="Save Item"/>
+          <Link className="toCloset" to="/closet">Go to closet</Link>
         </section>
       </div>
     )
