@@ -13,12 +13,6 @@ class Home extends React.Component {
     this.state = {
       loggedIn: false,
       userSession: {},
-      // userOutfits:[],
-      // userCloset: {data: {results: []}},
-      // userTops:[],
-      // userBottoms:[],
-      // userShoes:[],
-      // userAccessories:[],
       publicFeedUser:{
         user: false,
         closet:{},
@@ -32,8 +26,6 @@ class Home extends React.Component {
     }
     this.handleLogoutUser = this.handleLogoutUser.bind(this);
     this.handleLoginUser = this.handleLoginUser.bind(this)
-    // this.handleUserCloset = this.handleUserCloset.bind(this)
-    // this.handleUserOutfits = this.handleUserOutfits.bind(this)
     this.handlePublicFeedUser = this.handlePublicFeedUser.bind(this)
     this.handlePublicFeedUserOutfits = this.handlePublicFeedUserOutfits.bind(this)
     this.handlePublicFeedUserId =this.handlePublicFeedUserId.bind(this)
@@ -125,44 +117,7 @@ class Home extends React.Component {
       }
     })
   }
-  //
-  // handleUserOutfits(data) {
-  //   this.setState({
-  //     userOutfits: data
-  //   })
-  // }
-
-  // handleUserCloset(data) {
-  //   let allClothes = data.results
-  //   function tops(item){
-  //     return item.type === "Top";
-  //   }
-  //   function bottoms(item){
-  //     return item.type === "Bottom";
-  //   }
-  //   function shoes(item){
-  //     return item.type === "Shoes";
-  //   }
-  //   function accessories(item){
-  //     return item.type === "Accessory";
-  //   }
-  //
-  //   let userTops = allClothes.filter(tops)
-  //   let userBottoms = allClothes.filter(bottoms)
-  //   let userShoes = allClothes.filter(shoes)
-  //   let userAccessories = allClothes.filter(accessories)
-  //
-  //   this.setState({
-  //     userCloset: {
-  //       data
-  //     },
-  //     userTops,
-  //     userBottoms,
-  //     userShoes,
-  //     userAccessories
-  //   });
-  // }
-
+  
   handleLogoutUser() {
     this.setState({
       loggedIn: false,
