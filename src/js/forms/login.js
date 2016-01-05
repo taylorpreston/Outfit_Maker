@@ -38,73 +38,11 @@ class Login extends React.Component {
         })
       }
     });
-
   }
-
-  // getUserOutfits(){
-  //   let self = this
-  //   let userId = this.props.userSession.objectId
-  //
-  //   $.ajax({
-  //     url: 'https://api.parse.com/1/classes/Outfit',
-  //     type: 'GET',
-  //     data: {
-  //       where: JSON.stringify({
-  //         "user": {
-  //           "__type": "Pointer",
-  //           "className": "_User",
-  //           "objectId": userId
-  //         }
-  //       })
-  //     },
-  //     success: function(response){
-  //       console.log('you got outfits',response)
-  //       self.props.createUserOutfits(response)
-  //     }
-  //   })
-  // }
-  //
-  // createCloset(){
-  //   return new Promise((resolve, reject) => {
-  //   console.log('you created a user closet')
-  //   let self = this
-  //   let userId = this.props.userSession.objectId
-  //   $.ajax({
-  //     url: 'https://api.parse.com/1/classes/Article',
-  //     type: 'GET',
-  //     data: {
-  //       where: JSON.stringify({
-  //         "user": {
-  //           "__type": "Pointer",
-  //           "className": "_User",
-  //           "objectId": userId
-  //         }
-  //       })
-  //     },
-  //     success: function(response){
-  //       console.log('you made a closet',response)
-  //         self.props.handleUserCloset(response)
-  //         resolve()
-  //     },
-  //     error: function(){
-  //       console.log("error error")
-  //       reject()
-  //     }
-  //   })
-  //   })
-  // }
-
-
 
   logTheUser(e){
     e.preventDefault()
     this.loginUser()
-    // .then(() => {
-    //   this.createCloset().then(() => {
-        // this.getUserOutfits()
-      // })
-    // });
-    console.log(this.props)
   }
 
   componentDidMount() {
