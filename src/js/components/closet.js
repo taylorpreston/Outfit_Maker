@@ -21,7 +21,7 @@ class Closet extends React.Component {
 
   componentDidMount(){
     if(this.props.loggedIn === false){
-      this.props.history.pushState(null, '/')
+      // this.props.history.pushState(null, '/')
     }
     console.log('you created a user closet')
     let self = this
@@ -87,18 +87,18 @@ class Closet extends React.Component {
     return (
       <main className="closetMain">
         <Link className="addItemView" to="/additem">Add Item</Link>
-        <Category title="Tops" limit={3} articles={this.state.userTops} />
-        <Category title="Bottoms" limit={3} articles={this.state.userBottoms} />
-        <Category title="Shoes" limit={3} articles={this.state.userShoes} />
-        <Category title="Accessories" limit={3} articles={this.state.userAccessories} />
+        <Category title="Tops" limit={3} articles={this.state.userTops} location={this.props.location.pathname} />
+        <Category title="Bottoms" limit={3} articles={this.state.userBottoms} location={this.props.location.pathname}  />
+        <Category title="Shoes" limit={3} articles={this.state.userShoes} location={this.props.location.pathname} />
+        <Category title="Accessories" limit={3} articles={this.state.userAccessories} location={this.props.location.pathname} />
       </main>
     )}else{
       return(
         <main className="closetMain">
-          <Category title="Tops" limit={3} articles={this.props.publicFeedUser.userTops} />
-          <Category title="Bottoms" limit={3} articles={this.props.publicFeedUser.userBottoms} />
-          <Category title="Shoes" limit={3} articles={this.props.publicFeedUser.userShoes} />
-          <Category title="Accessories" limit={3} articles={this.props.publicFeedUser.userAccessories} />
+          <Category title="Tops" limit={3} articles={this.props.publicFeedUser.userTops} location={this.props.location.pathname} />
+          <Category title="Bottoms" limit={3} articles={this.props.publicFeedUser.userBottoms} location={this.props.location.pathname} />
+          <Category title="Shoes" limit={3} articles={this.props.publicFeedUser.userShoes} location={this.props.location.pathname} />
+          <Category title="Accessories" limit={3} articles={this.props.publicFeedUser.userAccessories} location={this.props.location.pathname} />
         </main>
       )
     }

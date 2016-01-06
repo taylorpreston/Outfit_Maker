@@ -29,11 +29,9 @@ class Login extends React.Component {
           success: function(response) {
             console.log('this is the response', response)
             self.props.loginUser(response);
-            resolve();
           },
           error: function(xhr, status, error){
               alert('please enter your correct details!')
-              reject();
           }
         })
       }
@@ -46,9 +44,7 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    if(this.props.loggedIn === true){
-      this.props.history.pushState(null, '/dashboard');
-    }
+
   }
 
   render () {

@@ -210,14 +210,16 @@ class OutfitDesigner extends React.Component {
                         limit={3}
                         articles={tOPS}
                         hangeItem={this.handleBottomChange}
-                        className="outfitArticle"/>
+                        className="outfitArticle"
+                         />
             </ul>
             <ul className="closetItems">
                 <Category title="Bottoms"
                           limit={3}
                           articles={bOTTOMS}
                           hangeItem={this.handleBottomChange}
-                          className="outfitArticle"/>
+                          className="outfitArticle"
+                           />
             </ul>
             <ul className="closetItems">
 
@@ -225,14 +227,16 @@ class OutfitDesigner extends React.Component {
                           limit={3}
                           articles={sHOES}
                           hangeItem={this.handleBottomChange}
-                          className="outfitArticle"/>
+                          className="outfitArticle"
+                           />
             </ul>
             <ul className="closetItems">
                 <Category title="Accessories"
                           limit={3}
                           articles={aCCESSORIES}
                           hangeItem={this.handleBottomChange}
-                          className="outfitArticle"/>
+                          className="outfitArticle"
+                           />
             </ul>
         </section>
         <section className="outfitDesigner">
@@ -279,14 +283,16 @@ class OutfitDesigner extends React.Component {
                         limit={3}
                         articles={tOPS}
                         hangeItem={this.handleBottomChange}
-                        className="outfitArticle"/>
+                        className="outfitArticle"
+                         />
             </ul>
             <ul className="closetItems">
                 <Category title="Bottoms"
                           limit={3}
                           articles={bOTTOMS}
                           hangeItem={this.handleBottomChange}
-                          className="outfitArticle"/>
+                          className="outfitArticle"
+                          />
             </ul>
             <ul className="closetItems">
 
@@ -294,14 +300,16 @@ class OutfitDesigner extends React.Component {
                           limit={3}
                           articles={sHOES}
                           hangeItem={this.handleBottomChange}
-                          className="outfitArticle"/>
+                          className="outfitArticle"
+                           />
             </ul>
             <ul className="closetItems">
                 <Category title="Accessories"
                           limit={3}
                           articles={aCCESSORIES}
                           hangeItem={this.handleBottomChange}
-                          className="outfitArticle"/>
+                          className="outfitArticle"
+                           />
             </ul>
         </section>
         <section className="outfitDesigner">

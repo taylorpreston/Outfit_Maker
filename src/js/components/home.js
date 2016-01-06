@@ -132,6 +132,7 @@ class Home extends React.Component {
         userSession: data
       })
       // this saves the sessionToken
+      console.log(data);
     localStorage.setItem('userSession', JSON.stringify(data));
     this.props.history.pushState(null, '/dashboard');
   }
@@ -165,7 +166,8 @@ class Home extends React.Component {
     });
     return (
       <div className = "mainWrap" >
-        <Header loggedIn = {this.state.loggedIn}
+        <Header userSession = {this.state.userSession}
+                loggedIn = {this.state.loggedIn}
                 loginUser = {this.handleLoginUser}
                 getRidOfPublicFeedUser = {this.getRidOfPublicFeedUser}
                 userSession = {this.state.userSession}

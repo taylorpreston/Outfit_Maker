@@ -15,33 +15,36 @@ class Category extends React.Component {
 
     this.handlePrev = this.handlePrev.bind(this);
     this.handleNext = this.handleNext.bind(this);
+
+    console.log(this.props)
   }
 
   handlePrev() {
-    // do some checks to make sure we're not past page 0
     let page;
-
-    if(page = 0){
-      document.getElementsByClassName('.prevBtn').style.visibility = "hidden";
-      console.log('hiding prev')
-    };
     page = this.state.page - 1;
-
     this.setState({
       page: page
     });
   }
 
   handleNext() {
-    // do some checks to make sure we're not past the total number of items
     let self = this.state
     let page = self.page + 1;
     this.setState({
       page: page
     });
   }
-  
+
   render () {
+    let preBTN;
+    let nextBTN;
+    let showNextBtn = (this.state.page+1) * this.props.limit < this.props.articles.length;
+    if(this.state.page >= 1){
+      preBTN = <button className="fa fa-arrow-left" onClick={this.handlePrev}></button>
+    } if (showNextBtn) {
+      nextBTN = <button className="fa fa-arrow-right" onClick={this.handleNext}></button>
+    }
+
     let articles = this.props.articles.filter((item, index) => {
       let start = this.state.page * this.props.limit;
       let end = start + this.props.limit;
@@ -51,17 +54,17 @@ class Category extends React.Component {
       }
       return false;
     }).map(item => {
-      return <Article key={item.objectId} img={item.img} brand={item.brand}/>
+      return <Article key={item.objectId} img={item.img} style={item.style} item={item}/>
     });
 
     return (
       <div>
-        <button className="fa fa-arrow-left" onClick={this.handlePrev}></button>
+          <div className="BTNContainer">{preBTN}</div>
         <ul className="closetItems">
           <h2>{this.props.title}</h2>
           {articles}
         </ul>
-        <button className="fa fa-arrow-right" onClick={this.handleNext}></button>
+          <div className="BTNContainer">{nextBTN}</div>
       </div>
     )
   }
