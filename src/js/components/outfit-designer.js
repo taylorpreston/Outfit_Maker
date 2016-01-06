@@ -1,15 +1,19 @@
 import React from 'react';
-import OutfitArticle from './outfit-article';
+import Category from './category';
 import $ from 'jquery';
 
 class OutfitDesigner extends React.Component {
 
   constructor(props){
     super(props)
-    console.log(this.props.userCloset)
-
 
     this.state = {
+      userCloset: {data: {results: []}},
+      userTops:[],
+      userBottoms:[],
+      userShoes:[],
+      userAccessories:[],
+
       outfitTop: null,
       outfitBottom: null,
       outfitShoes: null,
@@ -26,17 +30,25 @@ class OutfitDesigner extends React.Component {
     this.handleShoeChange = this.handleShoeChange.bind(this)
     this.handleAccessoriesChange = this.handleAccessoriesChange.bind(this)
     this.saveOutfit = this.saveOutfit.bind(this)
-    this.updateUserOutfits = this.updateUserOutfits.bind(this)
+    // this.updateUserOutfits = this.updateUserOutfits.bind(this)
+    this.handleUserCloset = this.handleUserCloset.bind(this)
   }
 
   saveOutfit(){
-    console.log(this.state)
+    console.log("you saved an OUTFIT!!!!", this.state)
     let self = this
     let top = this.state.outfitTop
     let bottom = this.state.outfitBottom
     let shoes =  this.state.outfitShoes
     let accessories = this.state.outfitAccessories
-    let userId = this.props.userSession.objectId
+    let userId = undefined
+    if(this.props.publicFeedUser.user === false){
+       userId = this.props.userSession.objectId
+    }else{
+       userId = this.props.publicFeedUserId
+    }
+
+    let createdBy = this.props.userSession.username
     let user = {
       "__type": "Pointer",
       "className": "_User",
@@ -61,32 +73,21 @@ class OutfitDesigner extends React.Component {
       data: JSON.stringify(newOutfit)
     }).done((result) => {
       console.log('saved outfit', result)
-      self.updateUserOutfits()
+      // self.updateUserOutfits()
+      self.setState({
+        outfitTop: null,
+        outfitBottom: null,
+        outfitShoes: null,
+        outfitAccessories: null,
+
+        outfitTopImg: null,
+        outfitBottomImg: null,
+        outfitShoesImg: null,
+        outfitAccessoriesImg: [null]
+        })
+      self.refs.outfitName.value = ''
       })
     }
-  }
-
-  updateUserOutfits(){
-    let self = this
-    let userId = this.props.userSession.objectId
-
-    $.ajax({
-      url: 'https://api.parse.com/1/classes/Outfit',
-      type: 'GET',
-      data: {
-        where: JSON.stringify({
-          "user": {
-            "__type": "Pointer",
-            "className": "_User",
-            "objectId": userId
-          }
-        })
-      },
-      success: function(response){
-        console.log('you got outfits',response)
-          self.props.createUserOutfits(response)
-      }
-    })
   }
 
 
@@ -120,41 +121,78 @@ class OutfitDesigner extends React.Component {
       outfitAccessoriesImg: data.img
     })
   }
+
+  handleUserCloset(data) {
+    let allClothes = data.results
+    function tops(item){
+      return item.type === "Top";
+    }
+    function bottoms(item){
+      return item.type === "Bottom";
+    }
+    function shoes(item){
+      return item.type === "Shoes";
+    }
+    function accessories(item){
+      return item.type === "Accessory";
+    }
+
+    let userTops = allClothes.filter(tops)
+    let userBottoms = allClothes.filter(bottoms)
+    let userShoes = allClothes.filter(shoes)
+    let userAccessories = allClothes.filter(accessories)
+
+    this.setState({
+      userCloset: {
+        data
+      },
+      userTops,
+      userBottoms,
+      userShoes,
+      userAccessories
+    });
+  }
+
   componentDidMount(){
     if(this.props.loggedIn === false){
       this.props.history.pushState(null, '/');
     }
 
+    let self = this
+    let userId = this.props.userSession.objectId
+    $.ajax({
+      url: 'https://api.parse.com/1/classes/Article',
+      type: 'GET',
+      data: {
+        where: JSON.stringify({
+          "user": {
+            "__type": "Pointer",
+            "className": "_User",
+            "objectId": userId
+          }
+        })
+      },
+      success: function(response){
+        console.log('you made a closet',response)
+          self.handleUserCloset(response)
+      },
+      error: function(){
+        console.log("error error")
+      }
+    })
+
   }
 
 
   render() {
-    let self = this.props
-    let tops = self.userTops.map(item => {
-      return <OutfitArticle key={item.objectId}
-                            item={item}
-                            changeItem={this.handleTopChange}
-                            className="outfitArticle"/>
-    })
-    let bottoms = self.userBottoms.map(item => {
-      return <OutfitArticle key={item.objectId}
-                            item={item}
-                            changeItem={this.handleBottomChange}
-                            className="outfitArticle"/>
-    })
-    let shoes = self.userShoes.map(item => {
-      return <OutfitArticle key={item.objectId}
-                            item={item}
-                            changeItem={this.handleShoeChange}
-                            className="outfitArticle"/>
-    })
-    let accessories = self.userAccessories.map(item => {
-      return <OutfitArticle key={item.objectId}
-                            item={item}
-                            changeItem={this.handleAccessoriesChange}
-                            className="outfitArticle"/>
-    })
+   if(this.props.publicFeedUser.user === false){
 
+    let self = this.state
+
+    let tOPS = self.userTops
+    let bOTTOMS = self.userBottoms
+    let sHOES = self.userShoes
+    let aCCESSORIES = self.userAccessories
 
     let outfitTop = (<img className='designImg' src={this.state.outfitTopImg}/>)
 
@@ -169,20 +207,37 @@ class OutfitDesigner extends React.Component {
         <section className='closetSection'>
           <h3>Make an Outfit</h3>
           <ul className="closetItems">
-            <h2>Tops</h2>
-              {tops}
+              <Category title="Tops"
+                        limit={3}
+                        articles={tOPS}
+                        hangeItem={this.handleBottomChange}
+                        className="outfitArticle"
+                         />
             </ul>
             <ul className="closetItems">
-              <h2>Bottoms</h2>
-              {bottoms}
+                <Category title="Bottoms"
+                          limit={3}
+                          articles={bOTTOMS}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"
+                           />
             </ul>
             <ul className="closetItems">
-              <h2>Shoes</h2>
-              {shoes}
+
+                <Category title="Shoes"
+                          limit={3}
+                          articles={sHOES}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"
+                           />
             </ul>
             <ul className="closetItems">
-              <h2>Accessories</h2>
-              {accessories}
+                <Category title="Accessories"
+                          limit={3}
+                          articles={aCCESSORIES}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"
+                           />
             </ul>
         </section>
         <section className="outfitDesigner">
@@ -202,8 +257,81 @@ class OutfitDesigner extends React.Component {
         </section>
         <button className="saveOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
       </main>
-    )
-  }
+    )}
+
+    else{
+
+    let self = this.props.publicFeedUser
+
+    let tOPS = self.userTops
+    let bOTTOMS = self.userBottoms
+    let sHOES = self.userShoes
+    let aCCESSORIES = self.userAccessories
+
+    let outfitTop = (<img className='designImg' src={this.state.outfitTopImg}/>)
+
+    let outfitBottom = (<img className='designImg' src={this.state.outfitBottomImg}/>)
+
+    let outfitShoes = (<img className='designImg' src={this.state.outfitShoesImg}/>)
+
+    let outfitAccessories = (<img className='designImg' src={this.state.outfitAccessoriesImg}/>)
+
+    return (
+      <main className="outfittMain">
+        <section className='closetSection'>
+          <ul className="closetItems">
+              <Category title="Tops"
+                        limit={3}
+                        articles={tOPS}
+                        hangeItem={this.handleBottomChange}
+                        className="outfitArticle"
+                         />
+            </ul>
+            <ul className="closetItems">
+                <Category title="Bottoms"
+                          limit={3}
+                          articles={bOTTOMS}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"
+                          />
+            </ul>
+            <ul className="closetItems">
+
+                <Category title="Shoes"
+                          limit={3}
+                          articles={sHOES}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"
+                           />
+            </ul>
+            <ul className="closetItems">
+                <Category title="Accessories"
+                          limit={3}
+                          articles={aCCESSORIES}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"
+                           />
+            </ul>
+        </section>
+        <section className="outfitDesigner">
+                    <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
+          <div className="designerTop, design">
+            {outfitTop}
+          </div>
+          <div className="designerBottom, design">
+            {outfitBottom}
+          </div>
+          <div className="designShoes, design">
+            {outfitShoes}
+          </div>
+          <div className="designAccessories">
+            {outfitAccessories}
+          </div>
+        </section>
+        <button className="saveOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
+      </main>
+    )}
+   }
   }
 
   export default OutfitDesigner;

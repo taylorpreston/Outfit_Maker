@@ -1,8 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import $ from 'jquery'
-
-import headers from '../headers-setup'
+import $ from '../ajax';
 
 class Dashboard extends React.Component {
 
@@ -13,9 +11,6 @@ class Dashboard extends React.Component {
   componentDidMount() {
     let self = this
     let username = this.props.userSession.username
-      if(this.props.loggedIn === false){
-        this.props.history.pushState(null, '/');
-      }
    }
 
   render () {

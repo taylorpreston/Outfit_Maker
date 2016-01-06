@@ -411,10 +411,10 @@ form {
 }
 
 .closetItems{
-  @include span-columns(12 of 12);
+  @include span-columns(11 of 12);
   border-bottom: 1px solid #000000;
   h2 {
-      @include span-columns(12 of 12);
+      @include span-columns(11 of 11);
       @include pad();
       font-family: $mainfont;
       margin: 0;
@@ -424,19 +424,22 @@ form {
   }
 
   li {
-    @include span-columns(4 of 12);
+  @include span-columns(3 of 11);
+  @include shift(0.5);
 
     span {
-      @include span-columns(4 of 4);
-      @include pad();
+      @include span-columns(3 of 3);
       font-family: $mainfont;
+      margin-bottom: 10px;
       font-size: 14px;
       color: #FF6002;
       text-align: center;
     }
       img {
-        @include span-columns(2.5 of 4);
-        @include shift(0.8);
+        @include span-columns(2.4 of 3);
+        @include pad();
+        @include shift(0.2);
+
       }
   }
 
@@ -449,25 +452,28 @@ form {
   font-size: 20px;
   color: #3ABFB5;
 }
-// .prevBtn{
-//   background-image: url(/Users/katebrock/dev/homework/final/src/img/rightarrow.png);
-//   cursor: pointer;
-//   border: none;
-// }
-// // .nextBtn{
-// //   background: url(../img/rightarrow.png);
-// //   cursor: pointer;
-// //   border: none;
-// // }
-
-
-
-.fa {
-  font-size: 30px;
-  outline: none;
-  border: none;
-  background-color: #fff;
+.BTNContainer{
+  @include span-columns(0.5 of 12);
 }
+
+  .fa-arrow-left{
+    @include span-columns(0.5 of 12);
+    line-height: 300px;
+    font-size: 38px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+  }
+  .fa-arrow-right{
+    @include span-columns(0.5 of 12);
+    line-height: 300px;
+    font-size: 38px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+  }
+
+
 //////////////////////////////////////
 //AddItem
 .mycloset{
