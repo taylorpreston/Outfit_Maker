@@ -167,6 +167,7 @@ class OutfitDesigner extends React.Component {
     return (
       <main className="outfitMain">
         <section className='closetSection'>
+          <h3>Make an Outfit</h3>
           <ul className="closetItems">
             <h2>Tops</h2>
               {tops}
@@ -185,7 +186,7 @@ class OutfitDesigner extends React.Component {
             </ul>
         </section>
         <section className="outfitDesigner">
-          <h3>Make an Outfit</h3>
+          <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
           <div className="designerTop, design">
             {outfitTop}
           </div>
@@ -198,7 +199,6 @@ class OutfitDesigner extends React.Component {
           <div className="designAccessories">
             {outfitAccessories}
           </div>
-          <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
         </section>
         <button className="saveOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
       </main>

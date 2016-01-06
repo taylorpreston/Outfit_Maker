@@ -52,7 +52,7 @@ class Register extends React.Component {
     return(
       <main className="registerMain">
         <section>
-          <span>Register with us</span>
+          <span>Register with us.</span>
           <form onSubmit={this.registerUser}>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="text" ref="email" placeholder="email"/>

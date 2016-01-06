@@ -120,7 +120,7 @@ class Login extends React.Component {
     return(
       <main className="loginMain">
         <section>
-          <span>take the WAR out of warDROBE</span>
+          <span className="motto"><b>Take the</b> <span className="highlight">WAR</span> <b>out of your </b><span className="highlight">WAR</span><b>DROBE</b>.</span>
           <form>
             <input className="input" type="text" ref="username" placeholder="username"/>
             <input className="input" type="password" ref="password" placeholder="password"/>
