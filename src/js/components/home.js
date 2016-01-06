@@ -41,7 +41,7 @@ class Home extends React.Component {
         loggedIn: true,
         userSession: userSession
       });
-    } 
+    }
   }
 
 
@@ -117,7 +117,7 @@ class Home extends React.Component {
       }
     })
   }
-  
+
   handleLogoutUser() {
     this.setState({
       loggedIn: false,
@@ -132,6 +132,7 @@ class Home extends React.Component {
         userSession: data
       })
       // this saves the sessionToken
+      console.log(data);
     localStorage.setItem('userSession', JSON.stringify(data));
     this.props.history.pushState(null, '/dashboard');
   }
@@ -165,10 +166,12 @@ class Home extends React.Component {
     });
     return (
       <div className = "mainWrap" >
-        <Header loggedIn = {this.state.loggedIn}
+        <Header userSession = {this.state.userSession}
+                loggedIn = {this.state.loggedIn}
                 loginUser = {this.handleLoginUser}
                 getRidOfPublicFeedUser = {this.getRidOfPublicFeedUser}
-                userSession = {this.state.userSession}/>
+                userSession = {this.state.userSession}
+                logoutUser = {this.handleLogoutUser}/>
 
         {childrenProps}
       </div>

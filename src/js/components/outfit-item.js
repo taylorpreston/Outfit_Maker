@@ -14,15 +14,14 @@ class OutfitItem extends React.Component {
 
   componentDidMount() {
     let outfit = this.props.outfit
-    if(!outfit.accessories.img){gulp
+    if(!outfit.accessories.img){
       return
     } else {
     this.setState({
       outfitAccessories: outfit.accessories.img
-    })
-   }
+      })
+    }
   }
-
   deleteOutfit(){
     let objId = this.props.outfit.objectId
     console.log(objId)
@@ -30,7 +29,7 @@ class OutfitItem extends React.Component {
       url: `https://api.parse.com/1/classes/Outfit/${objId}`,
       type: 'DELETE',
     })
-    this.forceUpdate()
+    this.props.handleOutfitChange()
   }
 
   render () {
@@ -38,7 +37,7 @@ class OutfitItem extends React.Component {
     return(
       <div className="outfitDisplay">
           <h2>{outfit.outfitName}</h2>
-          <img className="top" src={outfit.top.img}/>
+          <imgF className="top" src={outfit.top.img}/>
           <img className="bottom" src={outfit.bottom.img}/>
           <img className="shoes" src={outfit.shoes.img}/>
           <img className="accessory" src={this.state.outfitAccessories}/>

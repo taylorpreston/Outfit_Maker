@@ -9,6 +9,12 @@ class Outfits extends React.Component {
     this.state = {
       userOutfits:[]
     }
+    this.handleOutfitChange = this.handleOutfitChange.bind(this)
+  }
+
+
+  handleOutfitChange(){
+    this.forceUpdate()
   }
 
   componentDidMount(){
@@ -52,7 +58,7 @@ class Outfits extends React.Component {
       }
 
     let outfits = userOutfits.map( outfit => {
-      return <OutfitItem key={outfit.objectId} outfit={outfit}/>
+      return <OutfitItem key={outfit.objectId} outfit={outfit} handleOutfitChange={this.handleOutfitChange}/>
       })
 
     return(

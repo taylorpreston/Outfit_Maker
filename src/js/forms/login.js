@@ -29,11 +29,9 @@ class Login extends React.Component {
           success: function(response) {
             console.log('this is the response', response)
             self.props.loginUser(response);
-            resolve();
           },
           error: function(xhr, status, error){
               alert('please enter your correct details!')
-              reject();
           }
         })
       }

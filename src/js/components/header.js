@@ -13,25 +13,23 @@ class Header extends React.Component {
     this.logoutUser = this.logoutUser.bind(this)
     this.getRidOfPublicFeedUser = this.getRidOfPublicFeedUser.bind(this)
 
-
-    let self = this
-    if (localStorage.getItem('userSession')) {
-      let ID = JSON.parse(localStorage.getItem('userSession')).objectId;
-
-      $.ajax({
-        url: `https://api.parse.com/1/users/${ID}`,
-        type: 'GET',
-        success: (response) => {
-          self.setState({user: response.username})
-          self.props.loginUser(response)
-          console.log(response)
-        }
-      });
-    }
   }
 
   componentDidMount(){
 
+        let self = this
+        if (localStorage.getItem('userSession')) {
+          $.ajax({
+            url: `https://api.parse.com/1/users/me`,
+            type: 'GET',
+            headers: {"X-Parse-Session-Token": JSON.parse(localStorage.getItem('userSession')).sessionToken},
+            success: (response) => {
+              self.setState({user: response.username})
+              self.props.loginUser(response)
+              console.log(response)
+            }
+          });
+        }
   }
 
 
@@ -41,7 +39,6 @@ class Header extends React.Component {
   logoutUser(e) {
     let self = this;
     e.preventDefault();
-
     $.ajax({
       headers: {
         "X-Parse-Session-Token": JSON.parse(localStorage.getItem('userSession')).sessionToken
@@ -50,39 +47,36 @@ class Header extends React.Component {
       type: 'POST',
       success: function() {
         self.props.logoutUser(null, '/dashboard');
-
       }
-
     })
-
   }
   render() {
     let links;
     let user = this.props.userSession.username;
     if (this.props.loggedIn === true) {
       links = (
-        <div>
+        <div className="linkContainer">
           <div className="userbox">
           <span href="#" className="avatar"><img src="http://www.fillmurray.com/50/50" /></span>
           <span className="userlink">Welcome, {user}</span>
           </div>
           <section className="headerNav">
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-home " to="/dashboard">
+            <Link onClick={this.getRidOfPublicFeedUser} className="headerlink " to="/dashboard">
               Dashboard
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-columns " to="/closet">
+            <Link onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/closet">
               Closet
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-suitcase " to="/outfits">
-              Outfits
+            <Link onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/outfits">
+              Outfit
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-scissors " to="/outfitdesigner">
+            <Link onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/outfitdesigner">
               Outfit Designer
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-users " to="/publicfeed">
+            <Link onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/publicfeed">
               Public Feed
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-sign-out " to="/" onClick={this.logoutUser}>
+            <Link className="headerlink" to="/" onClick={this.logoutUser}>
               Logout
             </Link>
           </section>

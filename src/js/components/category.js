@@ -15,6 +15,8 @@ class Category extends React.Component {
 
     this.handlePrev = this.handlePrev.bind(this);
     this.handleNext = this.handleNext.bind(this);
+
+    console.log(this.props)
   }
 
   handlePrev() {
@@ -32,7 +34,7 @@ class Category extends React.Component {
       page: page
     });
   }
-  
+
   render () {
     let preBTN;
     let nextBTN;
@@ -52,7 +54,7 @@ class Category extends React.Component {
       }
       return false;
     }).map(item => {
-      return <Article key={item.objectId} img={item.img} style={item.style}/>
+      return <Article key={item.objectId} img={item.img} style={item.style} item={item}/>
     });
 
     return (
