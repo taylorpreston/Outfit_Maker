@@ -115,6 +115,7 @@ class OutfitDesigner extends React.Component {
     })
   }
   handleAccessoriesChange(data){
+    console.log('HELLO')
     console.log('this is my ACCESSORIES state', data)
     this.setState({
       outfitAccessories: data,
@@ -209,7 +210,7 @@ class OutfitDesigner extends React.Component {
               <Category title="Tops"
                         limit={3}
                         articles={tOPS}
-                        hangeItem={this.handleBottomChange}
+                        changeItem={this.handleTopChange}
                         className="outfitArticle"
                          />
             </ul>
@@ -217,7 +218,7 @@ class OutfitDesigner extends React.Component {
                 <Category title="Bottoms"
                           limit={3}
                           articles={bOTTOMS}
-                          hangeItem={this.handleBottomChange}
+                          changeItem={this.handleBottomChange}
                           className="outfitArticle"
                            />
             </ul>
@@ -226,7 +227,7 @@ class OutfitDesigner extends React.Component {
                 <Category title="Shoes"
                           limit={3}
                           articles={sHOES}
-                          hangeItem={this.handleBottomChange}
+                          changeItem={this.handleShoeChange}
                           className="outfitArticle"
                            />
             </ul>
@@ -234,7 +235,7 @@ class OutfitDesigner extends React.Component {
                 <Category title="Accessories"
                           limit={3}
                           articles={aCCESSORIES}
-                          hangeItem={this.handleBottomChange}
+                          changeItem={this.handleAccessoriesChange}
                           className="outfitArticle"
                            />
             </ul>
@@ -282,7 +283,7 @@ class OutfitDesigner extends React.Component {
               <Category title="Tops"
                         limit={3}
                         articles={tOPS}
-                        hangeItem={this.handleBottomChange}
+                        changeItem={this.handleTopChange}
                         className="outfitArticle"
                          />
             </ul>
@@ -290,7 +291,7 @@ class OutfitDesigner extends React.Component {
                 <Category title="Bottoms"
                           limit={3}
                           articles={bOTTOMS}
-                          hangeItem={this.handleBottomChange}
+                          changeItem={this.handleBottomChange}
                           className="outfitArticle"
                           />
             </ul>
@@ -299,7 +300,7 @@ class OutfitDesigner extends React.Component {
                 <Category title="Shoes"
                           limit={3}
                           articles={sHOES}
-                          hangeItem={this.handleBottomChange}
+                          changeItem={this.handleShoeChange}
                           className="outfitArticle"
                            />
             </ul>
@@ -307,7 +308,7 @@ class OutfitDesigner extends React.Component {
                 <Category title="Accessories"
                           limit={3}
                           articles={aCCESSORIES}
-                          hangeItem={this.handleBottomChange}
+                          changeItem={this.handleAccessoriesChange}
                           className="outfitArticle"
                            />
             </ul>
