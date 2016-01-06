@@ -57,12 +57,12 @@ class Category extends React.Component {
 
     return (
       <div>
-          <div className="BTNContainer">{preBTN}</div>
         <ul className="closetItems">
           <h2>{this.props.title}</h2>
+            <div className="BTNContainer">{preBTN}</div>
           {articles}
+            <div className="BTNContainer">{nextBTN}</div>
         </ul>
-          <div className="BTNContainer">{nextBTN}</div>
       </div>
     )
   }

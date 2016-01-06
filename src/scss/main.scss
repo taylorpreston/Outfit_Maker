@@ -364,13 +364,14 @@ form {
 
 .closetMain{
   @include outer-container;
+  @include pad();
 }
 
 .closetItems{
-  @include span-columns(11 of 12);
+  @include span-columns(12 of 12);
   border-bottom: 1px solid #000000;
   h2 {
-      @include span-columns(11 of 11);
+      @include span-columns(12 of 12);
       @include pad();
       font-family: $mainfont;
       margin: 0;
@@ -380,8 +381,8 @@ form {
   }
 
   li {
-  @include span-columns(3 of 11);
-  @include shift(0.5);
+  @include span-columns(3 of 12);
+  text-align: center;
 
     span {
       @include span-columns(3 of 3);
@@ -403,8 +404,13 @@ form {
 }
 
 .addItemView{
+  @include span-columns(2 of 12);
+  @include pad();
+  @include shift(5);
   text-decoration: none;
   font-family: $mainfont;
+  border: 1px solid #000000;
+  text-align: center;
   font-size: 20px;
   color: #3ABFB5;
 }
