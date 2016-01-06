@@ -15,7 +15,7 @@ class Article extends React.Component {
   render () {
     return(
         <li>
-          <span>{this.props.brand}</span>
+          <span>{this.props.style}</span>
           <img src={this.props.img}/>
           <button className='delete' />
         </li>

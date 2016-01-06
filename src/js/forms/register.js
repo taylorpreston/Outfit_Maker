@@ -17,10 +17,10 @@ class Register extends React.Component {
   registerUser(e){
     e.preventDefault()
     let self = this
-    let username = this.refs.username.value.replace(/\s+/g, '').toLowerCase;
-    let email = this.refs.email.value.replace(/\s+/g, '').toLowerCase;
-    let password = this.refs.password.value.replace(/\s+/g, '').toLowerCase;
-    let passConfirm = this.refs.confirmPassword.value.replace(/\s+/g, '').toLowerCase;
+    let username = this.refs.username.value;
+    let email = this.refs.email.value;
+    let password = this.refs.password.value;
+    let passConfirm = this.refs.confirmPassword.value;
     let user = {
       username,
       email,
