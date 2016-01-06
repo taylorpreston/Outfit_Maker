@@ -1,9 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import $ from 'jquery'
-
-import setUp from '../headers-setup';
-
+import $ from '../ajax';
 class Register extends React.Component {
 
   constructor(props){

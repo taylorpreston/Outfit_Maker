@@ -6,3 +6,6 @@ $.ajaxSetup({
    "X-Parse-REST-API-Key": "SuMuSHoO3R9CXoopQQNbVgWj3aRsxXs6WDdgWyLw"
  }
 });
+
+
+export default $;

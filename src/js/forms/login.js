@@ -1,16 +1,14 @@
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
-import $ from 'jquery';
-
-import headers from '../headers-setup'
+import $ from '../ajax';
 
 class Login extends React.Component {
 
   constructor(props) {
     super(props)
     this.loginUser = this.loginUser.bind(this)
-    this.createCloset = this.createCloset.bind(this)
-    this.getUserOutfits = this.getUserOutfits.bind(this)
+    // this.getUserOutfits = this.getUserOutfits.bind(this)
+    // this.createCloset = this.createCloset.bind(this)
     this.logTheUser = this.logTheUser.bind(this)
   }
 
@@ -31,82 +29,18 @@ class Login extends React.Component {
           success: function(response) {
             console.log('this is the response', response)
             self.props.loginUser(response);
-            resolve();
           },
           error: function(xhr, status, error){
               alert('please enter your correct details!')
-              reject();
           }
         })
       }
     });
-
   }
-
-  createCloset(){
-  return new Promise ((resolve, reject) => {
-    console.log('you created a user closet')
-    let self = this
-    let userId = this.props.userSession.objectId
-
-    $.ajax({
-      url: 'https://api.parse.com/1/classes/Article',
-      type: 'GET',
-      data: {
-        where: JSON.stringify({
-          "user": {
-            "__type": "Pointer",
-            "className": "_User",
-            "objectId": userId
-          }
-        })
-      },
-      success: function(response){
-        console.log('you made a closet',response)
-          self.props.createUserCloset(response)
-          resolve()
-      },
-      error: function(){
-        console.log("error error")
-        reject()
-      }
-    })
-  })
-}
-
-  getUserOutfits(){
-    let self = this
-    let userId = this.props.userSession.objectId
-
-    $.ajax({
-      url: 'https://api.parse.com/1/classes/Outfit',
-      type: 'GET',
-      data: {
-        where: JSON.stringify({
-          "user": {
-            "__type": "Pointer",
-            "className": "_User",
-            "objectId": userId
-          }
-        })
-      },
-      success: function(response){
-        console.log('you got outfits',response)
-        self.props.createUserOutfits(response)
-      }
-    })
-  }
-
-
 
   logTheUser(e){
     e.preventDefault()
-    this.loginUser().then(() => {
-      this.createCloset().then(() => {
-        this.getUserOutfits()
-      })
-    });
-    console.log(this.props)
+    this.loginUser()
   }
 
   componentDidMount() {
