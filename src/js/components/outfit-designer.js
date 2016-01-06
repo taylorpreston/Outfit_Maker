@@ -203,8 +203,9 @@ class OutfitDesigner extends React.Component {
     let outfitAccessories = (<img className='designImg' src={this.state.outfitAccessoriesImg}/>)
 
     return (
-      <main className="outfittMain">
+      <main className="outfitMain">
         <section className='closetSection'>
+          <h3>Make an Outfit</h3>
           <ul className="closetItems">
               <Category title="Tops"
                         limit={3}
@@ -240,6 +241,7 @@ class OutfitDesigner extends React.Component {
             </ul>
         </section>
         <section className="outfitDesigner">
+          <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
           <div className="designerTop, design">
             {outfitTop}
           </div>
@@ -252,7 +254,6 @@ class OutfitDesigner extends React.Component {
           <div className="designAccessories">
             {outfitAccessories}
           </div>
-          <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
         </section>
         <button className="saveOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
       </main>
@@ -313,6 +314,7 @@ class OutfitDesigner extends React.Component {
             </ul>
         </section>
         <section className="outfitDesigner">
+                    <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
           <div className="designerTop, design">
             {outfitTop}
           </div>
@@ -325,7 +327,6 @@ class OutfitDesigner extends React.Component {
           <div className="designAccessories">
             {outfitAccessories}
           </div>
-          <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
         </section>
         <button className="saveOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
       </main>
