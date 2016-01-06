@@ -10,13 +10,14 @@ body{
   background-color: #fff;
 
   h1{
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Josefin Sans', sans-serif;
   }
   h2{
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Josefin Sans', sans-serif;
   }
   h3{
-    font-family: 'Josefin Slab', serif;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #3ABFB5;
   }
 }
 
@@ -92,8 +93,7 @@ color: $loginForm !important;
     width: 85px;
     float: left;
   }
-  // color: white;
-  // background-color: black;
+
 }
 .userbox{
   @include span-columns(12 of 12);
@@ -191,10 +191,6 @@ form {
     text-align: left;
   }
 }
-
-
-
-
 
 // ===================================
 // DASHBOARD MAIN
@@ -429,49 +425,156 @@ form {
 .mycloset{
   @include outer-container;
 }
-h1{
+h4{
+  @include span-columns(12);
   text-align: center;
   font-family: $mainfont;
   font-weight: lighter;
+  font-size: 30px;
   color: #3ABFB5;
 }
-.filePicker{
-  @include span-columns(12 of 12);
-}
-.filePickerBtn{
-  @include span-columns(12 of 12);
-  background-color: rgba(246, 246, 246, 0.22);
-  color: #000000;
-  font-weight: normal;
-  font-size: 15px;
-  font-family: $mainfont;
-  border: 4px solid #000000;
-  width: 118px;
-  padding: 11px 14px 11px 14px;
-  margin-top: 10px;
-  outline: none;
-}
-.uploadedImage{
-  @include span-columns(4 of 12);
-  img {
-    max-width: 100%;
+
+.upload{
+  @include span-columns(6);
+
+    .filePickerBtn{
+    @include span-columns(2 of 6);
+    @include shift(1 of 6);
+    background-color: rgba(246, 246, 246, 0.22);
+    color: #000000;
+    font-weight: normal;
+    font-size: 15px;
+    font-family: $mainfont;
+    border: 2px solid #000000;
+    width: 118px;
+    padding: 11px 14px 11px 14px;
+    outline: none;
+    background-color: rgba(246, 246, 246, 0.22);
+    cursor: pointer;
+    -webkit-transition: background-color .7s ease-out;
+    -moz-transition: background-color .7s ease-out;
+    -o-transition: background-color .7s ease-out;
+    transition: background-color .7s ease-out;
+    &:hover{
+      cursor: pointer;
+      -webkit-transition: background-color 2s ease-out;
+      -moz-transition: background-color 2s ease-out;
+      -o-transition: background-color 2s ease-out;
+      transition: background-color 2s ease-out;
+      color: white;
+      background-color: #FF7C2F;
+      border: 2px solid gray;
+      }
+    }
+    .uploadedImage{
+    @include span-columns(4 of 6);
+    @include shift(2 of 6);
+    margin-top: 20px;
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .uploadedImage .placeholder {
+      border: 1px dashed rgba(0, 0, 0, 0.32);
+      display: block;
+      height: 220px;
+    }
+    .uploadedImage .image-placeholder{
+      background-color: rgba(255, 108, 0, 0.45);
+      background-image: url(../img/hanger.png);
+      border-radius: 90%;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+      margin: 0 auto;
+      margin-top: 17px;
+      height: 185px;
+      width: 185px;
+
+    }
   }
-}
 
-.imageInputs{
-  @include shift(7);
-  @include span-columns(5 of 12);
+  .imageInputs{
+    @include span-columns(6);
+  }
+  .inputs{
+    @include span-columns(3 of 6);
+    @include shift(1.5 of 6);
+    background-color: rgba(246, 246, 246, 0.22);
+    padding: 12px 14px 8px 10px;
+    border: 2px solid $loginForm;
+    margin-bottom: 15px;
+    color: $loginForm;
+    font-size: 20px;
+    outline: none;
+    text-decoration: none;
+    font-family: $mainfont;
 
-  input{
-    @include span-columns(5 of 5);
   }
 
   select{
-    @include span-columns(5 of 5);
+      @include span-columns(3 of 6);
+      @include shift(1.5 of 6);
       font-family: $mainfont;
       font-size: 12px;
+      text-overflow: '';
+      text-indent: 0.01px;
+      border: 2px solid black;
+      border-radius: 0px;
+      padding-left: 10px;
+      height: 30px;
+      margin-bottom: 10px;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: url(/img/downarrow.svg) no-repeat 100% 50%;
   }
+
+
+.saveItem{
+    @include span-columns(3 of 6);
+    @include shift(1.5 of 6);
+    background-color: rgba(246, 246, 246, 0.22);
+    padding: 12px 14px 8px 10px;
+    border: 2px solid $loginForm;
+    margin-bottom: 15px;
+    color: $loginForm;
+    font-size: 20px;
+    outline: none;
+    text-decoration: none;
+    font-family: $mainfont;
+    background-color: rgba(246, 246, 246, 0.22);
+    cursor: pointer;
+    -webkit-transition: background-color .7s ease-out;
+    -moz-transition: background-color .7s ease-out;
+    -o-transition: background-color .7s ease-out;
+    transition: background-color .7s ease-out;
+    &:hover{
+      cursor: pointer;
+      -webkit-transition: background-color 2s ease-out;
+      -moz-transition: background-color 2s ease-out;
+      -o-transition: background-color 2s ease-out;
+      transition: background-color 2s ease-out;
+      color: white;
+      background-color: #FF7C2F;
+      border: 2px solid gray;
+      }
 }
+
+.toCloset{
+  @include span-columns(3 of 6);
+  @include shift(1.5 of 6);
+  text-decoration: none;
+  font-family: $mainfont;
+  color: #3ABFB5;
+  display: inline-block;
+  margin-top: 10px;
+  text-align: right;
+}
+
+
 
 ///////////////////////////////////////////
 /// Outfit Maker Page
@@ -510,7 +613,7 @@ h1{
   font-weight: normal;
   font-size: 30px;
   font-family: $mainfont;
-  border: 4px solid #000000;
+  border: 3px solid #000000;
   width: 138px;
   padding: 11px 14px 11px 14px;
   margin-top: 10px;
@@ -529,7 +632,7 @@ h1{
     color: white;
     background-color: #FF7C2F;
     border: 2px solid gray;
-  }
+    }
 }
 ///////////////////
 /// Outfit Page

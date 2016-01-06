@@ -90,28 +90,6 @@ class OutfitDesigner extends React.Component {
     }
   }
 
-  // updateUserOutfits(){
-  //   let self = this
-  //   let userId = this.props.userSession.objectId
-  //
-  //   $.ajax({
-  //     url: 'https://api.parse.com/1/classes/Outfit',
-  //     type: 'GET',
-  //     data: {
-  //       where: JSON.stringify({
-  //         "user": {
-  //           "__type": "Pointer",
-  //           "className": "_User",
-  //           "objectId": userId
-  //         }
-  //       })
-  //     },
-  //     success: function(response){
-  //       console.log(response)
-  //     }
-  //   })
-  // }
-
 
   handleTopChange(data){
     console.log('this is my TOP state', data)
@@ -216,40 +194,6 @@ class OutfitDesigner extends React.Component {
     let sHOES = self.userShoes
     let aCCESSORIES = self.userAccessories
 
-    let tops = self.userTops.map(item => {
-      return <Category key={item.objectId}
-                       title="Tops"
-                       limit={3}
-                       articles={tOPS}
-                       hangeItem={this.handleBottomChange}
-                       className="outfitArticle"/>
-    })
-    let bottoms = self.userBottoms.map(item => {
-      return <Category key={item.objectId}
-                       title="Tops"
-                       limit={3}
-                       articles={bOTTOMS}
-                       hangeItem={this.handleBottomChange}
-                       className="outfitArticle"/>
-    })
-    let shoes = self.userShoes.map(item => {
-      return <Category key={item.objectId}
-                       title="Tops"
-                       limit={3}
-                       articles={sHOES}
-                       hangeItem={this.handleBottomChange}
-                       className="outfitArticle"/>
-    })
-    let accessories = self.userAccessories.map(item => {
-      return <Category key={item.objectId}
-                       title="Tops"
-                       limit={3}
-                       articles={aCCESSORIES}
-                       hangeItem={this.handleBottomChange}
-                       className="outfitArticle"/>
-    })
-
-
     let outfitTop = (<img className='designImg' src={this.state.outfitTopImg}/>)
 
     let outfitBottom = (<img className='designImg' src={this.state.outfitBottomImg}/>)
@@ -262,24 +206,36 @@ class OutfitDesigner extends React.Component {
       <main className="outfittMain">
         <section className='closetSection'>
           <ul className="closetItems">
-            <h2>Tops</h2>
-              {tops}
+              <Category title="Tops"
+                        limit={3}
+                        articles={tOPS}
+                        hangeItem={this.handleBottomChange}
+                        className="outfitArticle"/>
             </ul>
             <ul className="closetItems">
-              <h2>Bottoms</h2>
-              {bottoms}
+                <Category title="Bottoms"
+                          limit={3}
+                          articles={bOTTOMS}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"/>
             </ul>
             <ul className="closetItems">
-              <h2>Shoes</h2>
-              {shoes}
+
+                <Category title="Shoes"
+                          limit={3}
+                          articles={sHOES}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"/>
             </ul>
             <ul className="closetItems">
-              <h2>Accessories</h2>
-              {accessories}
+                <Category title="Accessories"
+                          limit={3}
+                          articles={aCCESSORIES}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"/>
             </ul>
         </section>
         <section className="outfitDesigner">
-          <h3>selected top</h3>
           <div className="designerTop, design">
             {outfitTop}
           </div>
@@ -307,41 +263,6 @@ class OutfitDesigner extends React.Component {
     let sHOES = self.userShoes
     let aCCESSORIES = self.userAccessories
 
-
-    let tops = self.userTops.map(item => {
-      return <Category key={item.objectId}
-                       title="Tops"
-                       limit={3}
-                       articles={tOPS}
-                       hangeItem={this.handleBottomChange}
-                       className="outfitArticle"/>
-                   })
-    let bottoms = self.userBottoms.map(item => {
-      return <Category key={item.objectId}
-                       title="Tops"
-                       limit={3}
-                       articles={bOTTOMS}
-                       hangeItem={this.handleBottomChange}
-                       className="outfitArticle"/>
-    })
-    let shoes = self.userShoes.map(item => {
-      return <Category key={item.objectId}
-                       title="Tops"
-                       limit={3}
-                       articles={sHOES}
-                       hangeItem={this.handleBottomChange}
-                       className="outfitArticle"/>
-    })
-    let accessories = self.userAccessories.map(item => {
-      return <Category key={item.objectId}
-                       title="Tops"
-                       limit={3}
-                       articles={aCCESSORIES}
-                       hangeItem={this.handleBottomChange}
-                       className="outfitArticle"/>
-    })
-
-
     let outfitTop = (<img className='designImg' src={this.state.outfitTopImg}/>)
 
     let outfitBottom = (<img className='designImg' src={this.state.outfitBottomImg}/>)
@@ -354,24 +275,36 @@ class OutfitDesigner extends React.Component {
       <main className="outfittMain">
         <section className='closetSection'>
           <ul className="closetItems">
-            <h2>Tops</h2>
-              {tops}
+              <Category title="Tops"
+                        limit={3}
+                        articles={tOPS}
+                        hangeItem={this.handleBottomChange}
+                        className="outfitArticle"/>
             </ul>
             <ul className="closetItems">
-              <h2>Bottoms</h2>
-              {bottoms}
+                <Category title="Bottoms"
+                          limit={3}
+                          articles={bOTTOMS}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"/>
             </ul>
             <ul className="closetItems">
-              <h2>Shoes</h2>
-              {shoes}
+
+                <Category title="Shoes"
+                          limit={3}
+                          articles={sHOES}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"/>
             </ul>
             <ul className="closetItems">
-              <h2>Accessories</h2>
-              {accessories}
+                <Category title="Accessories"
+                          limit={3}
+                          articles={aCCESSORIES}
+                          hangeItem={this.handleBottomChange}
+                          className="outfitArticle"/>
             </ul>
         </section>
         <section className="outfitDesigner">
-          <h3>selected top</h3>
           <div className="designerTop, design">
             {outfitTop}
           </div>

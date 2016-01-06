@@ -41,7 +41,6 @@ class Header extends React.Component {
   logoutUser(e) {
     let self = this;
     e.preventDefault();
-
     $.ajax({
       headers: {
         "X-Parse-Session-Token": JSON.parse(localStorage.getItem('userSession')).sessionToken
@@ -50,12 +49,8 @@ class Header extends React.Component {
       type: 'POST',
       success: function() {
         self.props.logoutUser();
-
-
       }
-
     })
-
   }
   render() {
     let links;
@@ -68,22 +63,22 @@ class Header extends React.Component {
           <span className="userlink">Welcome, {user}</span>
           </div>
           <section className="headerNav">
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-home " to="/dashboard">
+            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="headerlink " to="/dashboard">
               Dashboard
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-columns " to="/closet">
+            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/closet">
               Closet
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-suitcase " to="/outfits">
-              Outfits
+            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/outfits">
+              Outfit
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-scissors " to="/outfitdesigner">
+            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/outfitdesigner">
               Outfit Designer
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-users " to="/publicfeed">
+            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/publicfeed">
               Public Feed
             </Link>
-            <Link id="headerlink" onClick={this.getRidOfPublicFeedUser} className="fa fa-sign-out " to="/" onClick={this.logoutUser}>
+            <Link id="headerlink" className="headerlink" to="/" onClick={this.logoutUser}>
               Logout
             </Link>
           </section>

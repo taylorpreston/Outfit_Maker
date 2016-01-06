@@ -117,7 +117,7 @@ class Home extends React.Component {
       }
     })
   }
-  
+
   handleLogoutUser() {
     this.setState({
       loggedIn: false,
@@ -168,7 +168,8 @@ class Home extends React.Component {
         <Header loggedIn = {this.state.loggedIn}
                 loginUser = {this.handleLoginUser}
                 getRidOfPublicFeedUser = {this.getRidOfPublicFeedUser}
-                userSession = {this.state.userSession}/>
+                userSession = {this.state.userSession}
+                logoutUser = {this.handleLogoutUser}/>
 
         {childrenProps}
       </div>
