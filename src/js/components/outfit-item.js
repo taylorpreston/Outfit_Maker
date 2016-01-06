@@ -5,23 +5,24 @@ class OutfitItem extends React.Component {
 
   constructor(props) {
     super(props)
-    this.state = {
-      outfitAccessories: null
-    }
+    // this.state = {
+    //   outfitAccessories: null
+    // }
     this.deleteOutfit = this.deleteOutfit.bind(this)
     console.log(this.props);
   }
 
-  componentDidMount() {
-    let outfit = this.props.outfit
-    if(!outfit.accessories.img){
-      return
-    } else {
-    this.setState({
-      outfitAccessories: outfit.accessories.img
-      })
-    }
-  }
+  // componentDidMount() {
+  //   let outfit = this.props.outfit
+  //   if(!outfit.accessories.img){
+  //     return null
+  //   } else {
+  //   this.setState({
+  //     outfitAccessories: outfit.accessories.img
+  //     })
+  //   }
+  // }
+
   deleteOutfit(){
     let objId = this.props.outfit.objectId
     console.log(objId)
@@ -33,15 +34,39 @@ class OutfitItem extends React.Component {
   }
 
   render () {
-    let outfit = this.props.outfit
+    let outfit = this.props.outfit;
+
+  if(outfit.accessories) {
+    return <div className="outfitDisplay">
+            <h2>{outfit.outfitName}</h2>
+              <div className="outfitPic">
+                <img className="top article" src={outfit.top.img}/>
+              </div>
+              <div className="outfitPic">
+                <img className="bottom article" src={outfit.bottom.img}/>
+              </div>
+              <div className="outfitPic">
+                <img className="shoes article" src={outfit.shoes.img}/>
+              </div>
+              <div className="outfitPic">
+                <img className="accessory article" src={outfit.accessories.img}/>
+              </div>
+              <button className="delete" value='del' onClick={this.deleteOutfit}/>
+           </div>
+  }
     return(
       <div className="outfitDisplay">
           <h2>{outfit.outfitName}</h2>
-          <imgF className="top" src={outfit.top.img}/>
-          <img className="bottom" src={outfit.bottom.img}/>
-          <img className="shoes" src={outfit.shoes.img}/>
-          <img className="accessory" src={this.state.outfitAccessories}/>
-          <button className="delete" value='del' onClick={this.deleteOutfit}/>
+          <div className="outfitPic">
+            <img className="top article" src={outfit.top.img}/>
+          </div>
+          <div className="outfitPic">
+            <img className="bottom article" src={outfit.bottom.img}/>
+          </div>
+          <div className="outfitPic">
+            <img className="shoes article" src={outfit.shoes.img}/>
+          </div>
+            <button className="delete" value='del' onClick={this.deleteOutfit}/>
       </div>
     )
   }
