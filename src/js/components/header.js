@@ -68,7 +68,7 @@ class Header extends React.Component {
               Closet
             </Link>
             <Link onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/outfits">
-              Outfit
+              Outfits
             </Link>
             <Link onClick={this.getRidOfPublicFeedUser} className="headerlink" to="/outfitdesigner">
               Outfit Designer
