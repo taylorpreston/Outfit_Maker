@@ -10,14 +10,18 @@ class Outfits extends React.Component {
       userOutfits:[]
     }
     this.handleOutfitChange = this.handleOutfitChange.bind(this)
+    this.getOutfits = this.getOutfits.bind(this)
   }
 
 
   handleOutfitChange(){
+    console.log('getOutfitsRan');
+    this.getOutfits()
     this.forceUpdate()
   }
 
-  componentDidMount(){
+  getOutfits(){
+    console.log('getOutfitsRan');
     if(this.props.loggedIn === false){
       this.props.history.pushState(null, '/');
     }
@@ -43,6 +47,10 @@ class Outfits extends React.Component {
       }
     })
 
+  }
+
+  componentDidMount(){
+    this.getOutfits()
   }
 
   render () {
