@@ -195,68 +195,68 @@ class OutfitDesigner extends React.Component {
     let sHOES = self.userShoes
     let aCCESSORIES = self.userAccessories
 
-    let outfitTop = (<img className='designImg' src={this.state.outfitTopImg}/>)
+    let outfitTop = (<img className='designOutfitImg' src={this.state.outfitTopImg}/>)
 
-    let outfitBottom = (<img className='designImg' src={this.state.outfitBottomImg}/>)
+    let outfitBottom = (<img className='designOutfitImg' src={this.state.outfitBottomImg}/>)
 
-    let outfitShoes = (<img className='designImg' src={this.state.outfitShoesImg}/>)
+    let outfitShoes = (<img className='designOutfitImg' src={this.state.outfitShoesImg}/>)
 
-    let outfitAccessories = (<img className='designImg' src={this.state.outfitAccessoriesImg}/>)
+    let outfitAccessories = (<img className='designOutfitImg' src={this.state.outfitAccessoriesImg}/>)
 
     return (
-      <main className="outfitMain">
-        <section className='closetSection'>
-          <h3>Make an Outfit</h3>
-          <ul className="closetItems">
+      <main className="outfitDesignerMain">
+        <h3>Make an Outfit</h3>
+        <section className='closetDesignerSection'>
+          <ul className="closetDesignerItems">
               <Category title="Tops"
                         limit={3}
                         articles={tOPS}
                         changeItem={this.handleTopChange}
-                        className="outfitArticle"
+                        className="outfitDesignArticle"
                          />
             </ul>
-            <ul className="closetItems">
+            <ul className="closetDesignerItems">
                 <Category title="Bottoms"
                           limit={3}
                           articles={bOTTOMS}
                           changeItem={this.handleBottomChange}
-                          className="outfitArticle"
+                          className="outfitDesignArticle"
                            />
             </ul>
-            <ul className="closetItems">
+            <ul className="closetDesignerItems">
 
                 <Category title="Shoes"
                           limit={3}
                           articles={sHOES}
                           changeItem={this.handleShoeChange}
-                          className="outfitArticle"
+                          className="outfitDesignArticle"
                            />
             </ul>
-            <ul className="closetItems">
+            <ul className="closetDesignerItems">
                 <Category title="Accessories"
                           limit={3}
                           articles={aCCESSORIES}
                           changeItem={this.handleAccessoriesChange}
-                          className="outfitArticle"
+                          className="outfitDesignArticle"
                            />
             </ul>
         </section>
-        <section className="outfitDesigner">
-          <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
-          <div className="designerTop, design">
+        <section className="designOutfit">
+          <input className="outfitDesignName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
+          <div className="designerOutfitTop, design">
             {outfitTop}
           </div>
-          <div className="designerBottom, design">
+          <div className="designerOutfitBottom, design">
             {outfitBottom}
           </div>
-          <div className="designShoes, design">
+          <div className="designOutfitShoes, design">
             {outfitShoes}
           </div>
-          <div className="designAccessories">
+          <div className="designOutfitAccessories">
             {outfitAccessories}
           </div>
         </section>
-        <button className="saveOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
+        <button className="saveDesignOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
       </main>
     )}
 
@@ -269,67 +269,68 @@ class OutfitDesigner extends React.Component {
     let sHOES = self.userShoes
     let aCCESSORIES = self.userAccessories
 
-    let outfitTop = (<img className='designImg' src={this.state.outfitTopImg}/>)
+    let outfitTop = (<img className='designOutfitImg' src={this.state.outfitTopImg}/>)
 
-    let outfitBottom = (<img className='designImg' src={this.state.outfitBottomImg}/>)
+    let outfitBottom = (<img className='designOutfitImg' src={this.state.outfitBottomImg}/>)
 
-    let outfitShoes = (<img className='designImg' src={this.state.outfitShoesImg}/>)
+    let outfitShoes = (<img className='designOutfitImg' src={this.state.outfitShoesImg}/>)
 
-    let outfitAccessories = (<img className='designImg' src={this.state.outfitAccessoriesImg}/>)
+    let outfitAccessories = (<img className='designOutfitImg' src={this.state.outfitAccessoriesImg}/>)
 
     return (
-      <main className="outfittMain">
-        <section className='closetSection'>
-          <ul className="closetItems">
+      <main className="outfitDesignerMain">
+        <h3>Make an Outfit</h3>
+        <section className='closetDesignerSection'>
+          <ul className="closetDesignerItems">
               <Category title="Tops"
                         limit={3}
                         articles={tOPS}
                         changeItem={this.handleTopChange}
-                        className="outfitArticle"
+                        className="outfitDesignArticle"
                          />
-            </ul>
-            <ul className="closetItems">
+                     </ul>
+            <ul className="closetDesignerItems">
                 <Category title="Bottoms"
                           limit={3}
                           articles={bOTTOMS}
                           changeItem={this.handleBottomChange}
-                          className="outfitArticle"
+                          className="outfitDesignArticle"
                           />
             </ul>
-            <ul className="closetItems">
+            <ul className="closetDesignerItems">
 
                 <Category title="Shoes"
                           limit={3}
                           articles={sHOES}
                           changeItem={this.handleShoeChange}
-                          className="outfitArticle"
+                          className="outfitDesignArticle"
                            />
             </ul>
-            <ul className="closetItems">
+            <ul className="closetDesignerItems">
                 <Category title="Accessories"
                           limit={3}
                           articles={aCCESSORIES}
                           changeItem={this.handleAccessoriesChange}
-                          className="outfitArticle"
+                          className="outfitDesignArticle"
                            />
             </ul>
         </section>
-        <section className="outfitDesigner">
-                    <input className="outfitName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
-          <div className="designerTop, design">
+        <section className="designOutfit">
+          <input className="outfitDesignName" type="text" ref="outfitName" placeholder="Name Your Outfit"/>
+          <div className="designerOutfitTop, design">
             {outfitTop}
           </div>
-          <div className="designerBottom, design">
+          <div className="designerOutfitBottom, design">
             {outfitBottom}
           </div>
-          <div className="designShoes, design">
+          <div className="designOutfitShoes, design">
             {outfitShoes}
           </div>
-          <div className="designAccessories">
+          <div className="designOutfitAccessories">
             {outfitAccessories}
           </div>
         </section>
-        <button className="saveOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
+        <button className="saveDesignOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
       </main>
     )}
    }

@@ -35,13 +35,17 @@ class OutfitItem extends React.Component {
   render () {
     let outfit = this.props.outfit
     return(
+      <div className="containWhole">
       <div className="outfitDisplay">
-          <h2>{outfit.outfitName}</h2>
-          <imgF className="top" src={outfit.top.img}/>
-          <img className="bottom" src={outfit.bottom.img}/>
-          <img className="shoes" src={outfit.shoes.img}/>
-          <img className="accessory" src={this.state.outfitAccessories}/>
-          <button className="delete" value='del' onClick={this.deleteOutfit}/>
+          <span className="title">{outfit.outfitName}</span>
+          <div className="containOutfit">
+            <img className="singleItem" src={outfit.top.img}/>
+            <img className="singleItem" src={outfit.bottom.img}/>
+            <img className="singleItem" src={outfit.shoes.img}/>
+            <img className="singleItem" src={this.state.outfitAccessories}/>
+          </div>
+          <button className="delete" value='del' onClick={this.deleteOutfit}>Delete Outfit</button>
+          </div>
       </div>
     )
   }
