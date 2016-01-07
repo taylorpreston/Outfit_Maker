@@ -23,14 +23,12 @@ class OutfitItem extends React.Component {
     }
   }
   deleteOutfit(){
-    let objId = this.props.outfit.objectId
-    console.log(objId)
-    $.ajax({
-      url: `https://api.parse.com/1/classes/Outfit/${objId}`,
-      type: 'DELETE',
-    })
-    this.props.handleOutfitChange()
-  }
+     let objId = this.props.outfit.objectId
+     $.ajax({
+       url: `https://api.parse.com/1/classes/Outfit/${objId}`,
+       type: 'DELETE',
+     }).then( response => { this.props.handleOutfitChange()}, function(){ console.log('error');})
+   }
 
   render () {
     let outfit = this.props.outfit

@@ -64,7 +64,7 @@ class OutfitDesigner extends React.Component {
       user
     }
 
-    if(!this.state.outfitTop || !this.state.outfitBottom || !this.state.outfitShoes || !this.refs.outfitName){
+    if(!this.state.outfitTop || !this.state.outfitBottom || !this.state.outfitShoes || !this.refs.outfitName.value){
       alert('please select outfit items')
     }else{
     $.ajax({

@@ -149,7 +149,7 @@ class AddItem extends React.Component {
             <option value="normaly"> Normal </option>
           </select>
           <select className="style" ref="style">
-            <option value="fomal"> Formal </option>
+            <option value="formal"> Formal </option>
             <option value="casual"> Casual </option>
             <option value="comfy"> Comfy </option>
             <option value="active"> Active </option>
