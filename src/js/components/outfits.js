@@ -70,7 +70,10 @@ class Outfits extends React.Component {
 
     return(
       <section className="outfitPage">
+        <div className="containWhole">
+
         {outfits}
+      </div>
       </section>
     )
   }

@@ -427,8 +427,7 @@ form {
   li {
   @include span-columns(3 of 11);
   @include shift(0.5);
-  max-height: 155px;
-  overflow: hidden;
+  // max-height: 200px;
 
     span {
       @include span-columns(3 of 3);
@@ -694,9 +693,14 @@ h3{
   @include span-columns(6);
   @include omega();
   text-align: center;
+  // overflow: hidden;
 }
-.closetDesignerSection .closetItems{
-  height: 200px;
+// .closetDesignerSection .closetItems{
+//   max-height: 155px;
+//   overflow: hidden;
+// }
+.closetItems {
+  overflow: hidden;
 }
 
 .designOutfit{
@@ -762,12 +766,17 @@ h3{
 
 .outfitPage{
   @include outer-container;
-  @include pad();
-  @include shift(1);
+  // @include pad();
+  // @include shift(1);
+}
+.containWhole{
+  @include span-columns(12 of 12);
 }
   .outfitDisplay{
     @include  span-columns(4 of 12);
-    @include omega();
+    text-align: center;
+    padding-top: 20px;
+    &:nth-of-type(3n) {@include omega();}
     height: 800px;
     .title{
       text-align: center;

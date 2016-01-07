@@ -36,7 +36,7 @@ class OutfitItem extends React.Component {
     let outfit = this.props.outfit;
 
   if(outfit.accessories) {
-  return <div className="containWhole">
+  return(
           <div className="outfitDisplay">
             <span className="title">{outfit.outfitName}</span>
             <div className="containOutfit">
@@ -46,11 +46,9 @@ class OutfitItem extends React.Component {
               <img className="singleItem" src={outfit.accessories.img}/>
             </div>
             <button className="delete" value='del' onClick={this.deleteOutfit}>Delete Outfit</button>
-          </div>
-        </div>
+          </div>)
   }
     return(
-      <div className="containWhole">
       <div className="outfitDisplay">
           <span className="title">{outfit.outfitName}</span>
           <div className="containOutfit">
@@ -59,7 +57,6 @@ class OutfitItem extends React.Component {
             <img className="singleItem" src={outfit.shoes.img}/>
           </div>
           <button className="delete" value='del' onClick={this.deleteOutfit}>Delete Outfit</button>
-          </div>
       </div>
     )
   }
