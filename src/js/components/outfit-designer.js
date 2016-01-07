@@ -66,6 +66,7 @@ class OutfitDesigner extends React.Component {
 
     if(!this.state.outfitTop || !this.state.outfitBottom || !this.state.outfitShoes || !this.refs.outfitName){
       alert('please select outfit items')
+      return
     }else{
     $.ajax({
       url:'https://api.parse.com/1/classes/Outfit',
