@@ -134,7 +134,7 @@ class AddItem extends React.Component {
         <section className="uploadedImage">{ newlyUploadedImage }</section>
         </section>
         <section className="imageInputs">
-          <input className="inputs" type="text" ref="discription" placeholder="Outfit Title"/>
+          <input className="inputs" type="text" ref="discription" placeholder="Title"/>
           <input className="inputs" type="text" ref="brand" placeholder="Brand"/>
           <select className="type" ref="type">
             <option value="Top"> Top </option>
