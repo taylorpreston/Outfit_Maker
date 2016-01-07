@@ -427,6 +427,8 @@ form {
   li {
   @include span-columns(3 of 11);
   @include shift(0.5);
+  max-height: 155px;
+  overflow: hidden;
 
     span {
       @include span-columns(3 of 3);
@@ -725,33 +727,35 @@ h3{
 
 
 .saveDesignOutfit{
-  @include span-columns(3 of 6);
-  @include shift(1.5);
-  background-color: rgba(246, 246, 246, 0.22);
-  color: #000000;
-  font-weight: normal;
-  font-size: 30px;
-  font-family: $mainfont;
-  border: 2px solid #000000;
-  width: 138px;
-  padding: 11px 14px 11px 14px;
-  margin-top: 10px;
-  outline: none;
-  cursor: pointer;
-  -webkit-transition: background-color .7s ease-out;
-  -moz-transition: background-color .7s ease-out;
-  -o-transition: background-color .7s ease-out;
-  transition: background-color .7s ease-out;
-  &:hover{
+  @include span-columns(12);
+  @include omega();
+  text-align: center;
+  button {
+    outline: none;
     cursor: pointer;
-    -webkit-transition: background-color 2s ease-out;
-    -moz-transition: background-color 2s ease-out;
-    -o-transition: background-color 2s ease-out;
-    transition: background-color 2s ease-out;
-    color: white;
-    background-color: #FF7C2F;
-    border: 2px solid gray;
-    }
+    background-color: rgba(246, 246, 246, 0.22);
+    color: #000000;
+    font-weight: normal;
+    font-size: 30px;
+    font-family: $mainfont;
+    -webkit-transition: background-color .7s ease-out;
+    -moz-transition: background-color .7s ease-out;
+    -o-transition: background-color .7s ease-out;
+    transition: background-color .7s ease-out;
+    width: 245px;
+    border: 2px solid #000000;
+    padding: 11px 14px 11px 14px;
+    &:hover{
+      cursor: pointer;
+      -webkit-transition: background-color 2s ease-out;
+      -moz-transition: background-color 2s ease-out;
+      -o-transition: background-color 2s ease-out;
+      transition: background-color 2s ease-out;
+      color: white;
+      background-color: #FF7C2F;
+      border: 2px solid gray;
+      }
+  }
 }
 ///////////////////
 /// Outfit Page

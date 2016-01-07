@@ -66,6 +66,7 @@ class OutfitDesigner extends React.Component {
 
     if(!this.state.outfitTop || !this.state.outfitBottom || !this.state.outfitShoes || !this.refs.outfitName.value){
       alert('please select outfit items')
+      return
     }else{
     $.ajax({
       url:'https://api.parse.com/1/classes/Outfit',
@@ -206,6 +207,9 @@ class OutfitDesigner extends React.Component {
     return (
       <main className="outfitDesignerMain">
         <h3>Make an Outfit</h3>
+        <div className="saveDesignOutfit" >
+          <button onClick={this.saveOutfit}>Save This Outfit</button>
+          </div>
         <section className='closetDesignerSection'>
           <ul className="closetDesignerItems">
               <Category title="Tops"
@@ -256,7 +260,6 @@ class OutfitDesigner extends React.Component {
             {outfitAccessories}
           </div>
         </section>
-        <button className="saveDesignOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
       </main>
     )}
 
@@ -280,7 +283,10 @@ class OutfitDesigner extends React.Component {
     return (
       <main className="outfitDesignerMain">
         <h3>Make an Outfit</h3>
-        <section className='closetDesignerSection'>
+          <div className="saveDesignOutfit" >
+            <button onClick={this.saveOutfit}>Save This Outfit</button>
+            </div>
+                    <section className='closetDesignerSection'>
           <ul className="closetDesignerItems">
               <Category title="Tops"
                         limit={3}
@@ -330,7 +336,6 @@ class OutfitDesigner extends React.Component {
             {outfitAccessories}
           </div>
         </section>
-        <button className="saveDesignOutfit" onClick={this.saveOutfit}>Save This Outfit</button>
       </main>
     )}
    }

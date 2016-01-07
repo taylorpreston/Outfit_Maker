@@ -17,9 +17,11 @@ class Outfits extends React.Component {
 
   handleOutfitChange(){
     this.getOutfits()
+    this.forceUpdate()
   }
 
   getOutfits(){
+    console.log('getOutfitsRan');
     if(this.props.loggedIn === false){
       this.props.history.pushState(null, '/');
     }
@@ -63,7 +65,7 @@ class Outfits extends React.Component {
       }
 
     let outfits = userOutfits.map( outfit => {
-      return <OutfitItem key={outfit.objectId} outfit={outfit} handleOutfitChange={this.handleOutfitChange}/>
+      return <OutfitItem className="outfitContainer"key={outfit.objectId} outfit={outfit} handleOutfitChange={this.handleOutfitChange}/>
       })
 
     return(
